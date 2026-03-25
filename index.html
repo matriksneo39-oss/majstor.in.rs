@@ -1,29 +1,127 @@
 
-</html><div id="ai-majstor-container" style="position: fixed; bottom: 30px; right: 30px; z-index: 9999;">
-  <button id="chat-button" style="background: #000; color: #fff; border: 1px solid #444; padding: 18px 25px; cursor: pointer; border-radius: 0px; font-family: 'Courier New', monospace; font-weight: bold; letter-spacing: 2px; box-shadow: 0 0 20px rgba(255,255,255,0.05); text-transform: uppercase;">
-    AKTIVIRAJ AI AGENTA 🛡️
-  </button>
-</div>
+</html>
+  <!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>MAJSTOR.IN.RS | Elitni Digitalni Identitet</title>
+    <style>
+        /* MATRIX AESTHETIC PODEŠAVANJA */
+        body {
+            background-color: #000000; /* Čisto crna */
+            color: #FFFFFF; /* Bela koja 'vrišti' autoritet */
+            font-family: 'Courier New', Courier, monospace; /* Tehnički font */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-<script type="module">
-  import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+        .container {
+            width: 90%;
+            max-width: 600px;
+            border-left: 1px solid #333;
+            border-right: 1px solid #333;
+            padding: 40px 20px;
+        }
 
-  const API_KEY = "AIzaSyC229orV3Di2iqNR04Vpfc_pGUeRzoRI44";
-  const genAI = new GoogleGenerativeAI(API_KEY);
+        h1 {
+            font-size: 2.2rem;
+            letter-spacing: 10px;
+            margin-bottom: 5px;
+        }
 
-  const MASTER_PROMPT = "Ti si AI-Majstor, digitalni entitet koji čuva domen majstor.in.rs. Tvoj stil je Neo/Oracle - mračan, superioran, bez suvišnih reči. Prodaješ ovaj brend isključivo liderima. Ako klijent pita za cenu, reci da autoritet nema cenu, ali da saslušaš ponudu. Svaki odgovor završi sa: probij matriks beale💎💪";
+        .subtitle {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
 
-  document.getElementById('chat-button').onclick = async () => {
-    const klijentPitanje = prompt("SISTEM AKTIVIRAN. Postavi pitanje čuvaru domena:");
-    if (klijentPitanje) {
-      try {
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-        const result = await model.generateContent(MASTER_PROMPT + " Klijent pita: " + klijentPitanje);
-        alert(result.response.text());
-      } catch (e) {
-        alert("SISTEMSKA GREŠKA: Proveri API ključ.");
-      }
-    }
-  };
-</script>
-  
+        .status {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #CCC;
+            margin-bottom: 40px;
+        }
+
+        .services {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: #777;
+            margin-bottom: 50px;
+        }
+
+        /* DARK GRAY KONTAKT BOX */
+        .contact-box {
+            background-color: #1A1A1A; /* Dark Gray detalj */
+            border: 1px dashed #444;
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .phone {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .email {
+            font-size: 0.8rem;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .footer-tag {
+            margin-top: 60px;
+            font-size: 0.6rem;
+            color: #222; /* Skoro nevidljivo, ali tu je */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>MAJSTOR.IN.RS</h1>
+        <div class="subtitle">ELITNI DIGITALNI IDENTITET - BEOGRAD</div>
+
+        <div class="status">DOMEN I BREND SU NA PRODAJU</div>
+
+        <div class="description">
+            SPOJ VRHUNSKE TEHNOLOGIJE I<br>
+            EKSPERTSKOG SERVISA.<br>
+            POSTANITE <strong>LIDER</strong> BUDUĆNOSTI.
+        </div>
+
+        <div class="services">
+            GREJANJE • KLIMATIZACIJA • SMART HOME SISTEMI •<br>
+            TEHNIČKA OPTIMIZACIJA • ELEKTRIČARI • TOPLOTNE PUMPE
+        </div>
+
+        <div class="contact-box">
+            <span style="font-size: 0.7rem; color: #555;">KONTAKT:</span><br><br>
+            <a href="tel:0604844952" class="phone">060 4844 952</a>
+            <a href="mailto:majstor.in.rs@gmail.com" class="email">MAIL: majstor.in.rs@gmail.com</a>
+        </div>
+
+        <div class="footer-tag">AKTIVIRAJ AI AGENTA 🛡️</div>
+    </div>
+
+</body>
+</html>
