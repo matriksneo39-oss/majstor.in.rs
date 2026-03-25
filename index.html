@@ -4,22 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-MAJSTOR</title>
+    <title>MAJSTOR.IN.RS // TERMINAL</title>
     <style>
-        body { background:#000; color:#fff; font-family:monospace; padding:20px; text-transform:uppercase; text-align:center; margin:0; }
-        .m { border:1px solid #222; padding:15px; max-width:320px; margin:auto; }
-        h1 { font-size:1.2rem; border-bottom:1px solid #fff; margin-bottom:15px; padding-bottom:5px; }
-        .row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; font-size:0.8rem; border-bottom:1px solid #111; padding-bottom:5px; }
-        .p { color:#0f0; font-weight:bold; }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .terminal-box {
+            border: 2px solid #2f2f2f; /* Dark Gray Border */
+            padding: 20px;
+            width: 350px;
+            background-color: #000000;
+            box-shadow: 0 0 15px rgba(47, 47, 47, 0.5);
+        }
+
+        .header {
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #2f2f2f;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .status-bar {
+            font-size: 10px;
+            color: #00FF00;
+            margin-bottom: 15px;
+            text-align: center;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .label { font-size: 14px; letter-spacing: 1px; }
+        .price { color: #00FF00; font-weight: bold; text-shadow: 0 0 5px #00FF00; }
+        
+        .btn-ok {
+            border: 1px solid #ffffff;
+            background: none;
+            color: #ffffff;
+            padding: 2px 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 12px;
+        }
+
+        .btn-ok:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 10px;
+            color: #555555;
+        }
     </style>
 </head>
 <body>
-    <div class="m">
-        <h1>AI-MAJSTOR</h1>
-        <div class="row"><span>STATUS:</span> <span class="p">ONLINE</span></div>
-        <div class="row"><span>PROJEKAT:</span> <span>21 SAJT</span></div>
-        <div class="row"><span>OPTIMIZACIJA:</span> <span>100%</span></div>
+
+<div class="terminal-box">
+    <div class="header">MAJSTOR.IN.RS</div>
+    
+    <div class="status-bar">[SYSTEM STATUS: SCANNING MARKET DEALS... 100% OK]</div>
+
+    <div class="row">
+        <span class="label">GOLF 7</span>
+        <span class="price">200 RSD</span>
+        <button class="btn-ok">OK</button>
     </div>
+
+    <div class="row">
+        <span class="label">IPHONE</span>
+        <span class="price">150 RSD</span>
+        <button class="btn-ok">OK</button>
+    </div>
+
+    <div class="row">
+        <span class="label">POLOVNI LAPTOP</span>
+        <span class="price">150 RSD</span>
+        <button class="btn-ok">OK</button>
+    </div>
+
+    <div class="row">
+        <span class="label">SERVIS KLIME</span>
+        <span class="price">150 RSD</span>
+        <button class="btn-ok">OK</button>
+    </div>
+
+    <div class="row">
+        <span class="label">BOSCH ALAT</span>
+        <span class="price">150 RSD</span>
+        <button class="btn-ok">OK</button>
+    </div>
+
+    <div class="footer">
+        N21 // PROBIJAJ MATRIKS 💎💪
+    </div>
+</div>
+
 </body>
 </html>
   
