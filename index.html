@@ -1,128 +1,44 @@
 
-</html><!DOCTYPE html>
-<html lang="sr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAJSTOR.IN.RS // TERMINAL</title>
-    <style>
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-transform: uppercase;
-        }
-
-        .terminal-box {
-            border: 2px solid #2f2f2f; /* Dark Gray Border */
-            padding: 20px;
-            width: 350px;
-            background-color: #000000;
-            box-shadow: 0 0 15px rgba(47, 47, 47, 0.5);
-        }
-
-        .header {
-            text-align: center;
-            font-weight: bold;
-            letter-spacing: 2px;
-            border-bottom: 1px solid #2f2f2f;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-
-        .status-bar {
-            font-size: 10px;
-            color: #00FF00;
-            margin-bottom: 15px;
-            text-align: center;
-            animation: blink 1.5s infinite;
-        }
-
-        @keyframes blink {
-            50% { opacity: 0.5; }
-        }
-
-        .row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        .label { font-size: 14px; letter-spacing: 1px; }
-        .price { color: #00FF00; font-weight: bold; text-shadow: 0 0 5px #00FF00; }
-        
-        .btn-ok {
-            border: 1px solid #ffffff;
-            background: none;
-            color: #ffffff;
-            padding: 2px 8px;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 12px;
-        }
-
-        .btn-ok:hover {
-            background-color: #ffffff;
-            color: #000000;
-        }
-
-        .footer {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 10px;
-            color: #555555;
-        }
-    </style>
-</head>
-<body>
-
-<div class="terminal-box">
-    <div class="header">MAJSTOR.IN.RS</div>
+</html><div style="background-color: #000000; color: #ffffff; padding: 20px; border: 2px solid #333333; font-family: monospace; max-width: 400px; margin: auto;">
     
-    <div class="status-bar">[SYSTEM STATUS: SCANNING MARKET DEALS... 100% OK]</div>
+    <h2 style="text-align: center; letter-spacing: 5px; color: #ffffff;">MAJSTOR.IN.RS</h2>
+    <hr style="border: 0; border-top: 1px solid #333333;">
+    
+    <p style="color: #00ff00; font-size: 10px; text-align: center;">[SYSTEM STATUS: SCANNING MARKET DEALS... 100% OK]</p>
 
-    <div class="row">
-        <span class="label">GOLF 7</span>
-        <span class="price">200 RSD</span>
-        <button class="btn-ok">OK</button>
-    </div>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <tr style="border-bottom: 1px solid #333333;">
+            <td style="padding: 15px 0;">GOLF 7</td>
+            <td style="padding: 15px 0; color: #ffffff; font-weight: bold;">CENA RSD</td>
+            <td style="text-align: right;">
+                <a href="tel:0604844952" style="background: transparent; border: 1px solid #ffffff; color: #ffffff; padding: 5px 10px; text-decoration: none; font-size: 12px;">OK</a>
+            </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #333333;">
+            <td style="padding: 15px 0;">IPHONE</td>
+            <td style="padding: 15px 0; color: #ffffff; font-weight: bold;">CENA RSD</td>
+            <td style="text-align: right;">
+                <a href="tel:0604844952" style="background: transparent; border: 1px solid #ffffff; color: #ffffff; padding: 5px 10px; text-decoration: none; font-size: 12px;">OK</a>
+            </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #333333;">
+            <td style="padding: 15px 0;">POLOVNI LAPTOP</td>
+            <td style="padding: 15px 0; color: #ffffff; font-weight: bold;">CENA RSD</td>
+            <td style="text-align: right;">
+                <a href="tel:0604844952" style="background: transparent; border: 1px solid #ffffff; color: #ffffff; padding: 5px 10px; text-decoration: none; font-size: 12px;">OK</a>
+            </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #333333;">
+            <td style="padding: 15px 0;">SERVIS KLIME</td>
+            <td style="padding: 15px 0; color: #ffffff; font-weight: bold;">CENA RSD</td>
+            <td style="text-align: right;">
+                <a href="tel:0604844952" style="background: transparent; border: 1px solid #ffffff; color: #ffffff; padding: 5px 10px; text-decoration: none; font-size: 12px;">OK</a>
+            </td>
+        </tr>
+    </table>
 
-    <div class="row">
-        <span class="label">IPHONE</span>
-        <span class="price">150 RSD</span>
-        <button class="btn-ok">OK</button>
-    </div>
-
-    <div class="row">
-        <span class="label">POLOVNI LAPTOP</span>
-        <span class="price">150 RSD</span>
-        <button class="btn-ok">OK</button>
-    </div>
-
-    <div class="row">
-        <span class="label">SERVIS KLIME</span>
-        <span class="price">150 RSD</span>
-        <button class="btn-ok">OK</button>
-    </div>
-
-    <div class="row">
-        <span class="label">BOSCH ALAT</span>
-        <span class="price">150 RSD</span>
-        <button class="btn-ok">OK</button>
-    </div>
-
-    <div class="footer">
-        N21 // PROBIJAJ MATRIKS 💎💪
+    <div style="margin-top: 30px; text-align: center; font-size: 12px; color: #888888;">
+        BEZ POSREDNIKA. BEZ ČEKANJA. SAMO REZULTAT. 🦾
     </div>
 </div>
-
-</body>
-</html>
   
