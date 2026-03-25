@@ -4,194 +4,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAJSTOR.IN.RS | ZABRANA PROSEČNOSTI</title>
+    <title>MAJSTOR.IN.RS</title>
     <style>
-        /* MATRIX OSNOVA */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
+        /* Osnovni stilovi - Matrix Autoritet */
+        body {
             background-color: #000000;
             color: #ffffff;
             font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 10px;
             display: flex;
             flex-direction: column;
-        }
-
-        /* KONTEJNER KOJI PUNI EKRAN */
-        .wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Razvlači sadržaj od vrha do dna */
             align-items: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-            box-sizing: border-box;
             text-align: center;
         }
 
-        /* HEADER */
-        header h1 {
-            letter-spacing: 8px;
-            font-size: 28px;
-            margin-bottom: 20px;
+        .container {
+            width: 100%;
+            max-width: 400px; /* Optimizovano za mobilni */
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            letter-spacing: 6px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .status {
+            color: #888;
+            font-size: 0.8rem;
+            margin: 15px 0;
             text-transform: uppercase;
         }
 
-        /* GLAVNI STATUS BOX */
-        .status-box {
-            border: 1px solid #333333; /* Tamno siva ivica */
-            background-color: #111111; /* Skoro crna siva */
-            padding: 30px;
-            max-width: 500px;
-            margin-bottom: 40px;
+        .promo-text {
+            font-size: 0.75rem;
+            color: #555;
+            line-height: 1.4;
+            margin-bottom: 20px;
         }
 
-        .status-box h2 {
-            font-size: 18px;
+        /* Kontakt sekcija - Sabijeno */
+        .contact-box {
+            background-color: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: block;
+            text-decoration: none;
             color: #ffffff;
-            margin-bottom: 15px;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
             letter-spacing: 2px;
         }
 
-        .status-box p {
-            color: #808080; /* Dark Gray detalji */
-            font-size: 14px;
-            line-height: 1.6;
-            text-transform: uppercase;
+        .email-link {
+            font-size: 0.85rem;
+            color: #aaa;
+            word-break: break-all;
         }
 
-        /* KONTAKT SEKCIJA - DA VRIŠTI AUTORITET */
-        .contact-info {
-            margin: 40px 0;
-        }
-
-        .contact-link {
-            display: block;
-            color: #ffffff !important;
-            font-size: 26px; /* VELIKI FONT */
-            font-weight: bold;
-            text-decoration: none;
-            margin: 20px 0;
-            letter-spacing: 3px;
-            transition: 0.3s;
-        }
-
-        .contact-link:hover {
-            color: #808080 !important;
-            transform: scale(1.05);
-        }
-
-        /* USLUGE - REDOVI */
-        .services {
-            width: 100%;
-            max-width: 600px;
-        }
-
+        /* Lista usluga - Kompaktno */
         .service-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #222222;
-            padding: 20px 0;
-            margin-bottom: 10px;
-        }
-
-        .service-text {
+            border-bottom: 1px solid #111;
+            padding: 8px 5px;
             text-align: left;
         }
 
-        .service-text h3 {
+        .service-info h3 {
+            font-size: 0.85rem;
             margin: 0;
-            font-size: 18px;
-            letter-spacing: 2px;
-        }
-
-        .service-text p {
-            margin: 5px 0 0;
-            color: #555555;
-            font-size: 12px;
             text-transform: uppercase;
         }
 
-        /* OK DUGME - TVOJ BROJ */
-        .ok-btn {
-            border: 1px solid #ffffff;
-            color: #ffffff;
-            padding: 10px 25px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
-            transition: 0.3s;
+        .service-info p {
+            font-size: 0.65rem;
+            color: #666;
+            margin: 2px 0 0 0;
         }
 
-        .ok-btn:hover {
-            background-color: #ffffff;
-            color: #000000;
+        .btn-ok {
+            border: 1px solid #333;
+            background: none;
+            color: #fff;
+            padding: 5px 12px;
+            font-size: 0.7rem;
+            cursor: pointer;
         }
 
-        /* FOOTER */
-        footer {
-            margin-top: 50px;
-            font-size: 12px;
-            color: #333333;
-            letter-spacing: 4px;
+        .btn-ok:active {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Footer - Direktiva */
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.6rem;
+            color: #333;
+            letter-spacing: 5px;
             text-transform: uppercase;
         }
-
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
-        
-        <header>
-            <h1>MAJSTOR.IN.RS</h1>
-        </header>
+<div class="container">
+    <h1>MAJSTOR.IN.RS</h1>
 
-        <main>
-            <div class="status-box">
-                <h2>STATUS: DOMEN NA PRODAJU</h2>
-                <p>Preuzmi digitalni identitet koji drži Beograd.<br>Elitna adresa za vrhunske majstore.</p>
-            </div>
-
-            <div class="contact-info">
-                <a href="tel:0604844952" class="contact-link">📞 060 4844 952</a>
-                <a href="mailto:majstor.in.rs@gmail.com" class="contact-link">✉️ majstor.in.rs@gmail.com</a>
-            </div>
-
-            <div class="services">
-                <div class="service-row">
-                    <div class="service-text">
-                        <h3>GREJANJE</h3>
-                        <p>Toplotne pumpe i kotlovi</p>
-                    </div>
-                    <a href="tel:0604844952" class="ok-btn">OK</a>
-                </div>
-
-                <div class="service-row">
-                    <div class="service-text">
-                        <h3>STOLARIJA</h3>
-                        <p>PVC i ALU sistemi</p>
-                    </div>
-                    <a href="tel:0604844952" class="ok-btn">OK</a>
-                </div>
-
-                <div class="service-row">
-                    <div class="service-text">
-                        <h3>KLIMATIZACIJA</h3>
-                        <p>Beograd - Teren i Servis</p>
-                    </div>
-                    <a href="tel:0604844952" class="ok-btn">OK</a>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            ZABRANA PROSEČNOSTI | MAJSTOR.IN.RS
-        </footer>
-
+    <div class="status">STATUS: DOMEN NA PRODAJU</div>
+    
+    <div class="promo-text">
+        PREUZMI DIGITALNI IDENTITET KOJI DRŽI BEOGRAD.<br>
+        ELITNA ADRESA ZA VRHUNSKE MAJSTORE.
     </div>
+
+    <div class="contact-box">
+        <a href="tel:0604844952" class="contact-item">📞 060 4844 952</a>
+        <a href="mailto:majstor.in.rs@gmail.com" class="email-link">majstor.in.rs@gmail.com</a>
+    </div>
+
+    <div class="service-row">
+        <div class="service-info">
+            <h3>GREJANJE</h3>
+            <p>TOPLOTNE PUMPE I KOTLOVI</p>
+        </div>
+        <button class="btn-ok" onclick="location.href='tel:0604844952'">OK</button>
+    </div>
+
+    <div class="service-row">
+        <div class="service-info">
+            <h3>STOLARIJA</h3>
+            <p>PVC I ALU SISTEMI</p>
+        </div>
+        <button class="btn-ok" onclick="location.href='tel:0604844952'">OK</button>
+    </div>
+
+    <div class="service-row">
+        <div class="service-info">
+            <h3>KLIMATIZACIJA</h3>
+            <p>BEOGRAD - TEREN I SERVIS</p>
+        </div>
+        <button class="btn-ok" onclick="location.href='tel:0604844952'">OK</button>
+    </div>
+
+    <div class="footer-note">ZABRANA PROSEČNOSTI</div>
+</div>
 
 </body>
 </html>
