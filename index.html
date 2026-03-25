@@ -1,44 +1,143 @@
 
-</html><div style="background-color: #000000; color: #ffffff; padding: 20px; border: 2px solid #333333; font-family: monospace; max-width: 400px; margin: auto;">
-    
-    <h2 style="text-align: center; letter-spacing: 5px; color: #ffffff;">MAJSTOR.IN.RS</h2>
-    <hr style="border: 0; border-top: 1px solid #333333;">
-    
-    <p style="color: #00ff00; font-size: 10px; text-align: center;">[SYSTEM STATUS: SCANNING MARKET DEALS... 100% OK]</p>
+</html><!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MAJSTOR.IN.RS</title>
+    <style>
+        * { margin: 0; padding: 0; box-box: border-box; font-family: 'Courier New', Courier, monospace; }
+        
+        body { 
+            background-color: #000000; 
+            color: #ffffff; 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column;
+            overflow: hidden;
+        }
 
-    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-        <tr style="border-bottom: 1px solid #333333;">
-            <td style="padding: 15px 0;">GOLF 7</td>
-            <td style="padding: 15px 0; color: #ffffff; font-weight: bold;">CENA RSD</td>
-            <td style="text-align: right;">
-                <a href="tel:0604844952" style="background: transparent; border: 1px solid #ffffff; color: #ffffff; padding: 5px 10px; text-decoration: none; font-size: 12px;">OK</a>
-            </td>
-        </tr>
-        <tr style="border-bottom: 1px solid #333333;">
-            <td style="padding: 15px 0;">IPHONE</td>
-            <td style="padding: 15px 0; color: #ffffff; font-weight: bold;">CENA RSD</td>
-            <td style="text-align: right;">
-                <a href="tel:0604844952" style="background: transparent; border: 1px solid #ffffff; color: #ffffff; padding: 5px 10px; text-decoration: none; font-size: 12px;">OK</a>
-            </td>
-        </tr>
-        <tr style="border-bottom: 1px solid #333333;">
-            <td style="padding: 15px 0;">POLOVNI LAPTOP</td>
-            <td style="padding: 15px 0; color: #ffffff; font-weight: bold;">CENA RSD</td>
-            <td style="text-align: right;">
-                <a href="tel:0604844952" style="background: transparent; border: 1px solid #ffffff; color: #ffffff; padding: 5px 10px; text-decoration: none; font-size: 12px;">OK</a>
-            </td>
-        </tr>
-        <tr style="border-bottom: 1px solid #333333;">
-            <td style="padding: 15px 0;">SERVIS KLIME</td>
-            <td style="padding: 15px 0; color: #ffffff; font-weight: bold;">CENA RSD</td>
-            <td style="text-align: right;">
-                <a href="tel:0604844952" style="background: transparent; border: 1px solid #ffffff; color: #ffffff; padding: 5px 10px; text-decoration: none; font-size: 12px;">OK</a>
-            </td>
-        </tr>
-    </table>
+        .header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #2f2f2f; /* Dark Gray detalj */
+        }
 
-    <div style="margin-top: 30px; text-align: center; font-size: 12px; color: #888888;">
-        BEZ POSREDNIKA. BEZ ČEKANJA. SAMO REZULTAT. 🦾
+        h1 { font-size: 1.8rem; letter-spacing: 5px; margin-bottom: 10px; }
+
+        .manifest {
+            background: #1a1a1a;
+            padding: 15px;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            border-bottom: 1px solid #2f2f2f;
+        }
+
+        .main-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 10px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10px;
+            border-bottom: 1px solid #2f2f2f;
+        }
+
+        .info { flex: 2; }
+        .naziv { font-size: 1.1rem; display: block; font-weight: bold; }
+        .opis { font-size: 0.7rem; color: #888; text-transform: uppercase; }
+
+        .cena-box {
+            flex: 1;
+            text-align: center;
+            font-size: 1.4rem; /* Veća cena */
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .btn-ok {
+            flex: 0.5;
+            background: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            text-align: center;
+            padding: 15px 5px;
+            font-weight: bold;
+            border-radius: 2px;
+            font-size: 1rem;
+        }
+
+        .footer {
+            padding: 15px;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #444;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>MAJSTOR.IN.RS</h1>
     </div>
-</div>
+
+    <div class="manifest">
+        STATUS: AKTIVAN ZAŠTITNIK <br>
+        DA TE NE PREVARE PRODAVCI. MI SMO TVOJA KONTROLA. DOBIJ SAVET PRE NEGO ŠTO BACIŠ PARE.
+    </div>
+
+    <div class="main-container">
+        <div class="row">
+            <div class="info">
+                <span class="naziv">GOLF 7</span>
+                <span class="opis">PROVERA PREVARANATA</span>
+            </div>
+            <div class="cena-box">150 RSD</div>
+            <a href="tel:TVOJ_BROJ_OVDE" class="btn-ok">OK</a>
+        </div>
+
+        <div class="row">
+            <div class="info">
+                <span class="naziv">IPHONE</span>
+                <span class="opis">SAVET ZA KUPOVINU</span>
+            </div>
+            <div class="cena-box">150 RSD</div>
+            <a href="tel:TVOJ_BROJ_OVDE" class="btn-ok">OK</a>
+        </div>
+
+        <div class="row">
+            <div class="info">
+                <span class="naziv">POLOVNI LAPTOP</span>
+                <span class="opis">ISTINA O STANJU</span>
+            </div>
+            <div class="cena-box">150 RSD</div>
+            <a href="tel:TVOJ_BROJ_OVDE" class="btn-ok">OK</a>
+        </div>
+
+        <div class="row">
+            <div class="info">
+                <span class="naziv">SERVIS KLIME</span>
+                <span class="opis">REALNA DIJAGNOSTIKA</span>
+            </div>
+            <div class="cena-box">150 RSD</div>
+            <a href="tel:TVOJ_BROJ_OVDE" class="btn-ok">OK</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        BEZ POSREDNIKA. BEZ LAŽI. SAMO REZULTAT. 🦾
+    </div>
+
+</body>
+</html>
   
