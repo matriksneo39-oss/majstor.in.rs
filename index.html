@@ -1,127 +1,177 @@
 
-</html>
-  <!DOCTYPE html>
+</html><!DOCTYPE html>
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google" content="notranslate">
-    <title>MAJSTOR.IN.RS | Elitni Digitalni Identitet</title>
+    <title>MAJSTOR.IN.RS | ELITNI DIGITALNI IDENTITET</title>
     <style>
-        /* MATRIX AESTHETIC PODEŠAVANJA */
+        /* MATRIX CORE SETTINGS */
+        * { box-sizing: border-box; }
         body {
-            background-color: #000000; /* Čisto crna */
-            color: #FFFFFF; /* Bela koja 'vrišti' autoritet */
-            font-family: 'Courier New', Courier, monospace; /* Tehnički font */
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             min-height: 100vh;
             text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 600px;
-            border-left: 1px solid #333;
-            border-right: 1px solid #333;
             padding: 40px 20px;
+            overflow-x: hidden;
         }
 
-        h1 {
+        /* HEADER - TVOJA SLIKA */
+        .main-title {
+            letter-spacing: 12px;
             font-size: 2.2rem;
-            letter-spacing: 10px;
-            margin-bottom: 5px;
+            font-weight: 900;
+            margin: 20px 0 5px 0;
+            text-transform: uppercase;
         }
 
-        .subtitle {
-            font-size: 0.8rem;
-            color: #888;
-            margin-bottom: 50px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 20px;
+        .sub-title {
+            color: #444444; /* Dark Gray */
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 30px;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 60px;
         }
 
-        .status {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
+        /* PRODAJNA PORUKA */
+        .sale-status {
+            font-size: 1.4rem;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+            color: #eeeeee;
         }
 
-        .description {
+        .vision-text {
+            color: #666;
             font-size: 0.9rem;
-            line-height: 1.6;
-            color: #CCC;
-            margin-bottom: 40px;
-        }
-
-        .services {
-            font-size: 0.75rem;
-            font-style: italic;
-            color: #777;
+            line-height: 1.8;
+            letter-spacing: 2px;
+            max-width: 500px;
             margin-bottom: 50px;
+            text-transform: uppercase;
         }
 
-        /* DARK GRAY KONTAKT BOX */
+        /* KONTAKT BOX */
         .contact-box {
-            background-color: #1A1A1A; /* Dark Gray detalj */
-            border: 1px dashed #444;
-            padding: 30px;
-            margin-top: 20px;
+            border: 1px dashed #333;
+            padding: 40px 20px;
+            background-color: #050505;
+            width: 100%;
+            max-width: 500px;
         }
 
-        .phone {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 15px;
+        .contact-label {
+            color: #444;
+            font-size: 0.7rem;
+            letter-spacing: 5px;
             display: block;
-            text-decoration: none;
-            color: #FFFFFF;
+            margin-bottom: 20px;
         }
 
-        .email {
+        .phone-num {
+            font-size: 2rem;
+            letter-spacing: 8px;
+            display: block;
+            margin-bottom: 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .mail-link {
+            color: #555;
             font-size: 0.8rem;
-            color: #888;
+            letter-spacing: 2px;
             text-decoration: none;
         }
 
-        .footer-tag {
-            margin-top: 60px;
-            font-size: 0.6rem;
-            color: #222; /* Skoro nevidljivo, ali tu je */
+        /* AI TERMINAL SIMULACIJA */
+        #ai-console {
+            display: none;
+            background: #080808;
+            border-left: 3px solid #00ff00;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: left;
+            font-size: 0.75rem;
+            color: #00ff00;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.05);
+        }
+
+        .ai-btn {
+            margin-top: 80px;
+            color: #666;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            padding: 10px;
+            transition: 0.4s;
+        }
+
+        .ai-btn:hover { color: #00ff00; }
+
+        /* RESPONSIVE */
+        @media (max-width: 480px) {
+            .main-title { font-size: 1.4rem; letter-spacing: 6px; }
+            .phone-num { font-size: 1.3rem; letter-spacing: 4px; }
+            .sale-status { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>MAJSTOR.IN.RS</h1>
-        <div class="subtitle">ELITNI DIGITALNI IDENTITET - BEOGRAD</div>
+    <div class="main-title">MAJSTOR.IN.RS</div>
+    <div class="sub-title">ELITNI DIGITALNI IDENTITET - BEOGRAD</div>
 
-        <div class="status">DOMEN I BREND SU NA PRODAJU</div>
-
-        <div class="description">
-            SPOJ VRHUNSKE TEHNOLOGIJE I<br>
-            EKSPERTSKOG SERVISA.<br>
-            POSTANITE <strong>LIDER</strong> BUDUĆNOSTI.
-        </div>
-
-        <div class="services">
-            GREJANJE • KLIMATIZACIJA • SMART HOME SISTEMI •<br>
-            TEHNIČKA OPTIMIZACIJA • ELEKTRIČARI • TOPLOTNE PUMPE
-        </div>
-
-        <div class="contact-box">
-            <span style="font-size: 0.7rem; color: #555;">KONTAKT:</span><br><br>
-            <a href="tel:0604844952" class="phone">060 4844 952</a>
-            <a href="mailto:majstor.in.rs@gmail.com" class="email">MAIL: majstor.in.rs@gmail.com</a>
-        </div>
-
-        <div class="footer-tag">AKTIVIRAJ AI AGENTA 🛡️</div>
+    <div class="sale-status">DOMEN I BREND SU NA PRODAJU</div>
+    
+    <div class="vision-text">
+        SPOJ VRHUNSKE TEHNOLOGIJE I EKSPERTSKOG SERVISA.<br>
+        POSTANITE <strong style="color:#fff">LIDER</strong> BUDUĆNOSTI.
     </div>
+
+    <div class="contact-box">
+        <span class="contact-label">KONTAKT:</span>
+        <a href="tel:0604844952" class="phone-num">060 4844 952</a>
+        <a href="mailto:majstor.in.rs@gmail.com" class="mail-link">MAIL: MAJSTOR.IN.RS@GMAIL.COM</a>
+    </div>
+
+    <div id="ai-console">
+        > INICIJALIZACIJA AGENTA... [OK]<br>
+        > ANALIZA MREŽE... [COMPLETED]<br>
+        > STATUS: <span style="color:#fff">SPREMAN ZA AI INTEGRACIJU</span><br>
+        > DOMEN: <span style="color:#fff">MAJSTOR.IN.RS</span><br>
+        > <span style="animation: blink 1s infinite;">_</span>
+    </div>
+
+    <div class="ai-btn" id="trigger" onclick="runAI()">
+        AKTIVIRAJ AI AGENTA 🛡️
+    </div>
+
+    <script>
+        function runAI() {
+            document.getElementById('ai-console').style.display = 'block';
+            document.getElementById('trigger').style.opacity = '0.3';
+            document.getElementById('trigger').innerHTML = 'SISTEM AKTIVAN ✅';
+        }
+    </script>
+
+    <style>
+        @keyframes blink { 0% {opacity: 0;} 50% {opacity: 1;} 100% {opacity: 0;} }
+    </style>
 
 </body>
 </html>
