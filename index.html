@@ -63,3 +63,52 @@
     </div>
 </body>
 </html>
+<div style="background-color: #000; color: #fff; padding: 40px 20px; font-family: 'Courier New', monospace; text-align: center; border-top: 1px solid #1a1a1a;">
+    
+    <div style="border: 1px solid #00ffff; display: inline-block; padding: 10px 20px; margin-bottom: 30px; box-shadow: 0 0 10px #00ffff;">
+        <span style="color: #00ffff; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Sledeći talas optimizacije:</span><br>
+        <span id="n21-timer" style="font-size: 2rem; font-weight: bold;">02:14:55</span>
+    </div>
+
+    <div style="max-width: 600px; margin: 0 auto; text-align: left; border-left: 3px solid #00ffff; padding-left: 20px;">
+        <h2 style="font-size: 1.2rem; letter-spacing: 3px; color: #fff;">DOK TI SKROLUJEŠ, TI GUBIŠ:</h2>
+        <ul style="list-style: none; padding: 0; line-height: 1.8; color: #888;">
+            <li><span style="color: #ff0000;">✖</span> 4 sata fokusa na tuđe živote</li>
+            <li><span style="color: #ff0000;">✖</span> 15% baterije na algoritme koji te dresiraju</li>
+            <li><span style="color: #ff0000;">✖</span> Priliku da postaneš <span style="color: #fff;">Arhitekta</span></li>
+        </ul>
+    </div>
+
+    <div style="margin-top: 50px;">
+        <a href="#probij" style="color: #1a1a1a; text-decoration: none; font-size: 0.7rem; transition: 0.5s;" onmouseover="this.style.color='#00ffff'" onmouseout="this.style.color='#1a1a1a'">
+            Samo za one koji vide u mraku...
+        </a>
+    </div>
+</div>
+
+<script>
+// Matrix Timer Hack
+function startTimer(duration, display) {
+    var timer = duration, hours, minutes, seconds;
+    setInterval(function () {
+        hours = parseInt(timer / 3600, 10);
+        minutes = parseInt((timer % 3600) / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = hours + ":" + minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+window.onload = function () {
+    var twoHours = 60 * 60 * 2 + 14 * 60 + 55;
+    var display = document.querySelector('#n21-timer');
+    startTimer(twoHours, display);
+};
+</script>
