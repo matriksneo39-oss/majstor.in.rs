@@ -1,4 +1,4 @@
-mimi
+demimi
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -576,4 +576,182 @@ window.onload = function () {
     </footer>
 
 </body>
-</html>    
+</html> <!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLUB 210 | Suverenitet</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 90%;
+            padding: 20px;
+        }
+
+        h1 {
+            letter-spacing: 5px;
+            font-weight: 300;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .line {
+            width: 100px;
+            height: 3px;
+            background-color: #FFD700;
+            margin: 10px auto 30px;
+            box-shadow: 0 0 10px #FFD700;
+        }
+
+        .question-box {
+            background-color: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 2px;
+            display: none;
+        }
+
+        .active { display: block; }
+
+        .question-text {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .option-btn {
+            display: block;
+            width: 100%;
+            background: transparent;
+            color: #fff;
+            border: 1px solid #333;
+            padding: 12px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .option-btn:hover {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        #final-action {
+            display: none;
+            margin-top: 30px;
+            animation: fadeIn 1s;
+        }
+
+        .gold-btn {
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            text-transform: uppercase;
+        }
+
+        .status-msg {
+            color: #FFD700;
+            font-size: 0.8rem;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Sopstvena Nadmoć</h1>
+    <div class="line"></div>
+    
+    <div id="intro-text">
+        <p style="color: #FFD700; font-style: italic;">VI STE UPRAVO POVRATILI SUVERENITET.</p>
+        <p style="color: #888; font-size: 0.8rem;">Dokaži čast i inteligenciju da bi otvorio vezu sa Izvorište.</p>
+    </div>
+
+    <div id="q1" class="question-box active">
+        <div class="question-text">> Šta je tvoj najvredniji kapital?</div>
+        <button class="option-btn" onclick="wrong()">Novac i veze</button>
+        <button class="option-btn" onclick="next('q1', 'q2')">Čast, obraz i bistar um</button>
+        <button class="option-btn" onclick="wrong()">Sreća i čekanje</button>
+    </div>
+
+    <div id="q2" class="question-box">
+        <div class="question-text">> Šta predstavlja simboličnih 210 RSD?</div>
+        <button class="option-btn" onclick="next('q2', 'q3')">Potvrda namere i prvi korak ka slobodi</button>
+        <button class="option-btn" onclick="wrong()">Cena jednog dokumenta</button>
+        <button class="option-btn" onclick="wrong()">Trošak koji želim da izbegnem</button>
+    </div>
+
+    <div id="q3" class="question-box">
+        <div class="question-text">> Kakvu promenu tražiš u Klubu 210?</div>
+        <button class="option-btn" onclick="wrong()">Da neko drugi reši moje probleme</button>
+        <button class="option-btn" onclick="wrong()">Brzu zaradu bez truda</button>
+        <button class="option-btn" onclick="next('q3', 'final-action')">Transformaciju života i suverenitet</button>
+    </div>
+
+    <div id="final-action">
+        <div class="status-msg">> FREKVENCIJA POTVRĐENA. PRISTUP ODOBREN.</div>
+        <br>
+        <button class="gold-btn" onclick="window.location.href='https://wa.me/381604844952?text=Sistem%20je%20prepoznao%20moju%20frekvenciju.%20Spreman%20sam%20za%20Klub%20210.'">
+            OTKLJUČAJ STATUS
+        </button>
+    </div>
+
+    <p id="error-msg" style="color: #ff4444; font-size: 0.8rem; margin-top: 20px; display: none;">
+        > GREŠKA: FREKVENCIJA NIJE USKLAĐENA. POKUŠAJ PONOVO.
+    </p>
+
+    <footer style="margin-top: 50px; color: #333; font-size: 0.7rem; letter-spacing: 2px;">
+        ZABRANA PROSEČNOSTI | KLUB 210 | 2026
+    </footer>
+</div>
+
+<script>
+    function next(currentId, nextId) {
+        document.getElementById(currentId).classList.remove('active');
+        document.getElementById(nextId).style.display = 'block';
+        if(nextId !== 'final-action') {
+            document.getElementById(nextId).classList.add('active');
+        }
+        document.getElementById('error-msg').style.display = 'none';
+    }
+
+    function wrong() {
+        document.getElementById('error-msg').style.display = 'block';
+        setTimeout(() => {
+            location.reload();
+        }, 2000);
+    }
+</script>
+
+</body>
+</html>   
