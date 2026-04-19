@@ -754,4 +754,122 @@ window.onload = function () {
 </script>
 
 </body>
-</html>   
+</html>  <!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAJSTOR | PROTOKOL 21</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace; /* Terminal look */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .terminal-text {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 50px;
+            text-align: left;
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .highlight { color: #555; } /* Dark Gray detalji */
+
+        .matrix-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            letter-spacing: 10px;
+            margin: 40px 0;
+            text-transform: uppercase;
+            border-right: 4px solid #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 2s steps(7, end), blink .75s step-end infinite;
+        }
+
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink { from, to { border-color: transparent } 50% { border-color: #fff } }
+
+        .image-stack {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .image-stack img {
+            width: 100%;
+            border: 1px solid #1a1a1a;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .image-stack img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(255,255,255,0.1);
+            border-color: #fff;
+        }
+
+        .buy-btn {
+            background: #fff;
+            color: #000;
+            padding: 25px 60px;
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-decoration: none;
+            margin: 50px 0;
+            display: inline-block;
+            transition: all 0.3s;
+            border: 2px solid #fff;
+        }
+
+        .buy-btn:hover {
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .footer-code {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="terminal-text">
+        [SISTEM AKTIVIRAN...]<br>
+        [ZABRANA PROSEČNOSTI: ON]<br>
+        [IDENTITET POTVRĐEN: NEO]<br>
+    </div>
+
+    <h1 class="matrix-title">MAJSTOR</h1>
+
+    <div class="image-stack">
+        <img src="slika1.jpg" alt="Protokol 21">
+        <img src="slika2.jpg" alt="Sadržaj">
+        <img src="slika3.jpg" alt="Cena">
+    </div>
+
+    <a href="https://wa.me/TVOJBROJ?text=AKTIVIRAJ%20PROTOKOL" class="buy-btn">AKTIVIRAJ PROTOKOL</a>
+
+    <div class="footer-code">
+        3 6 9 | IZVORIŠTE 💎 | majstor.in.rs
+    </div>
+
+</body>
+</html> 
