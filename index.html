@@ -1,193 +1,192 @@
-<!DOCTYPE html>
-<html lang="sr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Majstor.in.rs | AI Selekcija</title>
-    <style>
-        /* RESET I OSNOVA SYSTEMS - ČISTA DOMINACIJA */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+ <div id="filter-matrix-modal" class="matrix-modal">
+    <div class="matrix-modal-content">
+        <span class="matrix-modal-close" onclick="zatvoriFilter()">&times;</span>
+        
+        <h3 id="modal-titula" style="color: #ffffff; font-family: sans-serif; letter-spacing: 2px; margin-bottom: 10px; font-size: 20px; font-weight: bold;"></h3>
+        <p id="modal-podtekst" style="color: #666666; font-family: sans-serif; font-size: 13px; margin-bottom: 25px; letter-spacing: 1px; font-weight: bold;"></p>
+        
+        <form id="matrix-kontakt-forma" onsubmit="procesuirajIposalji(event)">
+            <input type="hidden" id="tip-korisnika" value="">
+            
+            <div style="margin-bottom: 20px;">
+                <input type="text" id="forma-ime" required placeholder="IME I PREZIME / NAZIV FIRME" 
+                       style="width: 100%; background-color: #000000; color: #ffffff; border: 1px solid #333333; padding: 15px; font-family: sans-serif; font-size: 14px; border-radius: 0; outline: none; box-sizing: border-box;">
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <input type="tel" id="forma-telefon" required placeholder="VAŠ BROJ TELEFONA" 
+                       style="width: 100%; background-color: #000000; color: #ffffff; border: 1px solid #333333; padding: 15px; font-family: sans-serif; font-size: 14px; border-radius: 0; outline: none; box-sizing: border-box;">
+            </div>
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #000000; /* Crna pozadina proždire ekran */
-            color: #ffffff; /* Bela slova vrište autoritet */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* GLAVNI NASLOV I PODNASLOV (HERO SEKCIJA) */
-        .hero-title {
-            font-size: 28px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            line-height: 1.3;
-            margin-bottom: 25px;
-        }
-
-        .hero-subtitle {
-            font-size: 16px;
-            color: #a0a0a0; /* Tamno sivi detalj za tekst */
-            line-height: 1.6;
-            margin-bottom: 40px;
-            font-style: italic;
-        }
-
-        /* HIRURŠKI PRECIZNE KARTICE / BOKSEVI */
-        .matrix-box {
-            background-color: #000000;
-            border: 2px solid #262626; /* Tamno sivi precizni okvir */
-            padding: 35px 25px;
-            margin-bottom: 30px;
-            text-align: left;
-            position: relative;
-        }
-
-        .box-tag {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #ff3b3b; /* Crveni akcenat za cenu koja bode oči */
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .box-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-        }
-
-        .box-text {
-            font-size: 15px;
-            color: #cccccc;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        /* MATRIX SPEED DUGMADI */
-        .matrix-btn {
-            display: block;
-            width: 100%;
-            background-color: transparent;
-            color: #ffffff;
-            border: 2px solid #ffffff; /* Belo dugme koje udara u oči */
-            padding: 18px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.2s ease-in-out;
-            cursor: pointer;
-        }
-
-        /* Efekat kada se pređe mišem */
-        .matrix-btn:hover {
-            background-color: #ffffff;
-            color: #000000;
-        }
-
-        /* CHAT PROZORČIĆ (INTEGRACIJA VEZE) */
-        .ai-chat-trigger {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: #ffffff;
-            color: #000000;
-            border: none;
-            border-radius: 50px;
-            padding: 15px 25px;
-            font-size: 14px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: 0px 10px 20px rgba(255,255,255,0.1);
-            cursor: pointer;
-            z-index: 9999;
-            transition: transform 0.2s ease;
-        }
-
-        .ai-chat-trigger:hover {
-            transform: scale(1.05);
-        }
-
-        /* FUTUR KOJI DOMINIRA */
-        footer {
-            margin-top: 80px;
-            font-size: 11px;
-            letter-spacing: 2px;
-            color: #444444;
-            text-align: center;
-            text-transform: uppercase;
-            line-height: 1.8;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-
-        <h1 class="hero-title">Sistem za hirurški<br>preciznu<br>selekciju izvođača</h1>
-        <p class="hero-subtitle">Prekidamo gubljenje vremena na neozbiljne ponude. Spajamo građevinske lidere i proverenu elitu zanata. Napredni AI skrining rešava selekciju za 5 minuta.</p>
-
-        <div class="matrix-box">
-            <div class="box-tag">B2B PRETPLATA — 100€ / MESEČNO</div>
-            <h2 class="box-title">Za Firme & Investitore</h2>
-            <p class="box-text">Rešavamo vaš najveći problem — pronalazak elitnih izvođača. Aktivirajte licencu. AI vrši dubinsku verifikaciju, filtrira bazu i isporučuje top 3 majstora spremna za vaš projekat. Bez čekanja i bez greške.</p>
-            <button onclick="openAiChat('firma')" class="matrix-btn">Pokreni AI selekciju</button>
+            <div style="margin-bottom: 25px;">
+                <textarea id="forma-poruka" rows="3" required placeholder="SPECIFIČAN ZAHTEV ILI ZANAT" 
+                          style="width: 100%; background-color: #000000; color: #ffffff; border: 1px solid #333333; padding: 15px; font-family: sans-serif; font-size: 14px; border-radius: 0; outline: none; resize: none; box-sizing: border-box;"></textarea>
+            </div>
+            
+            <button type="submit" class="matrix-modal-btn">POKRENI A.I. SKRINING</button>
+        </form>
+        
+        <div id="uspeh-poruka" style="display: none; color: #ffffff; font-family: sans-serif; font-size: 16px; line-height: 1.6; padding: 10px 0; text-align: center;">
+            <span style="font-size: 24px;">🤖</span><br>
+            <span style="font-weight: bold; letter-spacing: 1px; color: #ffffff;">SISTEM JE POVEZAN</span><br><br>
+            <p style="font-size: 14px; color: #a6a6a6; margin-bottom: 20px;">
+                Kao tvoj A.I. asistent, generisao sam tvoj dosije i uputstva. Preusmeravam te direktno kod Osnivača na verifikaciju...
+            </p>
+            <div style="font-size: 12px; color: #666666; border-top: 1px solid #222222; padding-top: 15px;">
+                Ukoliko se WhatsApp ne pokrene automatski, kliknite na dugme ispod.
+            </div>
+            <a id="potvrda-wa-link" href="#" class="matrix-modal-btn" style="display: block; margin-top: 15px; text-decoration: none; line-height: 45px; padding: 0;">PRODI KROZ MATRIX</a>
         </div>
-
-        <div class="matrix-box">
-            <div class="box-tag">ZATVORENA BAZA — 30€ / MESEČNO</div>
-            <h2 class="box-title">Za Vrhunske Majstore</h2>
-            <p class="box-text">Prijavite se sami i uđite u elitu. Prođite rigorozan AI sistem verifikacije, obezbedite mesto u bazi i osigurajte direktan pristup stalnim, visoko profitabilnim ugovorima bez posrednika.</p>
-            <button onclick="openAiChat('majstor')" class="matrix-btn">Apliciraj za ulazak</button>
-        </div>
-
-        <footer>
-            © 2026 VODODOM DIGITAL. SVA PRAVA ZADRŽANA.<br>| MATRIX SPEED MODE |
-        </footer>
-
     </div>
+</div>
 
-    <button class="ai-chat-trigger" onclick="openAiChat('opšte')">🤖 AI Asistent Aktivan</button>
 
-    <script>
-        // Funkcija koja pali AI sisteme na klik dugmeta
-        function openAiChat(tipKlijenta) {
-            if (typeof Chatbase !== 'undefined') {
-                // Ako koristiš Chatbase/Typebot integraciju, bot skače ovde i prilagođava priču
-                window.Chatbase('open');
-            } else {
-                // Brza simulacija poruke dok ne ubaciš svoj specifični API ključ
-                alert("AI Sistem pokrenut za: " + tipKlijenta.toUpperCase() + "\nOtvaram chat interfejs za skrining i naplatu...");
-            }
-        }
-    </script>
+<style>
+.matrix-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 99999; 
+    left: 0; 
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.93); /* Duboko mračna pozadina */
+    backdrop-filter: blur(8px);
+}
 
-    <script src="https://www.chatbase.co/embed.min.js" chatbotId="TVOJ_CUSTOM_BOT_ID" defer></script>
+.matrix-modal-content {
+    background-color: #000000; 
+    margin: 10% auto; 
+    padding: 40px;
+    border: 1px solid #333333; /* Tamno sivi detalj koji drži liniju */
+    width: 90%; 
+    max-width: 460px;
+    box-sizing: border-box;
+    position: relative;
+}
 
-</body>
-</html>
+.matrix-modal-close {
+    color: #666666; 
+    float: right;
+    font-size: 28px; 
+    font-weight: bold; 
+    cursor: pointer;
+    line-height: 10px; 
+    margin-top: -20px; 
+    margin-right: -10px;
+    transition: color 0.2s ease;
+}
+
+.matrix-modal-close:hover { 
+    color: #ffffff; 
+}
+
+.matrix-modal-btn {
+    background-color: #000000; 
+    color: #ffffff;
+    border: 1px solid #333333; 
+    padding: 15px;
+    font-size: 13px; 
+    font-weight: bold; 
+    letter-spacing: 2px;
+    cursor: pointer; 
+    width: 100%; 
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.matrix-modal-btn:hover {
+    background-color: #ffffff; 
+    color: #000000; 
+    border-color: #ffffff;
+}
+
+/* Sređivanje izgleda placeholder-a da prate mračni stil */
+::placeholder { color: #555555; opacity: 1; font-size: 12px; letter-spacing: 1px; }
+:-ms-input-placeholder { color: #555555; }
+::-ms-input-placeholder { color: #555555; }
+</style>
+
+
+<script>
+// Glavni broj osnivača (Neo) unet u internacionalnom formatu bez plusa
+const MOJ_TELEFON = "381604844952";
+
+// Funkcija koja otvara modal i prilagođava tekst u zavisnosti od dugmeta
+function pokreniFilter(tip) {
+    document.getElementById("matrix-kontakt-forma").style.display = "block";
+    document.getElementById("uspeh-poruka").style.display = "none";
+    document.getElementById("tip-korisnika").value = tip;
+    
+    // Čišćenje prethodnih unosa
+    document.getElementById("forma-ime").value = "";
+    document.getElementById("forma-telefon").value = "";
+    document.getElementById("forma-poruka").value = "";
+    
+    if(tip === 'b2b') {
+        document.getElementById("modal-titula").innerText = "SISTEM ZA INVESTITORE";
+        document.getElementById("modal-podtekst").innerText = "ZATRAŽITE ODOBRENJE B2B LICENCE DIREKTNO OD OSNIVAČA";
+        document.getElementById("forma-poruka").placeholder = "UNESITE SPECIFIČNE ZAHTEVE VAŠEG PROJEKTA...";
+    } else {
+        document.getElementById("modal-titula").innerText = "APLIKACIJA ZA MAJSTORE";
+        document.getElementById("modal-podtekst").innerText = "PROĐITE SKRINING ZA ULAZAK U ZATVORENU BAZU ELITE";
+        document.getElementById("forma-poruka").placeholder = "KOJI ZANAT / USLUGU OBAVLJATE?";
+    }
+    
+    document.getElementById("filter-matrix-modal").style.display = "block";
+}
+
+function zatvoriFilter() {
+    document.getElementById("filter-matrix-modal").style.display = "none";
+}
+
+// Funkcija koja presreće slanje, generiše izveštaj i šalje tebi na WhatsApp
+function procesuirajIposalji(event) {
+    event.preventDefault(); // Zaustavi osvežavanje stranice
+    
+    // Uzimanje unetih podataka
+    const tip = document.getElementById("tip-korisnika").value;
+    const ime = document.getElementById("forma-ime").value.trim();
+    const telefon = document.getElementById("forma-telefon").value.trim();
+    const poruka = document.getElementById("forma-poruka").value.trim();
+    
+    // Formatiranje naslova u poruci na osnovu izbora
+    const tipOznaka = (tip === 'b2b') ? "🔥 INVESTITOR / FIRMA" : "🛠️ VRHUNSKI MAJSTOR";
+    const licencaTip = (tip === 'b2b') ? "B2B LICENCU (100€)" : "ZATVORENU BAZU (30€)";
+    
+    // Formiranje hirurški preciznog teksta poruke koji ti stiže na telefon
+    // Ja se ovde obraćam tebi, prenosim podatke i dajem uputstvo klijentu
+    let tekstPoruke = `🤖 *A.I. ASISTENT IZVEŠTAJ PORUČEN*\n\n`;
+    tekstPoruke += `Osnivaču, sistem je registrovao novu aplikaciju pre naplate.\n\n`;
+    tekstPoruke += `*KATEGORIJA:* ${tipOznaka}\n`;
+    tekstPoruke += `*KLIJENT:* ${ime}\n`;
+    tekstPoruke += `*KONTAKT TEL:* ${telefon}\n`;
+    tekstPoruke += `*ZAHTEV:* ${poruka}\n\n`;
+    tekstPoruke += `--- UPUTSTVO ZA KLIJENTA ---\n`;
+    tekstPoruke += `Ušli ste u direktan kanal verifikacije. Sačekajte da Osnivač pregleda vaš dosije i odobri vam *${licencaTip}*.`;
+
+    // Kodiranje teksta da bude bezbedan za URL prenos
+    const urlPoruka = encodeURIComponent(tekstPoruke);
+    
+    // Pravljenje krajnjeg WhatsApp linka ka tvom broju
+    const konacniWaLink = `https://wa.me/${MOJ_TELEFON}?text=${urlPoruka}`;
+    
+    // Prebacivanje u fazu uspeha na sajtu
+    document.getElementById("matrix-kontakt-forma").style.display = "none";
+    document.getElementById("uspeh-poruka").style.display = "block";
+    
+    // Povezivanje rezervnog dugmeta na prozorčiću sa ovim linkom
+    document.getElementById("potvrda-wa-link").href = konacniWaLink;
+    
+    // Automatsko hirurško preusmeravanje u roku od 1.5 sekunde direktno na tvoj chat
+    setTimeout(function() {
+        window.location.href = konacniWaLink;
+    }, 1500);
+}
+
+// Zatvaranje modala ako korisnik klikne bilo gde u prazan prostor van crnog okvira
+window.onclick = function(event) {
+    const modal = document.getElementById("filter-matrix-modal");
+    if (event.target == modal) { modal.style.display = "none"; }
+}
+</script>
