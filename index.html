@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAJSTOR.IN.RS | AI Selekcija Elite</title>
+    <title>Majstor.in.rs | AI Selekcija</title>
     <style>
-        /* RESET & BASE SYSTEM */
+        /* RESET I OSNOVA SYSTEMS - ČISTA DOMINACIJA */
         * {
             margin: 0;
             padding: 0;
@@ -13,212 +13,181 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: #000000;
-            color: #FFFFFF;
-            min-height: 100vh;
+            background-color: #000000; /* Crna pozadina proždire ekran */
+            color: #ffffff; /* Bela slova vrište autoritet */
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            overflow-x: hidden;
-        }
-
-        /* MATRIX GLOW BACKGROUND EFFECT */
-        .matrix-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 20%, #1a1a1a 0%, #000000 70%);
-            z-index: -1;
-        }
-
-        /* HEADER */
-        header {
+            align-items: center;
             padding: 40px 20px;
-            text-align: center;
-            border-bottom: 1px solid #1c1c1c;
+            min-height: 100vh;
         }
 
-        .logo {
-            font-size: 2rem;
-            font-weight: 900;
-            letter-spacing: 4px;
-            color: #FFFFFF;
-            text-transform: uppercase;
-        }
-
-        .logo span {
-            color: #4a4a4a;
-        }
-
-        /* MAIN HERO CONTAINER */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
+        .container {
+            max-width: 500px;
             width: 100%;
             text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
+        /* GLAVNI NASLOV I PODNASLOV (HERO SEKCIJA) */
         .hero-title {
-            font-size: 3rem;
+            font-size: 28px;
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: -1px;
+            letter-spacing: 2px;
+            line-height: 1.3;
+            margin-bottom: 25px;
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
-            color: #8c8c8c;
-            max-width: 700px;
-            margin: 0 auto 60px auto;
+            font-size: 16px;
+            color: #a0a0a0; /* Tamno sivi detalj za tekst */
             line-height: 1.6;
-        }
-
-        /* TWO DIRECT ENTRANCES (GRID) */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
             margin-bottom: 40px;
+            font-style: italic;
         }
 
-        .card {
-            background: #0a0a0a;
-            border: 2px solid #1a1a1a;
-            padding: 40px 30px;
-            border-radius: 0px; /* Oštre, hirurške ivice */
+        /* HIRURŠKI PRECIZNE KARTICE / BOKSEVI */
+        .matrix-box {
+            background-color: #000000;
+            border: 2px solid #262626; /* Tamno sivi precizni okvir */
+            padding: 35px 25px;
+            margin-bottom: 30px;
             text-align: left;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
         }
 
-        .card:hover {
-            border-color: #ffffff;
-            background: #111111;
-            transform: translateY(-5px);
-        }
-
-        .card-tag {
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #8c8c8c;
+        .box-tag {
+            font-size: 11px;
             text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #ff3b3b; /* Crveni akcenat za cenu koja bode oči */
             margin-bottom: 15px;
-            display: inline-block;
+            font-weight: bold;
         }
 
-        .card-title {
-            font-size: 1.8rem;
+        .box-title {
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 15px;
-            color: #FFFFFF;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
 
-        .card-text {
-            color: #a0a0a0;
-            font-size: 1rem;
+        .box-text {
+            font-size: 15px;
+            color: #cccccc;
             line-height: 1.6;
-            margin-bottom: 35px;
-            min-height: 75px;
+            margin-bottom: 30px;
         }
 
-        /* BUTTONS THAT SCREAM AUTHORITY */
-        .btn {
+        /* MATRIX SPEED DUGMADI */
+        .matrix-btn {
             display: block;
             width: 100%;
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff; /* Belo dugme koje udara u oči */
             padding: 18px;
             text-align: center;
             text-decoration: none;
-            font-weight: 800;
-            font-size: 1rem;
+            font-size: 14px;
+            font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease-in-out;
             cursor: pointer;
         }
 
-        .btn-primary {
-            background-color: #FFFFFF;
+        /* Efekat kada se pređe mišem */
+        .matrix-btn:hover {
+            background-color: #ffffff;
             color: #000000;
-            border: 2px solid #FFFFFF;
         }
 
-        .btn-primary:hover {
-            background-color: #000000;
-            color: #FFFFFF;
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: #FFFFFF;
-            border: 2px solid #333333;
-        }
-
-        .btn-secondary:hover {
-            border-color: #FFFFFF;
-            background-color: #111111;
-        }
-
-        /* FOOTER */
-        footer {
-            padding: 30px 20px;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #4a4a4a;
-            border-top: 1px solid #1c1c1c;
+        /* CHAT PROZORČIĆ (INTEGRACIJA VEZE) */
+        .ai-chat-trigger {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-size: 14px;
+            font-weight: 800;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0px 10px 20px rgba(255,255,255,0.1);
+            cursor: pointer;
+            z-index: 9999;
+            transition: transform 0.2s ease;
         }
 
-        /* RESPONSIVE DEFIANT DESIGN */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .grid-container { gap: 20px; }
-            main { padding: 40px 15px; }
+        .ai-chat-trigger:hover {
+            transform: scale(1.05);
+        }
+
+        /* FUTUR KOJI DOMINIRA */
+        footer {
+            margin-top: 80px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #444444;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 1.8;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <div class="matrix-bg"></div>
+    <div class="container">
 
-    <header>
-        <div class="logo">MAJSTOR<span>.IN.RS</span></div>
-    </header>
+        <h1 class="hero-title">Sistem za hirurški<br>preciznu<br>selekciju izvođača</h1>
+        <p class="hero-subtitle">Prekidamo gubljenje vremena na neozbiljne ponude. Spajamo građevinske lidere i proverenu elitu zanata. Napredni AI skrining rešava selekciju za 5 minuta.</p>
 
-    <main>
-        <h1 class="hero-title">Sistem za hirurški preciznu<br>selekciju izvođača</h1>
-        <p class="hero-subtitle">Prekidamo gubljenje vremena na neozbiljne ponude. Povezujemo građevinske firme i proverenu elitu zanata kroz napredni AI skrining za 5 minuta.</p>
-
-        <div class="grid-container">
-            <div class="card">
-                <span class="card-tag">B2B Pretplata</span>
-                <h2 class="card-title">Za Firme & Investitore</h2>
-                <p class="card-text">Zakupite licencu. AI vrši dubinsku verifikaciju, filtrira bazu i isporučuje top 3 majstora spremna za vaš projekat. Bez greške.</p>
-                <a href="https://tally.so/r/VAŠ_LINK_ZA_FIRME" target="_blank" class="btn btn-primary">Pokreni AI Selekciju</a>
-            </div>
-
-            <div class="card">
-                <span class="card-tag">Zatvorena Baza</span>
-                <h2 class="card-title">Za Vrhunske Majstore</h2>
-                <p class="card-text">Uđite u elitu. Prođite rigorozan AI sistem ocenjivanja i obezbedite direktan pristup stalnim, profitabilnim ugovorima bez posrednika.</p>
-                <a href="https://tally.so/r/VAŠ_LINK_ZA_MAJSTORE" target="_blank" class="btn btn-secondary">Apliciraj za Ulazak</a>
-            </div>
+        <div class="matrix-box">
+            <div class="box-tag">B2B PRETPLATA — 100€ / MESEČNO</div>
+            <h2 class="box-title">Za Firme & Investitore</h2>
+            <p class="box-text">Rešavamo vaš najveći problem — pronalazak elitnih izvođača. Aktivirajte licencu. AI vrši dubinsku verifikaciju, filtrira bazu i isporučuje top 3 majstora spremna za vaš projekat. Bez čekanja i bez greške.</p>
+            <button onclick="openAiChat('firma')" class="matrix-btn">Pokreni AI selekciju</button>
         </div>
-    </main>
 
-    <footer>
-        &copy; 2026 VODODOM DIGITAL. SVA PRAVA ZADRŽANA. | MATRIX SPEED MODE
-    </footer>
+        <div class="matrix-box">
+            <div class="box-tag">ZATVORENA BAZA — 30€ / MESEČNO</div>
+            <h2 class="box-title">Za Vrhunske Majstore</h2>
+            <p class="box-text">Prijavite se sami i uđite u elitu. Prođite rigorozan AI sistem verifikacije, obezbedite mesto u bazi i osigurajte direktan pristup stalnim, visoko profitabilnim ugovorima bez posrednika.</p>
+            <button onclick="openAiChat('majstor')" class="matrix-btn">Apliciraj za ulazak</button>
+        </div>
+
+        <footer>
+            © 2026 VODODOM DIGITAL. SVA PRAVA ZADRŽANA.<br>| MATRIX SPEED MODE |
+        </footer>
+
+    </div>
+
+    <button class="ai-chat-trigger" onclick="openAiChat('opšte')">🤖 AI Asistent Aktivan</button>
+
+    <script>
+        // Funkcija koja pali AI sisteme na klik dugmeta
+        function openAiChat(tipKlijenta) {
+            if (typeof Chatbase !== 'undefined') {
+                // Ako koristiš Chatbase/Typebot integraciju, bot skače ovde i prilagođava priču
+                window.Chatbase('open');
+            } else {
+                // Brza simulacija poruke dok ne ubaciš svoj specifični API ključ
+                alert("AI Sistem pokrenut za: " + tipKlijenta.toUpperCase() + "\nOtvaram chat interfejs za skrining i naplatu...");
+            }
+        }
+    </script>
+
+    <script src="https://www.chatbase.co/embed.min.js" chatbotId="TVOJ_CUSTOM_BOT_ID" defer></script>
 
 </body>
 </html>
