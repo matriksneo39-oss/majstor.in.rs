@@ -1,1 +1,224 @@
-666
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAJSTOR.IN.RS | AI Selekcija Elite</title>
+    <style>
+        /* RESET & BASE SYSTEM */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+        }
+
+        /* MATRIX GLOW BACKGROUND EFFECT */
+        .matrix-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 20%, #1a1a1a 0%, #000000 70%);
+            z-index: -1;
+        }
+
+        /* HEADER */
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #1c1c1c;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: #4a4a4a;
+        }
+
+        /* MAIN HERO CONTAINER */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            width: 100%;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #8c8c8c;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+            line-height: 1.6;
+        }
+
+        /* TWO DIRECT ENTRANCES (GRID) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: #0a0a0a;
+            border: 2px solid #1a1a1a;
+            padding: 40px 30px;
+            border-radius: 0px; /* Oštre, hirurške ivice */
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .card:hover {
+            border-color: #ffffff;
+            background: #111111;
+            transform: translateY(-5px);
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #8c8c8c;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #FFFFFF;
+        }
+
+        .card-text {
+            color: #a0a0a0;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            min-height: 75px;
+        }
+
+        /* BUTTONS THAT SCREAM AUTHORITY */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #FFFFFF;
+            color: #000000;
+            border: 2px solid #FFFFFF;
+        }
+
+        .btn-primary:hover {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #FFFFFF;
+            border: 2px solid #333333;
+        }
+
+        .btn-secondary:hover {
+            border-color: #FFFFFF;
+            background-color: #111111;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #4a4a4a;
+            border-top: 1px solid #1c1c1c;
+            letter-spacing: 1px;
+        }
+
+        /* RESPONSIVE DEFIANT DESIGN */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .grid-container { gap: 20px; }
+            main { padding: 40px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="matrix-bg"></div>
+
+    <header>
+        <div class="logo">MAJSTOR<span>.IN.RS</span></div>
+    </header>
+
+    <main>
+        <h1 class="hero-title">Sistem za hirurški preciznu<br>selekciju izvođača</h1>
+        <p class="hero-subtitle">Prekidamo gubljenje vremena na neozbiljne ponude. Povezujemo građevinske firme i proverenu elitu zanata kroz napredni AI skrining za 5 minuta.</p>
+
+        <div class="grid-container">
+            <div class="card">
+                <span class="card-tag">B2B Pretplata</span>
+                <h2 class="card-title">Za Firme & Investitore</h2>
+                <p class="card-text">Zakupite licencu. AI vrši dubinsku verifikaciju, filtrira bazu i isporučuje top 3 majstora spremna za vaš projekat. Bez greške.</p>
+                <a href="https://tally.so/r/VAŠ_LINK_ZA_FIRME" target="_blank" class="btn btn-primary">Pokreni AI Selekciju</a>
+            </div>
+
+            <div class="card">
+                <span class="card-tag">Zatvorena Baza</span>
+                <h2 class="card-title">Za Vrhunske Majstore</h2>
+                <p class="card-text">Uđite u elitu. Prođite rigorozan AI sistem ocenjivanja i obezbedite direktan pristup stalnim, profitabilnim ugovorima bez posrednika.</p>
+                <a href="https://tally.so/r/VAŠ_LINK_ZA_MAJSTORE" target="_blank" class="btn btn-secondary">Apliciraj za Ulazak</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 VODODOM DIGITAL. SVA PRAVA ZADRŽANA. | MATRIX SPEED MODE
+    </footer>
+
+</body>
+</html>
