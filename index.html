@@ -294,6 +294,263 @@
     </script>
 
 </body>
+</html><!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>majstor.in.rs | AI Verifikacija</title>
+    <style>
+        /* SVETI GRAL DIZAJNA: CRNA POZADINA, BELI TEKST, TAMNOSIVI DETALJI SVE UKLOPLJENO SA SAJTOM */
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: #000000; /* Potpuno crna pozadina kao na skrinšotu */
+            border: 1px solid #111111; /* Prefinjena tamnosiva ivica */
+            padding: 40px;
+            border-radius: 0px; /* Oštre ivice prateći premium B2B stil */
+            max-width: 550px;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            color: #FFFFFF;
+            font-style: italic; /* Prati kosi stil naslova sa sajta */
+        }
+
+        .subtitle {
+            color: #888888;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            border-bottom: 1px solid #111111;
+            padding-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #E24A3B; /* Suptilna narandžasto-crvena nijansa sa skrinšota za cene */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #FFFFFF;
+        }
+
+        /* PREMIUM TAMNOSIVA INPUT POLJA SA SKRINŠOTA */
+        input[type="text"], input[type="tel"], select {
+            width: 100%;
+            padding: 14px;
+            background-color: #000000;
+            border: 1px solid #333333; /* Tamnosive ivice polja */
+            color: #FFFFFF;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="tel"]:focus, select:focus {
+            border-color: #FFFFFF; /* Kada klikne, ivica "vrišti" belo */
+            outline: none;
+        }
+
+        /* STILIZACIJA ZA CHECKBOX I RADIO U SKLADU SA MATRIX SPEED PROTOKOLOM */
+        .checkbox-group, .radio-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 14px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #CCCCCC;
+        }
+
+        .checkbox-group input, .radio-group input {
+            margin-right: 12px;
+            accent-color: #FFFFFF; /* Bela tačka za maksimalan kontrast */
+            width: 18px;
+            height: 18px;
+        }
+
+        /* DUGME ZA UPLOAD KOJE IZGLEDA KAO OKVIR SA SAJTA */
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type="file"] {
+            display: none;
+        }
+
+        .file-upload-label {
+            display: block;
+            padding: 14px;
+            background-color: #000000;
+            border: 1px solid #333333;
+            border-style: dashed;
+            text-align: center;
+            font-size: 13px;
+            color: #888888;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-label:hover {
+            border-color: #FFFFFF;
+            color: #FFFFFF;
+        }
+
+        /* BRUTALNO GLAVNO DUGME - IDENTIČNO KAO "APLICIRAJ ZA ULAZAK" */
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background-color: #000000;
+            color: #FFFFFF;
+            border: 1px solid #333333;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            border-color: #FFFFFF;
+            background-color: #111111;
+        }
+
+        .footer-tag {
+            text-align: center;
+            font-size: 11px;
+            color: #666666;
+            margin-top: 35px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>AI VERIFIKACIJA</h2>
+    <div class="subtitle">Sistem vrši dubinski skrining. Unesite tačne podatke kako bi algoritam procenio vaš nivo profesionalizma i odobrio pristup zatvorenoj B2B bazi.</div>
+
+    <form action="https://formspree.io/f/xvgpjkzo" method="POST" enctype="multipart/form-data">
+        
+        <input type="hidden" name="_subject" value="Novi Elitni Majstor - Protokol majstor.in.rs">
+        <input type="hidden" name="_replyto" value="deljanin.com@gmail.com">
+
+        <div class="section-title">1. Osnovni Podaci</div>
+        
+        <div class="form-group">
+            <label for="name">Ime i prezime / Naziv firme</label>
+            <input type="text" id="name" name="Ime_i_Firma" placeholder="Npr. Marko Deljanin / Vododom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Kontakt telefon (Viber/WhatsApp)</label>
+            <input type="tel" id="phone" name="Telefon" placeholder="+381 6X XXX XXX" required>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Teritorija koju pokrivate</label>
+            <input type="text" id="location" name="Lokacija" placeholder="Npr. Beograd - Zemun, Novi Beograd" required>
+        </div>
+
+        <div class="section-title">2. Profesionalni Profil</div>
+        
+        <label>Vaša uža specijalnost (Označite polja)</label>
+        <label class="checkbox-group">
+            <input type="checkbox" name="Specijalnost_Vodovod" value="Da"> Vodovod, kanalizacija i kupatilski program
+        </label>
+        <label class="checkbox-group">
+            <input type="checkbox" name="Specijalnost_Keramika" value="Da"> Premium keramika i hidroizolacija
+        </label>
+        <label class="checkbox-group">
+            <input type="checkbox" name="Specijalnost_Struja" value="Da"> Elektroinstalacije i pametni sistemi
+        </label>
+        <label class="checkbox-group">
+            <input type="checkbox" name="Specijalnost_Inzenjering" value="Da"> Kompletan građevinski inženjering (ključ u ruke)
+        </label>
+
+        <div class="form-group" style="margin-top: 25px;">
+            <label>Status pravnog lica</label>
+            <label class="radio-group">
+                <input type="radio" name="Pravni_Status" value="Firma_Radnja" required> Registrovan biznis (Firma / APR radnja)
+            </label>
+            <label class="radio-group">
+                <input type="radio" name="Pravni_Status" value="Samostalni_Izvodjac"> Samostalni izvođač / Ekipa
+            </label>
+        </div>
+
+        <div class="section-title">3. Filter za kvalitet i prestiž</div>
+        
+        <div class="form-group">
+            <label>Minimalni budžet projekta ispod kojeg NE IZLAZITE na teren</label>
+            <label class="radio-group">
+                <input type="radio" name="Minimalni_Budzet" value="1000" required> Ne prihvatamo projekte ispod 1.000 €
+            </label>
+            <label class="radio-group">
+                <input type="radio" name="Minimalni_Budzet" value="3000"> Ne prihvatamo projekte ispod 3.000 €
+            </label>
+            <label class="radio-group">
+                <input type="radio" name="Minimalni_Budzet" value="5000"> Ne prihvatamo projekte ispod 5.000 €
+            </label>
+        </div>
+
+        <div class="section-title">4. Dokaz o elitnom zanatu</div>
+        
+        <div class="form-group">
+            <label for="portfolio-link">Link do radova (Mreže ili Sajt)</label>
+            <input type="text" id="portfolio-link" name="Link_Do_Radova" placeholder="instagram.com/vas-profil">
+        </div>
+
+        <div class="form-group">
+            <label>Ili priložite fotografije poslednja 3 završena objekta</label>
+            <div class="file-upload">
+                <label for="file-input" class="file-upload-label" id="upload-label">
+                    ➕ PRILOŽI FOTOGRAFIJE (DOKAZ KVALITETA)
+                </label>
+                <input type="file" id="file-input" name="Fotografije_Radova" multiple onchange="document.getElementById('upload-label').innerText = 'FOTOGRAFIJE USPEŠNO PRILOŽENE'; document.getElementById('upload-label').style.borderColor = '#FFFFFF';">
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Pokreni AI Verifikaciju</button>
+        
+        <div class="footer-tag">| MATRIX SPEED MODE |</div>
+    </form>
+</div>
+
+</body>
 </html>
                           
  
