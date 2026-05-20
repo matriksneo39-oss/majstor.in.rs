@@ -1,541 +1,270 @@
-
-
-        .card p {
-            font-size: 14px;
-            color: #cccccc;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        /* Dugmad spremna za trenutnu egzekuciju */
-        .btn {
-            display: block;
-            width: 100%;
-            background: transparent;
-            border: 1px solid #ffffff;
-            color: #ffffff;
-            text-align: center;
-            padding: 16px;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #ffffff;
-            color: #000000;
-        }
-
-        /* Fiksirani AI Asistent na dnu ekrana */
-        .ai-status-bar {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #111111;
-            border: 1px solid #222222;
-            padding: 12px 24px;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: bold;
-            color: #ffffff;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
-            z-index: 10;
-        }
-
-        /* Footer zona */
-        footer {
-            margin-top: 40px;
-            margin-bottom: 60px;
-            font-size: 11px;
-            color: #444444;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.8;
-        }
-
-        /* NEPROBOJNI SISTEMSKI POP-UP (MODAL) */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s ease;
-            padding: 20px;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-box {
-            background-color: #1c1d22; /* Android/Sistemski sivi ton sa skrinšota */
-            border-radius: 28px;
-            width: 100%;
-            max-width: 340px;
-            padding: 28px;
-            text-align: left;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid #2a2b30;
-        }
-
-        .modal-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 16px;
-        }
-
-        .modal-text {
-            font-size: 14px;
-            color: #bbbbbb;
-            line-height: 1.5;
-            margin-bottom: 24px;
-        }
-
-        .modal-btn {
-            display: block;
-            width: 100%;
-            text-align: right;
-            color: #ffffff;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        
-        <h1>Sistem za hirurški preciznu selekciju izvođača</h1>
-        <p class="subtitle">
-            Prekidamo gubljenje vremena na neozbiljne ponude. Spajamo građevinske lidere i proverenu elitu zanata. Napredni AI skrining rešava selekciju za 5 minuta.
-        </p>
-
-        <div class="card">
-            <div class="card-tag">B2B PRETPLATA — <span class="price">100€ / MESEČNO</span></div>
-            <h2>Za Firme & Investitore</h2>
-            <p>
-                Rešavamo vaš najveći problem — pronalazak elitnih izvođača. Aktivirajte licencu. AI vrši dubinsku verifikaciju, filtrira bazu i isporučuje top 3 majstora spremna za vaš projekat. Bez čekanja i bez greške.
-            </p>
-            <button class="btn" onclick="openSystemModal('FIRME')">Pokreni AI selekciju</button>
-        </div>
-
-        <div class="card">
-            <div class="card-tag">ZATVORENA BAZA — <span class="price">30€ / MESEČNO</span></div>
-            <h2>Za Vrhunske Majstore</h2>
-            <p>
-                Prijavite se sami i uđite u elitu. Prođite rigorozan AI sistem verifikacije, obezbedite mesto u bazi i osigurajte direktan pristup stalnim, visoko profitabilnim ugovorima bez posrednika.
-            </p>
-            <button class="btn" onclick="openSystemModal('MAJSTOR')">Apliciraj za ulazak</button>
-        </div>
-
-        <footer>
-            © 2026 VODODOM DIGITAL. SVA PRAVA ZADRŽANA.<br>
-            | MATRIX SPEED MODE |
-        </footer>
-
-    </div>
-
-    <div class="ai-status-bar">
-        <span>🤖</span> AI ASISTENT AKTIVAN
-    </div>
-
-    <div class="modal-overlay" id="systemModal">
-        <div class="modal-box">
-            <div class="modal-title">majstor.in.rs navodi:</div>
-            <div class="modal-text" id="modalText">
-                AI Sistem pokrenut za: MAJSTOR<br>Otvaram chat interfejs za skrining i naplatu...
-            </div>
-            <button class="modal-btn" onclick="executeRedirect()">Potvrdi</button>
-        </div>
-    </div>
-
-    <script>
-        // Tvoj broj telefona integrisan u međunarodnom formatu
-        const MOJ_BROJ = "381604844952"; 
-        let trenutniTip = "";
-
-        function openSystemModal(tip) {
-            trenutniTip = tip;
-            const modal = document.getElementById('systemModal');
-            const modalText = document.getElementById('modalText');
-            
-            if(tip === 'FIRME') {
-                modalText.innerHTML = "AI Sistem pokrenut za: FIRME & INVESTITORE<br>Otvaram chat interfejs za verifikaciju projekta i licenciranje...";
-            } else {
-                modalText.innerHTML = "AI Sistem pokrenut za: MAJSTOR<br>Otvaram chat interfejs za skrining i naplatu...";
-            }
-            
-            modal.classList.add('active');
-        }
-
-        function executeRedirect() {
-            const modal = document.getElementById('systemModal');
-            modal.classList.remove('active');
-            
-            let poruka = "";
-            if(trenutniTip === 'FIRME') {
-                poruka = encodeURIComponent("Pozdrav, želim da pokrenem AI selekciju za Firme & Investitore na majstor.in.rs.");
-            } else {
-                poruka = encodeURIComponent("Pozdrav, želim da apliciram za ulazak u zatvorenu bazu Vrhunskih Majstora.");
-            }
-            
-            // Trenutno izbacivanje na WhatsApp kanale
-            window.location.href = `https://wa.me/${MOJ_BROJ}?text=${poruka}`;
-        }
-    </script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="sr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>majstor.in.rs | AI Verifikacija</title>
-    <style>
-        /* SVETI GRAL DIZAJNA: CRNA POZADINA, BELI TEKST, TAMNOSIVI DETALJI SVE UKLOPLJENO SA SAJTOM */
-        body {
-            background-color: #000000;
-            color: #FFFFFF;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .form-container {
-            background-color: #000000; /* Potpuno crna pozadina kao na skrinšotu */
-            border: 1px solid #111111; /* Prefinjena tamnosiva ivica */
-            padding: 40px;
-            border-radius: 0px; /* Oštre ivice prateći premium B2B stil */
-            max-width: 550px;
-            width: 100%;
-        }
-
-        h2 {
-            font-size: 24px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 10px;
-            color: #FFFFFF;
-            font-style: italic; /* Prati kosi stil naslova sa sajta */
-        }
-
-        .subtitle {
-            color: #888888;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 35px;
-            border-bottom: 1px solid #111111;
-            padding-bottom: 20px;
-        }
-
-        .section-title {
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #E24A3B; /* Suptilna narandžasto-crvena nijansa sa skrinšota za cene */
-            margin-top: 30px;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            color: #FFFFFF;
-        }
-
-        /* PREMIUM TAMNOSIVA INPUT POLJA SA SKRINŠOTA */
   
 </html><!DOCTYPE html>
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Adaptacija Kupatila Beograd i Zemun | majstor.in.rs</title>
-    <meta name="description" content="Profesionalna adaptacija kupatila po sistemu ključ u ruke u Beogradu i Zemunu. Ugradnja premijum opreme: NIBCO, Geberit, Mapei, Rosan. Pozovite inženjere za vodoinstalacije.">
-    <meta name="keywords" content="adaptacija kupatila beograd, vodoinstalater zemun, kupatilski program, renoviranje kupatila, geberit ugradnja, nibco cevi, mapei hidroizolacija, majstor za kupatilo">
-    <meta name="robots" content="index, follow">
-    
+    <title>Majstor.in.rs - Mobilna Optimizacija</title>
     <style>
-        /* Trajna podešavanja sistema - Čist Autoritet */
-        body {
-            background-color: #000000;
-            color: #FFFFFF;
-            font-family: 'Arial', sans-serif;
+        /* Autoritativna crna pozadina i reset */
+        * {
             margin: 0;
             padding: 0;
-            line-height: 1.25;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.5;
+            padding: 15px;
         }
 
-        /* Zaglavlje / Brending */
-        header {
-            border-bottom: 2px solid #222222;
-            padding-bottom: 20px;
-            margin-bottom: 40px;
+        .glavni-kontejner {
+            max-width: 100%;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: #888888; /* Dark Gray detalj */
-        }
-
-        .status-badge {
-            background-color: #111111;
-            border: 1px solid #333333;
-            padding: 8px 15px;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Glavna poruka - Udarna igla */
-        .hero {
-            margin-bottom: 60px;
-        }
-
-        h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.15;
-        }
-
-        .subtitle {
-            font-size: 20px;
-            color: #888888;
-            max-width: 800px;
-            margin-bottom: 30px;
-        }
-
-        /* Hirurški precizna pravila / Tabela brendova */
-        .section-title {
-            font-size: 24px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: #FFFFFF;
+        /* 🤖 AI Asistent - Komandni boks na vrhu telefona */
+        .ai-asistent-boks {
+            background-color: #0a0a0a;
+            border: 1px solid #222222;
             border-left: 4px solid #444444;
-            padding-left: 15px;
-        }
-
-        table {
+            padding: 15px;
+            border-radius: 4px;
             width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 40px;
-            background-color: #0A0A0A;
         }
 
-        th, td {
-            padding: 18px;
-            text-align: left;
-            border: 1px solid #222222;
+        .ai-status {
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
         }
 
-        th {
-            background-color: #111111;
+        .ai-tekst {
+            color: #cccccc;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .ai-dugme {
+            background-color: #222222;
+            color: #ffffff;
+            border: 1px solid #333333;
+            padding: 10px;
+            width: 100%; /* Lako za klik na telefonu */
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 14px;
-            letter-spacing: 1px;
-            color: #888888;
+            font-size: 0.85rem;
+            border-radius: 2px;
         }
 
-        tr:nth-child(even) {
+        /* 📊 Glavni sadržaj */
+        .sadrzaj-sekcija {
+            width: 100%;
+        }
+
+        .naslov-sekcije {
+            font-style: italic;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 10px;
+        }
+
+        /* 📱 Mobilna transformacija tabele u moćne kartice */
+        .mobilna-tabela-kontejner {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .tabela-red-kartica {
             background-color: #050505;
+            border: 1px solid #111111;
+            padding: 15px;
+            border-radius: 4px;
         }
 
-        .brand-name {
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        /* Filter za klijente / Tekst autoriteta */
-        .manifest {
-            background-color: #0A0A0A;
-            border: 1px solid #1A1A1A;
-            padding: 30px;
-            margin-bottom: 60px;
-        }
-
-        .manifest p {
-            font-size: 18px;
-            margin: 0;
-            color: #CCCCCC;
-        }
-
-        /* Kontakt zona */
-        .kontakt-panel {
-            background-color: #111111;
-            border: 1px solid #222222;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .kontakt-panel h2 {
-            font-size: 32px;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-
-        .kontakt-panel p {
-            color: #888888;
-            font-size: 18px;
-            margin-bottom: 25px;
-        }
-
-        .telefon-link {
-            font-size: 28px;
-            font-weight: bold;
-            color: #FFFFFF;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-
-        .telefon-link:hover {
-            color: #888888;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: #FFFFFF;
-            color: #000000;
-            padding: 15px 40px;
-            font-weight: bold;
-            text-decoration: none;
+        /* Nazivi kolona na mobilnom */
+        .labela {
+            font-size: 0.75rem;
+            color: #555555;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: background 0.2s;
+            margin-bottom: 2px;
+            display: block;
         }
 
-        .cta-button:hover {
-            background-color: #888888;
+        .vrednost-segment {
+            font-size: 1.1rem;
+            font-weight: bold;
+            font-style: italic;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .vrednost-brend {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 10px;
+            background-color: #0f0f0f;
+            padding: 4px 8px;
+            display: inline-block;
+            border-radius: 2px;
+        }
+
+        .vrednost-opis {
+            font-size: 0.95rem;
+            color: #cccccc;
+        }
+
+        /* Razdvajanje polja unutar kartice */
+        .polje {
+            margin-bottom: 12px;
+        }
+        .polje:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 🎯 Donji poziv na akciju */
+        .cta-sekcija {
+            margin-top: 25px;
+            text-align: center;
+            border-top: 1px solid #111111;
+            padding-top: 20px;
+        }
+
+        .cta-naslov {
+            font-style: italic;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="glavni-kontejner">
         
-        <header>
-            <div class="logo">majstor<span>.in.rs</span></div>
-            <div class="status-badge">Lokacija: Beograd | Zemun</div>
-        </header>
-
-        <section class="hero">
-            <h1>ADAPTACIJA KUPATILA BEOGRAD.<br>HIRURŠKA PRECIZNOST.</h1>
-            <div class="subtitle">Ne radimo prosek. Projektujemo i postavljamo napredne sisteme vodoinstalacija i premijum kupatilski program na teritoriji Beograda, Zemuna i Novog Beograda.</div>
-        </section>
-
-        <div class="manifest">
-            <p><strong>ZAKONIK SLUŽBE:</strong> Naš inženjerski pristup ne poznaje kompromise. Ako tražite polovična rešenja, jeftine materijale i cjenkanje – na pogrešnoj ste adresi. Vlasnici nekretnina u Beogradu nas biraju kada žele nula procenata stresa, vrhunski rad na terenu i sistem "ključ u ruke".</p>
+        <div class="ai-asistent-boks">
+            <div class="ai-status">🤖 AI ASISTENT AKTIVAN</div>
+            <p class="ai-tekst">
+                <strong>majstor.in.rs navodi:</strong><br>
+                AI Sistem pokrenut za: MAJSTOR. Otvaram chat interfejs za skrining i naplatu...
+            </p>
+            <button class="ai-dugme">Potvrdi</button>
         </div>
 
-        <section>
-            <h2 class="section-title">Ugradnja Materijala i Opreme Visoke Vrednosti</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Segment sistema</th>
-                        <th>Brend / Program</th>
-                        <th>Garantovana Vrednost na Terenu</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="brand-name">Vodovodne instalacije</td>
-                        <td>NIBCO & Peštan Silent</td>
-                        <td>Neuništive unutrašnje mreže cevi bez šuma i rizika od pucanja.</td>
-                    </tr>
-                    <tr>
-                        <td class="brand-name">Hidroizolacioni sistemi</td>
-                        <td>MAPEI program</td>
-                        <td>Hermetička zaštita zidova i podova. Sigurnost od vlage i curenja.</td>
-                    </tr>
-                    <tr>
-                        <td class="brand-name">Ugradni vodokotlići</td>
-                        <td>Geberit</td>
-                        <td>Švajcarski inženjering i dugovečnost skrivena u zidu kupatila.</td>
-                    </tr>
-                    <tr>
-                        <td class="brand-name">Tuš kabine i stakla</td>
-                        <td>Copen kabine</td>
-                        <td>Čist minimalizam, kaljeno staklo i moderna estetika prostora.</td>
-                    </tr>
-                    <tr>
-                        <td class="brand-name">Sanitarne baterije</td>
-                        <td>Rosan program</td>
-                        <td>Domaći standard, vrhunski materijali i obezbeđen brz servis.</td>
-                    </tr>
-                    <tr>
-                        <td class="brand-name">Prohromski bojleri</td>
-                        <td>Elit Čačak</td>
-                        <td>Večni prohromski kazani i maksimalna energetska efikasnost sistema.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <div class="sadrzaj-sekcija">
+            <h2 class="naslov-sekcije">Ugradnja materijala i opreme visoke vrednosti</h2>
+            
+            <div class="mobilna-tabela-kontejner">
+                
+                <div class="tabela-red-kartica">
+                    <div class="polje">
+                        <span class="labela">Segment sistema</span>
+                        <div class="vrednost-segment">Vodovodne instalacije</div>
+                    </div>
+                    <div class="polje">
+                        <span class="labela">Brend / Program</span>
+                        <div class="vrednost-brend">NIBCO & Peštan Silent</div>
+                    </div>
+                    <div class="polje">
+                        <span class="labela">Garantovana vrednost na terenu</span>
+                        <div class="vrednost-opis">Neuništive unutrašnje mreže cevi bez šuma i rizika od pucanja.</div>
+                    </div>
+                </div>
 
-        <section class="kontakt-panel">
-            <h2>DOGOVORITE PREGOVORE I TERMIN</h2>
-            <p>Zbog održavanja maksimalnog kvaliteta rada, broj adaptacija mesečno je striktno ograničen. Direktna linija za klijente:</p>
-            <a href="tel:+381604844952" class="telefon-link">060 4844 952</a>
-            <a href="tel:+381604844952" class="cta-button">Pokreni Operaciju</a>
-        </section>
+                <div class="tabela-red-kartica">
+                    <div class="polje">
+                        <span class="labela">Segment sistema</span>
+                        <div class="vrednost-segment">Hidroizolacioni sistemi</div>
+                    </div>
+                    <div class="polje">
+                        <span class="labela">Brend / Program</span>
+                        <div class="vrednost-brend">MAPEI program</div>
+                    </div>
+                    <div class="polje">
+                        <span class="labela">Garantovana vrednost na terenu</span>
+                        <div class="vrednost-opis">Hermetička zaštita zidova i podova. Sigurnost od vlage i curenja.</div>
+                    </div>
+                </div>
+
+                <div class="tabela-red-kartica">
+                    <div class="polje">
+                        <span class="labela">Segment sistema</span>
+                        <div class="vrednost-segment">Ugradni vodokotlići</div>
+                    </div>
+                    <div class="polje">
+                        <span class="labela">Brend / Program</span>
+                        <div class="vrednost-brend">Geberit</div>
+                    </div>
+                    <div class="polje">
+                        <span class="labela">Garantovana vrednost na terenu</span>
+                        <div class="vrednost-opis">Švajcarski inženjering i dugovečnost skrivena u zidu kupatila.</div>
+                    </div>
+                </div>
+
+                <div class="tabela-red-kartica">
+                    <div class="polje">
+                        <span class="labela">Segment sistema</span>
+                        <div class="vrednost-segment">Tuš kabine i stakla</div>
+                    </div>
+                    <div class="polje">
+                        <span class="labela">Brend / Program</span>
+                        <div class="vrednost-brend">Copen kabine</div>
+                    </div>
+                    <div class="polje">
+                        <span class="labela">Garantovana vrednost na terenu</span>
+                        <div class="vrednost-opis">Čist minimalizam, kaljeno staklo i moderna estetika prostora.</div>
+                    </div>
+                </div>
+
+                <div class="tabela-red-kartica">
+                    <div class="polje">
+                        <span class="labela">Segment sistema</span>
+                        <div class="vrednost-segment">Sanitarne baterije</div>
+                    </div>
+                    <div class="polje">
+                        <span class="labela">Brend / Program</span>
+                        <div class="vrednost-brend">Rosan program</div>
+                    </div>
+                    <div class="polje">
+                        <span class="labela">Garantovana vrednost na terenu</span>
+                        <div class="vrednost-opis">Domaći standard, vrhunski materijali i obezbeđen brz servis.</div>
+                    </div>
+                </div>
+
+                <div class="tabela-red-kartica">
+                    <div class="polje">
+                        <span class="labela">Segment sistema</span>
+                        <div class="vrednost-segment">Prohromski bojleri</div>
+                    </div>
+                    <div class="polje">
+                        <span class="labela">Brend / Program</span>
+                        <div class="vrednost-brend">Elit Čačak</div>
+                    </div>
+                    <div class="polje">
+                        <span class="labela">Garantovana vrednost na terenu</span>
+                        <div class="vrednost-opis">Večni prohromski kazani i maksimalna energetska efikasnost sistema.</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="cta-sekcija">
+                <h2 class="cta-naslov">Dogovorite pregovore</h2>
+            </div>
+        </div>
 
     </div>
 
