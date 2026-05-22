@@ -3,364 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vododom Inženjering | Kupatilski Program</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    
+    <title>Vododom Inženjering - Pršti Kod</title>
     <style>
-        /* Osnovni Reset i K-21 Monohromatska Paleta */
-        * {
-            box-sizing: border-box;
+        /* OSNOVNI SISTEM - HIRURŠKA ČISTOĆA */
+        body {
+            background-color: #000000;
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: #000000; /* Apsolutna crna podloga */
-            color: #A0A0A0; /* DRUGA BOJA: K-21 svetlosiva za osnovni tekst */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            padding: 20px 15px;
-            display: flex;
-            justify-content: center;
         }
 
-        .container {
-            max-width: 450px;
+        .matriks-kontejner {
             width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
-        .section-box {
-            border: 1px solid #1A1A1A; /* Tamnosivi detalji / okviri */
-            background-color: #050505;
-            padding: 25px 20px;
-            margin-bottom: 25px;
-        }
-
-        /* PRVA BOJA: Čista bela za maksimalan autoritet naslova */
-        h1, h2, h3, th, td strong, .white-text {
-            color: #FFFFFF !important; 
-            font-style: italic;
-            font-weight: 700;
+        /* NASLOVI KOJI VRIŠTE (BELA) */
+        h1, h2 {
+            color: #FFFFFF;
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        h1 {
-            font-size: 28px;
-            line-height: 1.2;
+            font-weight: 900;
+            letter-spacing: 2px;
             margin-bottom: 5px;
+            border-left: 5px solid #F44336; /* Crvena hirurška linija */
+            padding-left: 15px;
         }
 
-        h2 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
+        h1 { font-size: 28px; margin-top: 30px; }
+        h2 { font-size: 20px; margin-top: 40px; }
 
-        h2::before {
-            content: "";
-            display: inline-block;
-            width: 3px;
-            height: 24px;
-            background-color: #333333; /* Tamnosivi akcenat */
-            margin-right: 12px;
-            vertical-align: middle;
-        }
-
-        .subtitle {
-            font-size: 12px;
-            font-style: italic;
-            color: #666666; /* Prigušena siva za podnaslov */
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-top: 1px solid #1A1A1A;
-            border-bottom: 1px solid #1A1A1A;
-            padding: 8px 0;
-            margin-top: 15px;
-            margin-bottom: 25px;
-        }
-
-        /* Osnovni paragrafi koriste sekundarnu svetlosivu */
-        p {
+        /* OPISNI TEKST (ČELIK SIVA) */
+        p, .tabelarni-tekst {
+            color: #B0B3B8;
             font-size: 15px;
-            font-style: italic;
-            color: #A0A0A0; 
-            margin-bottom: 15px;
+            margin-top: 5px;
+            margin-bottom: 25px;
+            font-weight: 400;
         }
 
-        .process-step {
-            background-color: #0A0A0A;
-            border-left: 3px solid #222222;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-
-        .step-day {
-            font-size: 11px;
+        /* KLJUČNE REČI I STANDARDI (CRVENA) */
+        strong {
+            color: #F44336;
+            font-weight: 800;
             text-transform: uppercase;
-            color: #555555;
-            font-weight: 700;
-            margin-bottom: 5px;
         }
 
-        .step-title {
-            color: #FFFFFF; /* Naslov koraka sija belo */
-            font-style: italic;
-            font-weight: 700;
-            font-size: 16px;
-            margin-bottom: 8px;
+        /* RAZDELNICI SISTEMA */
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #222222;
+            margin: 40px 0;
         }
 
+        /* TABELE SMANJENE NA MOBILNI MINIMUM */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
-            margin-bottom: 10px;
+            margin: 10px 0 30px 0;
+            font-size: 14px;
         }
 
         th, td {
-            border: 1px solid #1A1A1A;
+            border: 1px solid #222222;
             padding: 12px;
             text-align: left;
-            font-size: 14px;
-            font-style: italic;
         }
 
         th {
-            background-color: #0A0A0A;
+            color: #B0B3B8;
+            background-color: #111111;
+            text-transform: uppercase;
             font-weight: 700;
+        }
+
+        td.segment {
+            color: #B0B3B8;
+        }
+
+        td.standard {
+            color: #F44336;
+            font-weight: 800;
             text-transform: uppercase;
-            font-size: 12px;
         }
 
-        /* Tekst u tabeli je svetlosiv, osim jakih brendova koji su beli */
-        td {
-            color: #A0A0A0;
+        td.cena {
+            color: #FFFFFF;
+            font-weight: 900;
         }
 
-        .table-note {
-            font-size: 11px;
-            color: #444444;
-            font-style: italic;
-        }
-
-        .status-footer {
-            font-size: 11px;
-            font-style: italic;
-            color: #444444;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .cta-box {
-            background-color: #0A0A0A;
-            border: 1px solid #1A1A1A;
-            padding: 25px;
+        /* KONTAKT SEKCIJA */
+        .kontakt-blok {
+            background-color: #111111;
+            border: 1px solid #222222;
+            padding: 30px;
             text-align: center;
+            margin-top: 50px;
         }
 
-        .cta-title {
-            font-size: 14px;
-            font-style: italic;
-            color: #FFFFFF; /* Bela za akciju */
-            letter-spacing: 1px;
+        .kontakt-naslov {
+            color: #B0B3B8;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            letter-spacing: 3px;
+            margin: 0 0 10px 0;
         }
 
-        .cta-desc {
-            font-size: 15px;
-            color: #A0A0A0; /* Siva za opis */
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .phone-number {
-            font-size: 32px;
-            font-weight: 700;
+        .kontakt-telefon {
+            color: #F44336;
+            font-size: 36px;
+            font-weight: 900;
+            margin: 15px 0 0 0;
             letter-spacing: 1px;
-            color: #FFFFFF; /* Telefon maksimalno uočljiv */
-            text-decoration: none;
-            display: block;
         }
+
     </style>
 </head>
 <body>
 
-    <div class="container">
+<div class="matriks-kontejner">
 
-        <div class="status-footer">
-            © 2026 VODODOM BEOGRAD. SVA PRAVA ZADRŽANA. BEZ LIMITA.
-        </div>
+    <h1>Zašto Vododom Inženjering?</h1>
 
-        <div class="section-box">
-            <h1>Vododom<br>Inženjering</h1>
-            <div class="subtitle">
-                Profesionalni kupatilski program /<br>Zemun i Novi Beograd
-            </div>
+    <p>• <strong>BEZ RASTEZANJA I "MAJSTORSKIH" OPRAVDANJA</strong><br>
+    Rok od <strong>15 dana</strong> za završetak kompletnog kupatila je fiksna stavka. Radimo po sistemskom rasporedu, bez napuštanja gradilišta dok se projekat ne preda.</p>
 
-            <h2>Operativni Profil</h2>
-            <p>
-                Specijalizovani smo za kompletnu adaptaciju kupatila "ključ u ruke". Naš pristup isključuje improvizaciju; fokus je na tehničkoj ispravnosti, poštovanju standarda ugradnje i dugovečnosti sistema.
-            </p>
-        </div>
+    <p>• <strong>APSOLUTNA TEHNIČKA PEDANTNOST</strong><br>
+    Mi ne krpimo sisteme. Koristimo isključivo industrijske standarde (<strong>NIBCO, PEŠTAN SILENT, MAPEI, GEBERIT</strong>). Svaki detalj se postavlja po pravilima struke.</p>
 
-        <div class="section-box">
-            <h2>Tehničke Specifikacije</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Segment</th>
-                        <th>Industrijski standard</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Vodovodne instalacije</td>
-                        <td><strong>NIBCO</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Kanalizaciona mreža</td>
-                        <td><strong>Peštan Silent</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Hidroizolacioni sistemi</td>
-                        <td><strong>Mapei</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Ugradni elementi</td>
-                        <td><strong>Geberit</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <p>• <strong>GARANTOVANA CENA BEZ IZNENAĐENJA</strong><br>
+    Cena definisana na terenu je konačna. Nema naknadnih kalkulacija i doplata za materijal. Sve je transparentno od prvog dana.</p>
 
-        <div class="section-box">
-            <h2>Adaptacija Kupatila</h2>
-            <p>Bez stresa, bez probijanja rokova i bez skrivenih troškova.</p>
-            <p>Većina sajtova u Srbiji nudi prazna obećanja. Ovde važe druga pravila. Mi ne rastežemo radove – mi donosimo rešenje po sistemu "ključ u ruke".</p>
+    <p>• <strong>ČIST TEREN I POŠTOVANJE VAŠEG PROSTORA</strong><br>
+    Hirurško rušenje podrazumeva maksimalnu kontrolu prašine i šuta. Sav građevinski otpad se odvozi odmah, a prostor se priprema za rad bez ometanja vašeg svakodnevnog života.</p>
 
-            <h2 style="margin-top: 30px;">Proces: 15 dana od rušenja do prve vode</h2>
-            
-            <div class="process-step">
-                <div class="step-day">Dan 1 – 2</div>
-                <div class="step-title">Hirurško rušenje i priprema</div>
-                <p style="font-size: 14px; margin: 0;">Uklanjanje starih sanitarija, lupanje pločica i odvoz šuta. Čist prostor za novu arhitekturu.</p>
-            </div>
+    <hr>
 
-            <div class="process-step">
-                <div class="step-day">Dan 3 – 5</div>
-                <div class="step-title">Postavljanje instalacija i hidroizolacija</div>
-                <p style="font-size: 14px; margin: 0;">Izrada nove vodovodne i kanalizacione mreže. Nanošenje Mapei hidroizolacije u kritičnim zonama.</p>
-            </div>
+    <h1>Adaptacija kupatila</h1>
+    <p>Bez stresa, bez probijanja rokova i skrivenih troškova.</p>
+    <p>Većina sajtova u Srbiji nudi prazna obećanja. Ovde važe druga pravila. Mi ne rastežemo rokove – mi donosimo rešenje po sistemu <strong>"KLJUČ U RUKE"</strong>.</p>
 
-            <div class="process-step">
-                <div class="step-day">Dan 6 – 15</div>
-                <div class="step-title">Fina montaža i estetika</div>
-                <p style="font-size: 14px; margin: 0;">Lepljenje keramike, fugovanje i montaža. Puštanje sistema u rad.</p>
-            </div>
-        </div>
+    <hr>
 
-        <div class="section-box">
-            <h2>Projekcija Troškova (Po Projektu)</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Usluga</th>
-                        <th>Cena (€)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Rušenje i odvoz šuta</td>
-                        <td><span class="white-text">200 – 500</span></td>
-                    </tr>
-                    <tr>
-                        <td>Voda i kanalizacija</td>
-                        <td><span class="white-text">600 – 1200</span></td>
-                    </tr>
-                    <tr>
-                        <td>Struja</td>
-                        <td><span class="white-text">200 – 300</span></td>
-                    </tr>
-                    <tr>
-                        <td>Nivelisanje poda</td>
-                        <td><span class="white-text">100 – 200</span></td>
-                    </tr>
-                    <tr>
-                        <td>Malterisanje</td>
-                        <td><span class="white-text">200 – 400</span></td>
-                    </tr>
-                    <tr>
-                        <td>Hidroizolacija</td>
-                        <td><span class="white-text">200 – 300</span></td>
-                    </tr>
-                    <tr>
-                        <td>Postavka pločica</td>
-                        <td><span class="white-text">600 – 800</span></td>
-                    </tr>
-                    <tr>
-                        <td>Postavka sanitarija</td>
-                        <td><span class="white-text">200 – 400</span></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="table-note">*Cene su informativne za kompletno kupatilo. Konačna ponuda se definiše na terenu.</div>
-        </div>
+    <h1>Tehničke specifikacije</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Segment</th>
+                <th>Standard</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="segment">Vodovodne instalacije</td>
+                <td class="standard">NIBCO</td>
+            </tr>
+            <tr>
+                <td class="segment">Kanalizaciona mreža</td>
+                <td class="standard">PEŠTAN SILENT</td>
+            </tr>
+            <tr>
+                <td class="segment">Hidroizolacioni sistemi</td>
+                <td class="standard">MAPEI</td>
+            </tr>
+            <tr>
+                <td class="segment">Ugradni elementi</td>
+                <td class="standard">GEBERIT</td>
+            </tr>
+        </tbody>
+    </table>
 
-        <div class="cta-box">
-            <div class="cta-title">Kontakt za konsultacije</div>
-            <div class="cta-desc">Pozovite direktno za analizu vašeg objekta:</div>
-            <a href="tel:0604844952" class="phone-number">060 4844 952</a>
-        </div>
+    <hr>
 
+    <h1>Proces: 15 dana od...</h1>
+    <p class="tabelarni-tekst"><em>[Detalji procesa po danima ovde...]</em></p>
+
+    <hr>
+
+    <h1>Projekcija troškova (po projektu)</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Usluga</th>
+                <th>Cena (€)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td class="segment">Rušenje i odvoz šuta</td><td class="cena">200 – 500</td></tr>
+            <tr><td class="segment">Voda i kanalizacija</td><td class="cena">600 – 1200</td></tr>
+            <tr><td class="segment">Struja</td><td class="cena">200 – 300</td></tr>
+            <tr><td class="segment">Nivelisanje poda</td><td class="cena">100 – 200</td></tr>
+            <tr><td class="segment">Malterisanje</td><td class="cena">200 – 400</td></tr>
+            <tr><td class="segment">Hidroizolacija</td><td class="cena">200 – 300</td></tr>
+            <tr><td class="segment">Postavka pločica</td><td class="cena">600 – 800</td></tr>
+            <tr><td class="segment">Postavka sanitarija</td><td class="cena">200 – 400</td></tr>
+        </tbody>
+    </table>
+
+    <div class="kontakt-blok">
+        <div class="kontakt-naslov">Kontakt za konsultacije</div>
+        <p class="tabelarni-tekst">Pozovite direktno za analizu vašeg objekta:</p>
+        <div class="kontakt-telefon">060 4844 952</div>
     </div>
+
+</div>
 
 </body>
-</html><section style="background-color: #000000; padding: 40px 20px; color: #ffffff;">
-    <h2 style="font-family: 'Tvoj-Zakošeni-Font', sans-serif; font-style: italic; text-transform: uppercase; border-left: 4px solid #A0AAB5; padding-left: 15px; margin-bottom: 35px; letter-spacing: 1px; color: #ffffff;">
-        Zašto Vododom Inženjering?
-    </h2>
-
-    <div style="margin-bottom: 25px;">
-        <h3 style="color: #A0AAB5; font-weight: bold; margin-bottom: 5px; font-size: 16px; font-family: 'Tvoj-Zakošeni-Font', sans-serif; font-style: italic;">
-            • Bez rastezanja i "majstorskih" opravdanja
-        </h3>
-        <p style="color: #A0AAB5; margin: 0; font-size: 14px; line-height: 1.6;">
-            Rok od 15 dana za završetak kompletnog kupatila je fiksna stavka. Radimo po sistemskom rasporedu, bez napuštanja gradilišta dok se projekat ne preda.
-        </p>
-    </div>
-
-    <div style="margin-bottom: 25px;">
-        <h3 style="color: #A0AAB5; font-weight: bold; margin-bottom: 5px; font-size: 16px; font-family: 'Tvoj-Zakošeni-Font', sans-serif; font-style: italic;">
-            • Apsolutna tehnička pedantnost
-        </h3>
-        <p style="color: #A0AAB5; margin: 0; font-size: 14px; line-height: 1.6;">
-            Mi ne krpimo sisteme. Koristimo isključivo industrijske standarde (NIBCO, Peštan Silent, Mapei, Geberit). Svaki detalj se postavlja po pravilima struke.
-        </p>
-    </div>
-
-    <div style="margin-bottom: 25px;">
-        <h3 style="color: #A0AAB5; font-weight: bold; margin-bottom: 5px; font-size: 16px; font-family: 'Tvoj-Zakošeni-Font', sans-serif; font-style: italic;">
-            • Garantovana cena bez iznenađenja
-        </h3>
-        <p style="color: #A0AAB5; margin: 0; font-size: 14px; line-height: 1.6;">
-            Cena definisana na terenu je konačna. Nema naknadnih kalkulacija i doplata za materijal. Sve je transparentno od prvog dana.
-        </p>
-    </div>
-
-    <div style="margin-bottom: 25px;">
-        <h3 style="color: #A0AAB5; font-weight: bold; margin-bottom: 5px; font-size: 16px; font-family: 'Tvoj-Zakošeni-Font', sans-serif; font-style: italic;">
-            • Čist teren i poštovanje vašeg prostora
-        </h3>
-        <p style="color: #A0AAB5; margin: 0; font-size: 14px; line-height: 1.6;">
-            Hirurško rušenje podrazumeva maksimalnu kontrolu prašine i šuta. Sav građevinski otpad se odvozi odmah, a prostor se priprema za rad bez ometanja vašeg svakodnevnog života.
-        </p>
-    </div>
-</section>
-  
+</html>
