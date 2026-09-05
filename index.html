@@ -1210,4 +1210,178 @@
     </div>
 
 </body>
+</html><!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Radova | majstor.in.rs</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+    .kalkulator-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border: 1px solid #e1e4e8;
+    }
+    h2 { text-align: center; color: #111; margin-top: 0; }
+    p.sub { text-align: center; color: #666; margin-bottom: 25px; font-size: 14px; }
+    .form-group { margin-bottom: 20px; }
+    label.title { font-weight: 600; display: block; margin-bottom: 8px; color: #222; }
+    select, input[type="text"], input[type="tel"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+    .checkbox-label { display: flex; align-items: center; margin-bottom: 8px; cursor: pointer; font-size: 15px; }
+    .checkbox-label input { margin-right: 10px; width: 18px; height: 18px; }
+    .prikaz-box {
+      background-color: #f0f7ff;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+      border: 1px solid #cce3ff;
+    }
+    .cena { font-size: 30px; font-weight: 800; color: #0070f3; margin-top: 5px; }
+    .btn-wa {
+      width: 100%;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-wa:hover { background-color: #20ba5a; }
+    .poziv-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #0070f3;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="kalkulator-card">
+  <h2>Procena troškova radova</h2>
+  <p class="sub">majstor.in.rs — Zabrana prosečnosti</p>
+
+  <!-- Step 1: Obim posla -->
+  <div class="form-group">
+    <label class="title">1. Tip i veličina projekta:</label>
+    <select id="tipProjekta">
+      <option value="800">Malo kupatilo (do 4m²) - Kompletna instalacija</option>
+      <option value="1200" selected>Srednje kupatilo (4m² - 8m²) - Kompletna instalacija</option>
+      <option value="1700">Veliko kupatilo (8m²+) - Kompletna instalacija</option>
+      <option value="500">Delimične vodovodne zamene / Manja rekonstrukcija</option>
+    </select>
+  </div>
+
+  <!-- Step 2: Materijali -->
+  <div class="form-group">
+    <label class="title">2. Standard materijala:</label>
+    <select id="tipMaterijala">
+      <option value="1.0">Standardni sistem vodovoda i kanalizacije</option>
+      <option value="1.3" selected>PREMIJUM: Peštan Silent, Mapei hidroizolacija & Nibco (Preporučeno)</option>
+    </select>
+  </div>
+
+  <!-- Step 3: Dodatne opcije -->
+  <div class="form-group">
+    <label class="title">3. Dodatni radovi:</label>
+    <label class="checkbox-label">
+      <input type="checkbox" id="optDemontaza" value="150" checked> Rušenje, demontaža i odvoz šuta
+    </label>
+    <label class="checkbox-label">
+      <input type="checkbox" id="optGeberit" value="100"> Ugradnja ugradnog vodokotlića / Geberit
+    </label>
+    <label class="checkbox-label">
+      <input type="checkbox" id="optVertikala" value="200"> Zamena glavne vertikale kanalizacije
+    </label>
+  </div>
+
+  <!-- Prikaz kalkulacije -->
+  <div class="prikaz-box">
+    <span style="font-size: 14px; color: #555;">Orijentaciona procena (Rad + Materijal):</span>
+    <div id="prikazCene" class="cena">0 €</div>
+  </div>
+
+  <!-- Podaci i Slanje -->
+  <form onsubmit="posaljiNaWhatsApp(event)">
+    <div class="form-group">
+      <input type="text" id="imeKlijenta" placeholder="Vaše ime i lokacija (npr. Marko, Zemun)" required>
+    </div>
+    <div class="form-group">
+      <input type="tel" id="telefonKlijenta" placeholder="Vaš broj telefona" required>
+    </div>
+
+    <button type="submit" class="btn-wa">
+      💬 Pošalji upit na WhatsApp (060 484 4952)
+    </button>
+  </form>
+
+  <a href="tel:0604844952" class="poziv-link">
+    📞 Ili pozovite direktno: 060 484 4952
+  </a>
+</div>
+
+<script>
+  function izracunaj() {
+    let osnova = parseFloat(document.getElementById('tipProjekta').value);
+    let koeficijentMaterijala = parseFloat(document.getElementById('tipMaterijala').value);
+    
+    let dodatno = 0;
+    if (document.getElementById('optDemontaza').checked) dodatno += parseFloat(document.getElementById('optDemontaza').value);
+    if (document.getElementById('optGeberit').checked) dodatno += parseFloat(document.getElementById('optGeberit').value);
+    if (document.getElementById('optVertikala').checked) dodatno += parseFloat(document.getElementById('optVertikala').value);
+
+    let ukupnoMin = Math.round((osnova * koeficijentMaterijala) + dodatno);
+    let ukupnoMax = Math.round(ukupnoMin * 1.15);
+
+    document.getElementById('prikazCene').innerText = `${ukupnoMin} € - ${ukupnoMax} €`;
+  }
+
+  document.getElementById('tipProjekta').addEventListener('change', izracunaj);
+  document.getElementById('tipMaterijala').addEventListener('change', izracunaj);
+  document.getElementById('optDemontaza').addEventListener('change', izracunaj);
+  document.getElementById('optGeberit').addEventListener('change', izracunaj);
+  document.getElementById('optVertikala').addEventListener('change', izracunaj);
+
+  izracunaj();
+
+  function posaljiNaWhatsApp(e) {
+    e.preventDefault();
+    let ime = document.getElementById('imeKlijenta').value;
+    let telefon = document.getElementById('telefonKlijenta').value;
+    let procena = document.getElementById('prikazCene').innerText;
+    
+    let mojBroj = "381604844952";
+    let poruka = `Zdravo! Upit sa majstor.in.rs:%0A- Ime/Lokacija: ${ime}%0A- Kontakt: ${telefon}%0A- Okvirna procena: ${procena}`;
+
+    window.open(`https://wa.me/${mojBroj}?text=${poruka}`, '_blank');
+  }
+</script>
+
+</body>
 </html>
