@@ -1,4 +1,4 @@
-<style>
+mi<style>
   /* Svetlija, čitljiva zelena boja za sve važne reči i naslove */
   [class*="green"], [style*="green"], h1, h2, h3, h4, strong, b {
     color: #4ade80 !important;
@@ -499,5 +499,151 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geberit & Rosan Paketi za Kupatilo | Vododom</title>
+    <style>
+        :root {
+            --primary: #107c41; /* Vododom zelena */
+            --dark: #1b1b1b;
+            --light: #f4f6f8;
+            --accent: #ff6b00;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); color: var(--dark); }
+        
+        /* UDARNI BANER (HERO) */
+        .hero {
+            background: linear-gradient(135deg, #1b1b1b 0%, #2d3748 100%);
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--primary);
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .hero h1 span { color: #4cd964; }
+        .hero p { font-size: 1.2rem; color: #cbd5e0; max-width: 700px; margin: 0 auto 25px auto; }
+        .hero-badges { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
+        .badge { background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.2); }
+        .cta-btn { background: var(--accent); color: #fff; padding: 15px 35px; text-decoration: none; font-weight: bold; font-size: 1.1rem; border-radius: 5px; display: inline-block; transition: 0.3s; }
+        .cta-btn:hover { background: #e05e00; }
 
+        /* GRID SA PAKETIMA */
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        
+        .package-card { background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .package-header { background: var(--primary); color: #fff; padding: 15px; text-align: center; font-weight: bold; font-size: 1.3rem; }
+        .package-body { padding: 20px; flex-grow: 1; }
+        .package-list { list-style: none; padding: 0; margin: 0 0 20px 0; }
+        .package-list li { padding: 8px 0; border-bottom: 1px dashed #e2e8f0; font-size: 0.95rem; }
+        .package-price { font-size: 1.6rem; font-weight: bold; color: var(--dark); text-align: center; margin-bottom: 15px; }
+        .order-btn { display: block; width: 100%; text-align: center; background: var(--dark); color: #fff; padding: 12px 0; text-decoration: none; font-weight: bold; border-radius: 4px; }
+        .order-btn:hover { background: var(--primary); }
+
+        /* PRAVILA I SKRIVANJE MANIPULACIJA */
+        .rules-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin-top: 40px; border-radius: 4px; }
+        .rules-box h3 { margin-top: 0; color: #856404; }
+    </style>
+</head>
+<body>
+
+    <!-- UDARNI BANER -->
+    <section class="hero">
+        <h1>SVE ZA KUPATILO U <span>1 KLIKU</span></h1>
+        <p>Originalni Geberit ugradni sistemi + Rosan garancija kvaliteta. Izaberi proverenu kombinaciju, uštedi vreme i preuzmi odmah bez čekanja.</p>
+        
+        <div class="hero-badges">
+            <span class="badge">✅ 100% Original Geberit & Rosan</span>
+            <span class="badge">✅ Garancija do 10 Godina</span>
+            <span class="badge">✅ Brza Isporuka na Adresu</span>
+        </div>
+
+        <a href="#paketi" class="cta-btn">POGLEDAJ PAKETE I CENE ⬇️</a>
+    </section>
+
+    <!-- SEKCIJA SA PAKETIMA -->
+    <div class="container" id="paketi">
+        <h2 class="section-title">Izaberite Komplet Po Vašoj Meri</h2>
+        
+        <div class="packages-grid">
+            
+            <!-- PAKET 1 -->
+            <div class="package-card">
+                <div>
+                    <div class="package-header">PAKET "BASIC"</div>
+                    <div class="package-body">
+                        <ul class="package-list">
+                            <li>✔️ <strong>Geberit Delta</strong> ugradni vodokotlić</li>
+                            <li>✔️ <strong>Geberit Delta20</strong> taster (Bela/Hrom)</li>
+                            <li>✔️ <strong>Rosan King</strong> baterija za umivaonik</li>
+                            <li>✔️ <strong>Rosan King</strong> baterija za kadu/tuš</li>
+                            <li>✔️ Set za montažu i priključci</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="padding: 20px;">
+                    <div class="package-price">32.900 RSD</div>
+                    <a href="#naruci" class="order-btn">NARUČI BASIC PAKET</a>
+                </div>
+            </div>
+
+            <!-- PAKET 2 -->
+            <div class="package-card" style="border: 2px solid var(--primary);">
+                <div>
+                    <div class="package-header" style="background: #0d6efd;">PAKET "PREMIUM SMART"</div>
+                    <div class="package-body">
+                        <ul class="package-list">
+                            <li>✔️ <strong>Geberit Sigma (12cm)</strong> ugradni vodokotlić</li>
+                            <li>✔️ <strong>Geberit Sigma20</strong> taster po izboru</li>
+                            <li>✔️ <strong>Rosan Termo</strong> usponski tuš sa ružom</li>
+                            <li>✔️ <strong>Rosan Visoka</strong> baterija za nadgradni umivaonik</li>
+                            <li>✔️ Ušteda vode do 30%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="padding: 20px;">
+                    <div class="package-price">54.500 RSD</div>
+                    <a href="#naruci" class="order-btn" style="background: #0d6efd;">NARUČI PREMIUM PAKET</a>
+                </div>
+            </div>
+
+            <!-- PAKET 3 -->
+            <div class="package-card">
+                <div>
+                    <div class="package-header" style="background: #000;">PAKET "BLACK ELEGANCE"</div>
+                    <div class="package-body">
+                        <ul class="package-list">
+                            <li>✔️ <strong>Geberit Sigma</strong> ugradni vodokotlić</li>
+                            <li>✔️ <strong>Geberit Sigma</strong> mat crni taster</li>
+                            <li>✔️ <strong>Rosan Black</strong> mat crna baterija za umivaonik</li>
+                            <li>✔️ <strong>Rosan Black</strong> mat crni usponski tuš set</li>
+                            <li>✔️ Za moderne "Walk-in" kabine</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="padding: 20px;">
+                    <div class="package-price">48.900 RSD</div>
+                    <a href="#naruci" class="order-btn" style="background: #000;">NARUČI BLACK PAKET</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- USLOVI PRODAJE (FILTER ZA ČIST POSAO) -->
+        <div class="rules-box">
+            <h3>⚠️ Napomena i uslovi kupovine:</h3>
+            <ul>
+                <li><strong>Fiksne akcijske cene:</strong> Paketi su formirani sa maksimalnim popustom i cene su fiksne.</li>
+                <li><strong>Nema rasparčavanja:</strong> Proizvodi se prodaju isključivo u navedenim setovima.</li>
+                <li><strong>Plaćanje:</strong> Gotovinom pri preuzimanju ili 100% avansno preko računa za pravna lica.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
 
