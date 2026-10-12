@@ -1,770 +1,435 @@
-mi<style>
-  /* Svetlija, čitljiva zelena boja za sve važne reči i naslove */
-  [class*="green"], [style*="green"], h1, h2, h3, h4, strong, b {
-    color: #4ade80 !important;
-  }
-
-  /* Zaobljivanje svih kockica i blokova na sajtu */
-  div, section, article, [class*="card"], [class*="box"] {
-    border-radius: 14px !important;
-  }
-
-  /* Dodavanje zagasitije tamne pozadine i svetlećeg zelenog okvira oko kockica */
-  div[class], section[class], article[class], [class*="card"], [class*="box"] {
-    background: linear-gradient(135deg, #18181b 0%, #27272a 100%) !important;
-    border: 1px solid rgba(74, 222, 128, 0.3) !important;
-    box-shadow: 0 0 20px rgba(74, 222, 128, 0.15), inset 0 0 15px rgba(0, 0, 0, 0.5) !important;
-    padding: 16px !important;
-    margin-bottom: 16px !important;
-  }
-
-  /* Dodatni efekat sjaja pri dodiru ili prelazu prstom/mišem */
-  div[class]:hover, section[class]:hover, [class*="card"]:hover {
-    border-color: #4ade80 !important;
-    box-shadow: 0 0 25px rgba(74, 222, 128, 0.3) !important;
-    transition: all 0.3s ease !important;
-  }
-</style><!-- SEO i Meta Tagovi -->
-<meta name="description" content="Vodoinstalaterske usluge i rekonstrukcija kupatila u Zemunu i Novom Beogradu. Izračunajte okvirnu cenu radova preko online kalkulatora.">
-<meta name="keywords" content="vodoinstalater, Zemun, Novi Beograd, kupatilo, rekonstrukcija, Peštan Silent, Nibco, Mapei">
-
-<!-- Open Graph / Social Media (Viber, Facebook, WhatsApp) -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://majstor.in.rs">
-<meta property="og:title" content="Vododom - Vodoinstalaterske Usluge Zemun i Novi Beograd">
-<meta property="og:description" content="Vodoinstalaterske usluge i profesionalna rekonstrukcija kupatila. Izračunajte okvirnu cenu radova online.">
-<meta property="og:image" content="https://majstor.in.rs/logo.png">
-
-<!-- Google Pretraga & Schema.org (Lokalni Biznis) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Plumber",
-  "name": "Vododom",
-  "image": "https://majstor.in.rs/logo.png",
-  "telephone": "+381604844952",
-  "url": "https://majstor.in.rs",
-  "areaServed": [
-    "Zemun",
-    "Novi Beograd"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Zemun",
-    "addressRegion": "Beograd",
-    "addressCountry": "RS"
-  },
-  "priceRange": "RSD"
-}
-</script><style>
-  .vododom-about-section {
-    background-color: #121519;
-    color: #e2e8f0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    padding: 30px 16px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
-
-  .vododom-card {
-    background-color: #1e232b;
-    border: 1px solid #2d3542;
-    border-radius: 12px;
-    padding: 24px 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  .vododom-badge {
-    display: inline-block;
-    color: #3b82f6;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
-
-  .vododom-title {
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 700;
-    margin: 0 0 16px 0;
-    line-height: 1.3;
-  }
-
-  .vododom-text {
-    color: #94a3b8;
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 0 0 14px 0;
-  }
-
-  .vododom-highlight {
-    color: #ffffff;
-    font-weight: 600;
-  }
-
-  .vododom-brand {
-    color: #3b82f6;
-    font-weight: 700;
-  }
-
-  .vododom-cta-text {
-    background: rgba(59, 130, 246, 0.1);
-    border-left: 3px solid #3b82f6;
-    color: #e2e8f0;
-    padding: 12px 14px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 0 8px 8px 0;
-    margin-top: 18px;
-    line-height: 1.4;
-  }
-</style>
-
-<section class="vododom-about-section">
-  <div class="vododom-card">
-    <span class="vododom-badge">O nama</span>
-    <h2 class="vododom-title">Majstorski rad bez improvizacija — <span class="vododom-brand">Vododom</span></h2>
-    
-    <p class="vododom-text">
-      Najvažniji deo svakog kupatila je onaj koji se ne vidi. Pločice i lepe slavine dođu na kraju, ali suv komšija ispod tebe, pravilan pritisak i miran san zavise isključivo od onoga što je uzidano u zid i pod. Tu nema mesta za loše kompromise i rad "od oka".
-    </p>
-
-    <p class="vododom-text">
-      Za to brine <span class="vododom-brand">Vododom</span> — naša lokalna ekipa iz Zemuna i Novog Beograda, specijalizovana za grube vodovodne instalacije, zamenu kanalizacionih vertikala i kompletnu pripremu terena. Radimo ono što je najbitnije i najodgovornije — čistu mehaniku, rušenje, odvoz šuta i postavljanje cevi po svim pravilima struke.
-    </p>
-
-    <p class="vododom-text" style="margin-bottom: 0;">
-      Ne mešamo se u keramiku i ulepšavanje. Fokusirani smo na to da cevovod trajno drži i da teren ostane čist.
-    </p>
-
-    <div class="vododom-cta-text">
-      👇 Izaberi opcije u kalkulatoru ispod i ostvari tačnu procenu radova u par klikova.
-    </div>
-  </div>
-</section>
 
 </body>
-</html><!DOCTYPE html>
-<html lang="sr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kalkulator Radova | majstor.in.rs</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #f4f6f8;
-      margin: 0;
-      padding: 20px;
-    }
-    .kalkulator-card {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      border: 1px solid #e1e4e8;
-    }
-    h2 { text-align: center; color: #111; margin-top: 0; }
-    p.sub { text-align: center; color: #666; margin-bottom: 25px; font-size: 14px; }
-    .form-group { margin-bottom: 20px; }
-    label.title { font-weight: 600; display: block; margin-bottom: 8px; color: #222; }
-    select, input[type="text"], input[type="tel"] {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 15px;
-      box-sizing: border-box;
-    }
-    .checkbox-label { display: flex; align-items: center; margin-bottom: 8px; cursor: pointer; font-size: 15px; }
-    .checkbox-label input { margin-right: 10px; width: 18px; height: 18px; }
-    .prikaz-box {
-      background-color: #f0f7ff;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
-      margin-bottom: 20px;
-      border: 1px solid #cce3ff;
-    }
-    .cena { font-size: 30px; font-weight: 800; color: #0070f3; margin-top: 5px; }
-    .btn-wa {
-      width: 100%;
-      background-color: #25D366;
-      color: white;
-      border: none;
-      padding: 15px;
-      font-size: 16px;
-      font-weight: 700;
-      border-radius: 8px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .btn-wa:hover { background-color: #20ba5a; }
-    .poziv-link {
-      display: block;
-      text-align: center;
-      margin-top: 15px;
-      color: #0070f3;
-      font-weight: 600;
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-
-<div class="kalkulator-card">
-  <h2>Procena troškova radova</h2>
-  <p class="sub">majstor.in.rs — Zabrana prosečnosti</p>
-
-  <!-- Step 1: Obim posla -->
-  <div class="form-group">
-    <label class="title">1. Tip i veličina projekta:</label>
-    <select id="tipProjekta">
-      <option value="800">Malo kupatilo (do 4m²) - Kompletna instalacija</option>
-      <option value="1200" selected>Srednje kupatilo (4m² - 8m²) - Kompletna instalacija</option>
-      <option value="1700">Veliko kupatilo (8m²+) - Kompletna instalacija</option>
-      <option value="500">Delimične vodovodne zamene / Manja rekonstrukcija</option>
-    </select>
-  </div>
-
-  <!-- Step 2: Materijali -->
-  <div class="form-group">
-    <label class="title">2. Standard materijala:</label>
-    <select id="tipMaterijala">
-      <option value="1.0">Standardni sistem vodovoda i kanalizacije</option>
-      <option value="1.3" selected>PREMIJUM: Peštan Silent, Mapei hidroizolacija & Nibco (Preporučeno)</option>
-    </select>
-  </div>
-
-  <!-- Step 3: Dodatne opcije -->
-  <div class="form-group">
-    <label class="title">3. Dodatni radovi:</label>
-    <label class="checkbox-label">
-      <input type="checkbox" id="optDemontaza" value="150" checked> Rušenje, demontaža i odvoz šuta
-    </label>
-    <label class="checkbox-label">
-      <input type="checkbox" id="optGeberit" value="100"> Ugradnja ugradnog vodokotlića / Geberit
-    </label>
-    <label class="checkbox-label">
-      <input type="checkbox" id="optVertikala" value="200"> Zamena glavne vertikale kanalizacije
-    </label>
-  </div>
-
-  <!-- Prikaz kalkulacije -->
-  <div class="prikaz-box">
-    <span style="font-size: 14px; color: #555;">Orijentaciona procena (Rad + Materijal):</span>
-    <div id="prikazCene" class="cena">0 €</div>
-  </div>
-
-  <!-- Podaci i Slanje -->
-  <form onsubmit="posaljiNaWhatsApp(event)">
-    <div class="form-group">
-      <input type="text" id="imeKlijenta" placeholder="Vaše ime i lokacija (npr. Marko, Zemun)" required>
-    </div>
-    <div class="form-group">
-      <input type="tel" id="telefonKlijenta" placeholder="Vaš broj telefona" required>
-    </div>
-
-    <button type="submit" class="btn-wa">
-      💬 Pošalji upit na WhatsApp (060 484 4952)
-    </button>
-  </form>
-
-  <a href="tel:0604844952" class="poziv-link">
-    📞 Ili pozovite direktno: 060 484 4952
-  </a>
-</div>
-
-<script>
-  function izracunaj() {
-    let osnova = parseFloat(document.getElementById('tipProjekta').value);
-    let koeficijentMaterijala = parseFloat(document.getElementById('tipMaterijala').value);
-    
-    let dodatno = 0;
-    if (document.getElementById('optDemontaza').checked) dodatno += parseFloat(document.getElementById('optDemontaza').value);
-    if (document.getElementById('optGeberit').checked) dodatno += parseFloat(document.getElementById('optGeberit').value);
-    if (document.getElementById('optVertikala').checked) dodatno += parseFloat(document.getElementById('optVertikala').value);
-
-    let ukupnoMin = Math.round((osnova * koeficijentMaterijala) + dodatno);
-    let ukupnoMax = Math.round(ukupnoMin * 1.15);
-
-    document.getElementById('prikazCene').innerText = `${ukupnoMin} € - ${ukupnoMax} €`;
-  }
-
-  document.getElementById('tipProjekta').addEventListener('change', izracunaj);
-  document.getElementById('tipMaterijala').addEventListener('change', izracunaj);
-  document.getElementById('optDemontaza').addEventListener('change', izracunaj);
-  document.getElementById('optGeberit').addEventListener('change', izracunaj);
-  document.getElementById('optVertikala').addEventListener('change', izracunaj);
-
-  izracunaj();
-
-  function posaljiNaWhatsApp(e) {
-    e.preventDefault();
-    let ime = document.getElementById('imeKlijenta').value;
-    let telefon = document.getElementById('telefonKlijenta').value;
-    let procena = document.getElementById('prikazCene').innerText;
-    
-    let mojBroj = "381604844952";
-    let poruka = `Zdravo! Upit sa majstor.in.rs:%0A- Ime/Lokacija: ${ime}%0A- Kontakt: ${telefon}%0A- Okvirna procena: ${procena}`;
-
-    window.open(`https://wa.me/${mojBroj}?text=${poruka}`, '_blank');
-  }
-</script>
-
-</body>
-</html><div class="majstor-container">
-
-  <section class="majstor-card">
-    <h2 class="majstor-title">Majstorski rad bez improvizacija</h2>
-    <p class="majstor-text">
-      Lokalna ekipa specijalizovana za vodovodne instalacije i grube pripremnim radovima na teritoriji <strong>Zemuna i Novog Beograda</strong>. Ne radimo "od oka" niti ostavljamo posao polovično. Fokusirani smo isključivo na vrhunsku mehaniku, pouzdane cevi i čistu pripremu terena.
-    </p>
-    
-    <div class="majstor-features">
-      <div class="feature-item">
-        <span class="feature-icon">📋</span>
-        <strong>Čisti računi i rokovi</strong>
-        <p>Preko kalkulatora dobijaš jasnu procenu — bez skrivenih troškova.</p>
-      </div>
-      <div class="feature-item">
-        <span class="feature-icon">🧹</span>
-        <strong>Čist teren iza nas</strong>
-        <p>Šut i stari materijal pakujemo i odvozimo odmah po završetku rušenja.</p>
-      </div>
-      <div class="feature-item">
-        <span class="feature-icon">🔧</span>
-        <strong>Provereni materijali</strong>
-        <p>Radimo sa Nibco i Peštan Silent zvučno izolovanim sistemima.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="majstor-card">
-    <h2 class="majstor-title">Naše usluge: Rušenje & Vodovodne instalacije</h2>
-    <p class="majstor-subtitle">Specijalizovani za grube radove i cevne sisteme — bez mešanja u keramiku.</p>
-
-    <div class="services-grid">
-      <div class="service-box">
-        <h3>1. Rušenje, demontaža & Odvoz šuta</h3>
-        <ul>
-          <li>Demontaža starih sanitarija, slavina i cevi</li>
-          <li>Rušenje i priprema zidova i podova</li>
-          <li>Pakovanje i kompletan odvoz šuta na deponiju</li>
-        </ul>
-      </div>
-
-      <div class="service-box">
-        <h3>2. Vodovod & Kanalizacija</h3>
-        <ul>
-          <li>Nibco vodovodne cevi (hladno hemijsko zavarivanje)</li>
-          <li>Peštan Silent zvučno izolovane cevne vertikale</li>
-          <li>Izmeštanje i prilagođavanje svih odvodnih i vodovodnih tačaka</li>
-        </ul>
-      </div>
-
-      <div class="service-box">
-        <h3>3. Geberit & Ugradni sistemi</h3>
-        <ul>
-          <li>Ugradnja ugradnih vodokotlića (Geberit) i konzolnih šolja</li>
-          <li><strong>Montaža ugradnih slavina i podžbuknih mešača</strong></li>
-          <li>Postavljanje linijskih slivnika i provera pritiska</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="majstor-card seo-card">
-    <h2 class="majstor-title">Brza intervencija: Zemun & Novi Beograd</h2>
-    <p class="majstor-text">
-      Izlazimo na teren u najkraćem roku na teritoriji opština <strong>Zemun</strong> i <strong>Novi Beograd</strong>.
-    </p>
-
-    <div class="seo-locations">
-      <div class="location-group">
-        <h4>📍 Vodoinstalater Zemun</h4>
-        <p>Zemun Polje, Altina, Gornji Grad, Donji Grad, Kalvarija, Retenzija, Galenika, Batajnica Busije.</p>
-      </div>
-      <div class="location-group">
-        <h4>📍 Vodoinstalater Novi Beograd</h4>
-        <p>Svi blokovi: Bežanijska Kosa, Fontana, Paviljoni, Belvil, A Blok, Savski kejevi.</p>
-      </div>
-    </div>
+</html>
 <!DOCTYPE html>
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Vododom</title>
+    <title>Sve-U-1 Montaža | majstor.in.rs</title>
     <style>
+        :root {
+            --primary-dark: #0f2e48;
+            --primary-brand: #00a896;
+            --primary-hover: #008072;
+            --accent-orange: #f4a261;
+            --accent-hover: #e76f51;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --text-main: #2b2d42;
+            --text-muted: #6c757d;
+            --border-color: #e9ecef;
+            --whatsapp-green: #25d366;
+            --viber-purple: #7360f2;
+        }
+
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
             margin: 0;
-            background-color: #121212;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #e0e0e0;
+            padding: 20px 10px;
         }
 
-        .faq-section {
-            padding: 40px 15px;
-        }
-
-        .faq-container {
-            max-width: 800px;
+        .container {
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        .faq-title {
+        /* BANER */
+        .hero-banner {
+            background-color: var(--primary-dark);
             color: #ffffff;
-            font-size: 24px;
-            margin-bottom: 30px;
-            border-left: 4px solid #0066ff;
-            padding-left: 12px;
-            letter-spacing: 0.5px;
+            padding: 40px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 35px;
         }
 
-        .faq-item {
-            background-color: #1a1a1a;
-            border: 1px solid #262626;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 16px;
-        }
-
-        .faq-item.highlight {
-            border-left: 3px solid #0066ff;
-            background-color: #161616;
-        }
-
-        .faq-item h3 {
+        .hero-banner h1 {
             color: #ffffff;
-            font-size: 16px;
-            margin: 0 0 10px 0;
+            margin-top: 0;
+            font-size: 28px;
+            line-height: 1.2;
+        }
+
+        .hero-banner p.subtitle {
+            color: var(--primary-brand);
+            font-size: 18px;
             font-weight: 600;
         }
 
-        .faq-item p {
-            color: #a3a3a3;
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 30px 0;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-brand);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: #ffffff;
+            padding: 14px 28px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* SECTION TITLE */
+        .section-title {
+            color: var(--primary-dark);
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary-brand);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* GRID PAKETA */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .package-card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-top: 5px solid var(--primary-brand);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .package-title {
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .package-price {
+            font-size: 28px;
+            color: var(--primary-brand);
+            font-weight: bold;
+            margin: 10px 0 20px 0;
+        }
+
+        .package-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
             font-size: 14px;
-            line-height: 1.6;
-            margin: 0;
         }
 
-        .faq-item strong {
-            color: #ffffff;
+        .package-features li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
         }
-    </style>
-</head>
-<body>
 
-<section class="faq-section">
-    <div class="faq-container">
-        
-        <h2 class="faq-title">Često postavljana pitanja</h2>
-
-        <div class="faq-item">
-            <h3>Da li radite kompletno opremanje kupatila i keramiku?</h3>
-            <p>Fokusirani smo isključivo na grube radove, demontažu i cevne sisteme — radimo ono u čemu smo najbolji. Ne bavimo se lepljenjem keramike i završnom estetikom, ali vam ostavljamo perfektno pripremljen teren i cevi montirane po svim pravilima struke.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Koje materijale koristite za vodovod i kanalizaciju?</h3>
-            <p>Naša preporuka i standard koji koristimo jesu provereni <strong>Nibco</strong> sistemi za vodovod (sa hladnim hemijskim zavarivanjem) i <strong>Peštan Silent</strong> zvučno izolovane cevi za kanalizaciju. Ipak, uvek smo otvoreni za dogovor i možemo da uradimo instalaciju i po vašem izboru materijala.</p>
-        </div>
-
-        <div class="faq-item highlight">
-            <h3>Kako funkcioniše procena troškova preko kalkulatora?</h3>
-            <p>Izborom dimenzija kupatila, standarda materijala i dodatnih usluga (poput rušenja, zamene vertikale ili ugradnje Geberita) dobijate instant procenu radova i materijala. Tačan iznos potvrđujemo na licu mesta pre početka radova — bez skrivenih troškova.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Šta sve obuhvata usluga rušenja i pripreme?</h3>
-            <p>Kompletnu demontažu starih sanitarija, slavina i cevi, rušenje i pripremu zidova i podova, kao i pakovanje i odvoz kompletnog šuta na deponiju. Teren ostavljamo potpuno čist.</p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Za koje lokacije ste dostupni i koliko se čeka na dolazak?</h3>
-            <p>Specijalizovani smo za teritoriju <strong>Zemuna</strong> (Zemun Polje, Altina, Gornji/Donji Grad, Kalvarija, Retenzija, Galenika, Busije) i <strong>Novog Beograda</strong> (svi blokovi, Bežanijska Kosa, Fontana, Belvil, A Blok). Na teren izlazimo u najkraćem mogućem roku po pozivu.</p>
-        </div>
-
-    </div>
-</section>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="sr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geberit & Rosan Paketi za Kupatilo | Vododom</title>
-    <style>
-        :root {
-            --primary: #107c41; /* Vododom zelena */
-            --dark: #1b1b1b;
-            --light: #f4f6f8;
-            --accent: #ff6b00;
+        .package-features li::before {
+            content: "•";
+            color: var(--primary-brand);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 18px;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); color: var(--dark); }
-        
-        /* UDARNI BANER (HERO) */
-        .hero {
-            background: linear-gradient(135deg, #1b1b1b 0%, #2d3748 100%);
-            color: #ffffff;
-            padding: 60px 20px;
+
+        /* KONTAKT DUGMIĆI (WhatsApp & Viber) */
+        .contact-box {
+            background-color: #f0fdfa;
+            border: 1px dashed var(--primary-brand);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 13px;
             text-align: center;
-            border-bottom: 5px solid var(--primary);
         }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-        .hero h1 span { color: #4cd964; }
-        .hero p { font-size: 1.2rem; color: #cbd5e0; max-width: 700px; margin: 0 auto 25px auto; }
-        .hero-badges { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
-        .badge { background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.2); }
-        .cta-btn { background: var(--accent); color: #fff; padding: 15px 35px; text-decoration: none; font-weight: bold; font-size: 1.1rem; border-radius: 5px; display: inline-block; transition: 0.3s; }
-        .cta-btn:hover { background: #e05e00; }
 
-        /* GRID SA PAKETIMA */
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
-        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        
-        .package-card { background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .package-header { background: var(--primary); color: #fff; padding: 15px; text-align: center; font-weight: bold; font-size: 1.3rem; }
-        .package-body { padding: 20px; flex-grow: 1; }
-        .package-list { list-style: none; padding: 0; margin: 0 0 20px 0; }
-        .package-list li { padding: 8px 0; border-bottom: 1px dashed #e2e8f0; font-size: 0.95rem; }
-        .package-price { font-size: 1.6rem; font-weight: bold; color: var(--dark); text-align: center; margin-bottom: 15px; }
-        .order-btn { display: block; width: 100%; text-align: center; background: var(--dark); color: #fff; padding: 12px 0; text-decoration: none; font-weight: bold; border-radius: 4px; }
-        .order-btn:hover { background: var(--primary); }
+        .contact-box-title {
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            display: block;
+        }
 
-        /* PRAVILA I SKRIVANJE MANIPULACIJA */
-        .rules-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin-top: 40px; border-radius: 4px; }
-        .rules-box h3 { margin-top: 0; color: #856404; }
+        .chat-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        .btn-chat {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            flex: 1;
+            padding: 10px 12px;
+            border-radius: 6px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-chat:hover {
+            opacity: 0.9;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+        }
+
+        .btn-viber {
+            background-color: var(--viber-purple);
+        }
+
+        /* SEO LOKACIJE */
+        .seo-box {
+            background-color: var(--bg-white);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .seo-box h3 {
+            color: var(--primary-dark);
+            margin-top: 0;
+        }
+
+        .seo-box p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
     </style>
 </head>
 <body>
 
-    <!-- UDARNI BANER -->
-    <section class="hero">
-        <h1>SVE ZA KUPATILO U <span>1 KLIKU</span></h1>
-        <p>Originalni Geberit ugradni sistemi + Rosan garancija kvaliteta. Izaberi proverenu kombinaciju, uštedi vreme i preuzmi odmah bez čekanja.</p>
-        
-        <div class="hero-badges">
-            <span class="badge">✅ 100% Original Geberit & Rosan</span>
-            <span class="badge">✅ Garancija do 10 Godina</span>
-            <span class="badge">✅ Brza Isporuka na Adresu</span>
-        </div>
+<div class="container">
 
-        <a href="#paketi" class="cta-btn">POGLEDAJ PAKETE I CENE ⬇️</a>
-    </section>
-
-    <!-- SEKCIJA SA PAKETIMA -->
-    <div class="container" id="paketi">
-        <h2 class="section-title">Izaberite Komplet Po Vašoj Meri</h2>
+    <!-- BANER -->
+    <div class="hero-banner">
+        <h1>BEZ TRČANJA PO PRODAVNICAMA.<br>BEZ SKRIVENIH TROŠKOVA.</h1>
+        <p class="subtitle">Naručite uređaj sa kompletnom „Sve-U-1” montažom na majstor.in.rs. Mi donosimo sav fiting, skidamo staro, montiramo novo i puštamo u rad.</p>
         
-        <div class="packages-grid">
-            
-            <!-- PAKET 1 -->
-            <div class="package-card">
-                <div>
-                    <div class="package-header">PAKET "BASIC"</div>
-                    <div class="package-body">
-                        <ul class="package-list">
-                            <li>✔️ <strong>Geberit Delta</strong> ugradni vodokotlić</li>
-                            <li>✔️ <strong>Geberit Delta20</strong> taster (Bela/Hrom)</li>
-                            <li>✔️ <strong>Rosan King</strong> baterija za umivaonik</li>
-                            <li>✔️ <strong>Rosan King</strong> baterija za kadu/tuš</li>
-                            <li>✔️ Set za montažu i priključci</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="padding: 20px;">
-                    <div class="package-price">32.900 RSD</div>
-                    <a href="#naruci" class="order-btn">NARUČI BASIC PAKET</a>
+        <ul class="checklist">
+            <li>Demontaža i odnošenje starog uređaja/opreme</li>
+            <li>Kompletan potrošni materijal (brinoksi, EK ventili, sifoni, tiplovi, silikon)</li>
+            <li>Profi montaža i garancija na izvedene radove</li>
+        </ul>
+
+        <a href="#paketi" class="btn-cta">POGLEDAJ SVE-U-1 PAKETE MONTAŽE</a>
+    </div>
+
+    <!-- PAKETI -->
+    <h2 class="section-title" id="paketi">Izdvojeni „Sve-U-1” Paketi</h2>
+    
+    <div class="packages-grid">
+        
+        <!-- Paket 1: Bojler -->
+        <div class="package-card">
+            <div>
+                <h3 class="package-title">Paket „SVE-U-1” Bojler</h3>
+                <div class="package-price">9.500 RSD</div>
+                <ul class="package-features">
+                    <li>Demontaža i pražnjenje starog bojlera</li>
+                    <li>2x Inox flex brinoks creva, 2x hromirani dupli niplovi, rozetne, tiplovi, zaptivni materijal</li>
+                    <li>Kačenje novog bojlera, povezivanje na vodovod i struju</li>
+                    <li>Puštanje u rad, provera sigurnosnog ventila i pritiska</li>
+                </ul>
+            </div>
+            <div class="contact-box">
+                <span class="contact-box-title">Pošaljite sliku za proveru termina:</span>
+                <div class="chat-buttons">
+                    <a href="https://wa.me/381604844952?text=Zdravo,%20interesuje%20me%20Paket%20SVE-U-1%20Bojler" target="_blank" class="btn-chat btn-whatsapp">
+                        WhatsApp
+                    </a>
+                    <a href="viber://chat?number=%2B381604844952" target="_blank" class="btn-chat btn-viber">
+                        Viber
+                    </a>
                 </div>
             </div>
+        </div>
 
-            <!-- PAKET 2 -->
-            <div class="package-card" style="border: 2px solid var(--primary);">
-                <div>
-                    <div class="package-header" style="background: #0d6efd;">PAKET "PREMIUM SMART"</div>
-                    <div class="package-body">
-                        <ul class="package-list">
-                            <li>✔️ <strong>Geberit Sigma (12cm)</strong> ugradni vodokotlić</li>
-                            <li>✔️ <strong>Geberit Sigma20</strong> taster po izboru</li>
-                            <li>✔️ <strong>Rosan Termo</strong> usponski tuš sa ružom</li>
-                            <li>✔️ <strong>Rosan Visoka</strong> baterija za nadgradni umivaonik</li>
-                            <li>✔️ Ušteda vode do 30%</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="padding: 20px;">
-                    <div class="package-price">54.500 RSD</div>
-                    <a href="#naruci" class="order-btn" style="background: #0d6efd;">NARUČI PREMIUM PAKET</a>
+        <!-- Paket 2: Monoblok / WC Šolja -->
+        <div class="package-card">
+            <div>
+                <h3 class="package-title">Paket „SVE-U-1” Monoblok / WC Šolja</h3>
+                <div class="package-price">9.500 RSD</div>
+                <ul class="package-features">
+                    <li>Demontaža stare WC šolje i vodokotlića</li>
+                    <li>Ekscentrična manžetna za odvod, novi EK ventil sa filterom, brinoks, podni šrafovi, silikon</li>
+                    <li>Sklapanje mehanizma, fiksiranje šolje za pod, zaptivanje baze</li>
+                    <li>Provera ispiranja i zaptivenosti odvoda pod pritiskom</li>
+                </ul>
+            </div>
+            <div class="contact-box">
+                <span class="contact-box-title">Pošaljite sliku za proveru termina:</span>
+                <div class="chat-buttons">
+                    <a href="https://wa.me/381604844952?text=Zdravo,%20interesuje%20me%20Paket%20SVE-U-1%20WC%20Solja" target="_blank" class="btn-chat btn-whatsapp">
+                        WhatsApp
+                    </a>
+                    <a href="viber://chat?number=%2B381604844952" target="_blank" class="btn-chat btn-viber">
+                        Viber
+                    </a>
                 </div>
             </div>
+        </div>
 
-            <!-- PAKET 3 -->
-            <div class="package-card">
-                <div>
-                    <div class="package-header" style="background: #000;">PAKET "BLACK ELEGANCE"</div>
-                    <div class="package-body">
-                        <ul class="package-list">
-                            <li>✔️ <strong>Geberit Sigma</strong> ugradni vodokotlić</li>
-                            <li>✔️ <strong>Geberit Sigma</strong> mat crni taster</li>
-                            <li>✔️ <strong>Rosan Black</strong> mat crna baterija za umivaonik</li>
-                            <li>✔️ <strong>Rosan Black</strong> mat crni usponski tuš set</li>
-                            <li>✔️ Za moderne "Walk-in" kabine</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="padding: 20px;">
-                    <div class="package-price">48.900 RSD</div>
-                    <a href="#naruci" class="order-btn" style="background: #000;">NARUČI BLACK PAKET</a>
+        <!-- Paket 3: Baterije -->
+        <div class="package-card">
+            <div>
+                <h3 class="package-title">Paket „SVE-U-1” Baterije (Slavine)</h3>
+                <div class="package-price">6.700 RSD</div>
+                <ul class="package-features">
+                    <li>Demontaža stare baterije i priključaka</li>
+                    <li>2x EK ventila sa filterom ili 2x mesingana ekscentra sa rozetnama, brinoksi, zaptivke</li>
+                    <li>Montaža nove baterije, povezivanje na mrežu, nivelisanje</li>
+                    <li>Provera pritiska, prebacivača i aeratora pod punim mlazom</li>
+                </ul>
+            </div>
+            <div class="contact-box">
+                <span class="contact-box-title">Pošaljite sliku za proveru termina:</span>
+                <div class="chat-buttons">
+                    <a href="https://wa.me/381604844952?text=Zdravo,%20interesuje%20me%20Paket%20SVE-U-1%20Baterije" target="_blank" class="btn-chat btn-whatsapp">
+                        WhatsApp
+                    </a>
+                    <a href="viber://chat?number=%2B381604844952" target="_blank" class="btn-chat btn-viber">
+                        Viber
+                    </a>
                 </div>
             </div>
-
         </div>
 
-        <!-- USLOVI PRODAJE (FILTER ZA ČIST POSAO) -->
-        <div class="rules-box">
-            <h3>⚠️ Napomena i uslovi kupovine:</h3>
-            <ul>
-                <li><strong>Fiksne akcijske cene:</strong> Paketi su formirani sa maksimalnim popustom i cene su fiksne.</li>
-                <li><strong>Nema rasparčavanja:</strong> Proizvodi se prodaju isključivo u navedenim setovima.</li>
-                <li><strong>Plaćanje:</strong> Gotovinom pri preuzimanju ili 100% avansno preko računa za pravna lica.</li>
-            </ul>
+        <!-- Paket 4: Tuš Kabina -->
+        <div class="package-card">
+            <div>
+                <h3 class="package-title">Paket „SVE-U-1” Tuš Kabina sa Kadicom</h3>
+                <div class="package-price">16.000 RSD</div>
+                <ul class="package-features">
+                    <li>Demontaža stare kabine/kadice i priprema podloge</li>
+                    <li>Sifon visoke propusnosti sa savitljivim crevom, profi silikon, tiplovi i šrafovi</li>
+                    <li>Nivelisanje kadice, spajanje odvoda, montaža alu-profila i stakala, silikonisanje</li>
+                    <li>Test oticanja vode i nepropusnosti pod direktnim mlazom</li>
+                </ul>
+            </div>
+            <div class="contact-box">
+                <span class="contact-box-title">Pošaljite sliku za proveru termina:</span>
+                <div class="chat-buttons">
+                    <a href="https://wa.me/381604844952?text=Zdravo,%20interesuje%20me%20Paket%20SVE-U-1%20Tus%20Kabina" target="_blank" class="btn-chat btn-whatsapp">
+                        WhatsApp
+                    </a>
+                    <a href="viber://chat?number=%2B381604844952" target="_blank" class="btn-chat btn-viber">
+                        Viber
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
 
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="sr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator adaptacije kupatila | majstor.in.rs</title>
-    <style>
-        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
-        .calculator-card { max-width: 650px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        h2 { color: #1a365d; text-align: center; margin-bottom: 10px; }
-        p.subtitle { text-align: center; color: #666; font-size: 14px; margin-bottom: 25px; }
-        .form-group { margin-bottom: 20px; }
-        label { font-weight: 600; display: block; margin-bottom: 8px; color: #2d3748; }
-        input[type="number"] { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 6px; font-size: 16px; transition: 0.3s; }
-        input[type="number"]:focus { border-color: #3182ce; outline: none; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .result-box { background: #ebf8ff; border: 2px dashed #3182ce; padding: 20px; border-radius: 8px; margin-top: 25px; text-align: center; }
-        .result-title { font-size: 14px; color: #2b6cb0; text-transform: uppercase; font-weight: bold; }
-        .result-amount { font-size: 28px; color: #2c5282; font-weight: bold; margin: 10px 0; }
-        .btn-submit { width: 100%; background: #2b6cb0; color: #fff; border: none; padding: 15px; border-radius: 6px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 15px; transition: 0.3s; }
-        .btn-submit:hover { background: #2c5282; }
-        
-        /* Modal za preuzimanje vodiča */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; }
-        .modal-content { background: #fff; padding: 30px; border-radius: 10px; max-width: 450px; width: 90%; text-align: center; position: relative; }
-        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #a0aec0; }
-    </style>
-</head>
-<body>
-
-<div class="calculator-card">
-    <h2>🧮 Kalkulator Adaptacije Kupatila</h2>
-    <p class="subtitle">Izračunajte okvirne troškove materijala i radova za vaše kupatilo</p>
-
-    <div class="form-group">
-        <label for="pod">Površina poda (m²):</label>
-        <input type="number" id="pod" placeholder="Npr. 5" value="5" oninput="izracunaj()">
-    </div>
-
-    <div class="grid-2">
-        <div class="form-group">
-            <label for="obim">Obim kupatila (m):</label>
-            <input type="number" id="obim" placeholder="Npr. 9" value="9" oninput="izracunaj()">
+        <!-- Paket 5: Walk-In Paravan -->
+        <div class="package-card">
+            <div>
+                <h3 class="package-title">Paket „SVE-U-1” Walk-In Paravan</h3>
+                <div class="package-price">13.000 RSD</div>
+                <ul class="package-features">
+                    <li>Skidanje starog paravana ili zavese</li>
+                    <li>Zidni alu-profili, stabilizatorska šipka, profi sanitarni silikon, tiplovi</li>
+                    <li>Lasersko nivelisanje profila, fiksiranje stakla, montaža stabilizatora</li>
+                    <li>Provera stabilnosti i nepropusnosti donje barijere</li>
+                </ul>
+            </div>
+            <div class="contact-box">
+                <span class="contact-box-title">Pošaljite sliku za proveru termina:</span>
+                <div class="chat-buttons">
+                    <a href="https://wa.me/381604844952?text=Zdravo,%20interesuje%20me%20Paket%20SVE-U-1%20Walk-In%20Paravan" target="_blank" class="btn-chat btn-whatsapp">
+                        WhatsApp
+                    </a>
+                    <a href="viber://chat?number=%2B381604844952" target="_blank" class="btn-chat btn-viber">
+                        Viber
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="visina">Visina pločica (m):</label>
-            <input type="number" id="visina" placeholder="Npr. 2.5" value="2.5" oninput="izracunaj()">
+
+        <!-- Paket 6: Kupatilski Nameštaj -->
+        <div class="package-card">
+            <div>
+                <h3 class="package-title">Paket „SVE-U-1” Kupatilski Nameštaj</h3>
+                <div class="package-price">11.500 RSD</div>
+                <ul class="package-features">
+                    <li>Demontaža starog lavaboa, konzola i ogledala</li>
+                    <li>Sifon sa prelivom, 2x EK ventila, brinoksi, sanitarni silikon, tiplovi</li>
+                    <li>Montaža ormarića i umivaonika, kačenje ogledala sa laserskim ravnanjem, spajanje LED rasvete</li>
+                    <li>Provera odvodnog sistema i stabilnosti</li>
+                </ul>
+            </div>
+            <div class="contact-box">
+                <span class="contact-box-title">Pošaljite sliku za proveru termina:</span>
+                <div class="chat-buttons">
+                    <a href="https://wa.me/381604844952?text=Zdravo,%20interesuje%20me%20Paket%20SVE-U-1%20Kupatilski%20Namestaj" target="_blank" class="btn-chat btn-whatsapp">
+                        WhatsApp
+                    </a>
+                    <a href="viber://chat?number=%2B381604844952" target="_blank" class="btn-chat btn-viber">
+                        Viber
+                    </a>
+                </div>
+            </div>
         </div>
+
     </div>
 
-    <div class="result-box">
-        <div class="result-title">Procenjena investicija (Materijal + Radovi)</div>
-        <div class="result-amount" id="ukupno-cena">0 RSD</div>
-        <small style="color: #718096;">*Obuhvata rušenje, nove instalacije, hidroizolaciju, keramiku i montažu</small>
+    <!-- SEO LOKACIJE -->
+    <div class="seo-box">
+        <h3>Lokacije i opštine koje pokrivamo</h3>
+        <p><strong>Zemun:</strong> Gornji grad, Donji grad, Novi grad, Altina, Busije, Batajnica, Zemun Polje, Galenika, 13. maj | <strong>Novi Beograd:</strong> Svi blokovi, Bežanijska kosa, Ledine | <strong>Ostale opštine:</strong> Palilula, Voždovac, Zvezdara, Čukarica, Rakovica, Stari grad, Vračar, Savski venac, Surčin i okolina Beograda po dogovoru.</p>
     </div>
 
-    <button class="btn-submit" onclick="otvoriModal()">📥 Preuzmite detaljan proračun i Ček-listu (PDF + Excel)</button>
+    <footer>
+        <p>© majstor.in.rs — Sve-U-1 Vodoinstalaterske usluge i montaža | Telefon: 060/484-4952</p>
+    </footer>
+
 </div>
-
-<!-- MODAL POP-UP -->
-<div class="modal" id="leadModal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="zatvoriModal()">&times;</span>
-        <h3>Besplatan Vodič & Excel Kalkulator</h3>
-        <p style="color: #4a5568; font-size: 14px;">Unesite podatke gde da vam pošaljemo detaljnu specifikaciju i profil za izbegavanje grešaka majstora.</p>
-        
-        <form id="leadForm" onsubmit="posaljiUpit(event)">
-            <div class="form-group">
-                <input type="text" id="ime" placeholder="Vaše ime" required>
-            </div>
-            <div class="form-group">
-                <input type="tel" id="telefon" placeholder="Vaš broj telefona" required>
-            </div>
-            <button type="submit" class="btn-submit" style="background: #38a169;">Besplatno Preuzmi</button>
-        </form>
-    </div>
-</div>
-
-<script>
-    function izracunaj() {
-        const pod = parseFloat(document.getElementById('pod').value) || 0;
-        const obim = parseFloat(document.getElementById('obim').value) || 0;
-        const visina = parseFloat(document.getElementById('visina').value) || 0;
-
-        const povrsinaZidova = obim * visina;
-        const ukupnoM2 = pod + povrsinaZidova;
-
-        // Prosečni normativi i cene (materijal + rad)
-        const materijalSrednje = ukupnoM2 * 2800; // Pločice, lepak, hidroizolacija, fuge
-        const radoviSrednje = ukupnoM2 * 4500;   // Vodovod, rušenje, keramika, montaža
-        const fiksniTrosak = 35000;              // Vodovodne cevi i fiting paušalno
-
-        const ukupno = Math.round(materijalSrednje + radoviSrednje + fiksniTrosak);
-
-        document.getElementById('ukupno-cena').innerText = ukupno.toLocaleString('sr-RS') + " RSD";
-    }
-
-    function otvoriModal() {
-        document.getElementById('leadModal').style.display = 'flex';
-    }
-
-    function zatvoriModal() {
-        document.getElementById('leadModal').style.display = 'none';
-    }
-
-    function posaljiUpit(e) {
-        e.preventDefault();
-        const ime = document.getElementById('ime').value;
-        const tel = document.getElementById('telefon').value;
-        
-        alert("Hvala " + ime + "! Vodič i kalkulator su spremni za preuzimanje.");
-        zatvoriModal();
-    }
-
-    // Inicijalni proračun na učitavanju
-    izracunaj();
-</script>
 
 </body>
 </html>
