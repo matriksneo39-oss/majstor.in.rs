@@ -1,321 +1,463 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>majstor.in.rs — Sve-U-1 Vodoinstalaterske usluge i montaža</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1a1a1a;
+            --accent-green: #00b074;
+            --accent-orange: #f39c51;
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --border-color: #00b074;
+            --consulting-border: #f39c51;
+            --consulting-accent: #f39c51;
+            --consulting-card-bg: #1e1915;
+            --whatsapp-green: #25D366;
+            --viber-purple: #7360f2;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-    <!-- BANER -->
-    <div class="hero-banner">
-        <h1>BEZ TRČANJA PO PRODAVNICAMA.<br>BEZ SKRIVENIH TROŠKOVA.</h1>
-        <p class="subtitle">Naručite uređaj sa kompletnom „Sve-U-1” montažom na majstor.in.rs. Mi donosimo sav fiting, skidamo staro, montiramo novo i puštamo u rad.</p>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* Hero / Header Box */
+        .hero-box {
+            background-color: #0f273d;
+            border: 2px solid #1b4965;
+            border-radius: 12px;
+            padding: 24px 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero-title {
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero-desc {
+            font-size: 15px;
+            color: #74c69d;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .hero-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .hero-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .hero-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .hero-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-orange);
+            color: #121212;
+            text-align: center;
+            font-weight: bold;
+            padding: 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(243, 156, 81, 0.3);
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--accent-green);
+            padding-bottom: 6px;
+            display: inline-block;
+        }
+
+        .section-title.consulting-title {
+            border-bottom-color: var(--consulting-accent);
+            margin-top: 20px;
+        }
+
+        .consulting-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* Package Cards */
+        .card {
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card.consulting-card {
+            background-color: var(--consulting-card-bg);
+            border-color: var(--consulting-border);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card-price {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--accent-green);
+            margin-bottom: 16px;
+        }
+
+        .consulting-card .card-price {
+            color: var(--consulting-accent);
+        }
+
+        .card-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .card-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .card-list li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-size: 14px;
+        }
+
+        .consulting-card .card-list li::before {
+            color: var(--consulting-accent);
+        }
+
+        /* Contact Box inside Card */
+        .action-box {
+            background-color: #121212;
+            border: 1px dashed #333;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .consulting-card .action-box {
+            border-color: #443322;
+        }
+
+        .action-box p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px 0;
+            border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            color: white;
+            display: inline-block;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+        }
+
+        .btn-viber {
+            background-color: var(--viber-purple);
+        }
+
+        /* Locations Box */
+        .locations-box {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 30px 0;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .locations-box strong {
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            padding: 20px 0;
+            border-top: 1px solid #222;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Hero Header -->
+    <div class="hero-box">
+        <h1 class="hero-title">Bez trčanja po prodavnicama. Bez skrivenih troškova.</h1>
+        <p class="hero-desc">Naručite uređaj sa kompletnom „Sve-U-1” montažom na majstor.in.rs. Mi donosimo sav fiting, skidamo staro, montiramo novo i puštamo u rad.</p>
         
-        <ul class="checklist">
+        <ul class="hero-list">
             <li>Demontaža i odnošenje starog uređaja/opreme</li>
             <li>Kompletan potrošni materijal (brinoksi, EK ventili, sifoni, tiplovi, silikon)</li>
             <li>Profi montaža i garancija na izvedene radove</li>
         </ul>
 
-        <a href="#paketi" class="btn-cta">POGLEDAJ SVE-U-1 PAKETE MONTAŽE</a>
+        <a href="#paketi" class="hero-btn">Pogledaj Sve-U-1 pakete montaže</a>
     </div>
 
-    <!-- PAKETI -->
     <h2 class="section-title" id="paketi">Izdvojeni „Sve-U-1” Paketi</h2>
-    
-    <div class="packages-grid">
-        
-        <!-- Paket 1: Bojler -->
-        <div class="package-card">
-            <div>
-                <h3 class="package-title">Paket „SVE-U-1” Bojler</h3>
-                <div class="package-price">9.500 RSD</div>
-                <ul class="package-features">
-                    <li>Demontaža i pražnjenje starog bojlera</li>
-                    <li>2x Inox flex brinoks creva, 2x hromirani dupli niplovi, rozetne, tiplovi, zaptivni materijal</li>
-                    <li>Kačenje novog bojlera, povezivanje na vodovod i struju</li>
-                    <li>Puštanje u rad, provera sigurnosnog ventila i pritiska</li>
-                </ul>
-            </div>
-            <div class="contact-box">
-                <span class="contact-box-title">Pošaljite sliku za proveru termina:</span>
-                <div class="chat-buttons">
-                    <a href="https://wa.me/381604844952?text=Zdravo,%20interesuje%20me%20Paket%20SVE-U-1%20Bojler" target="_blank" class="btn-chat btn-whatsapp">
-                        WhatsApp
-                    </a>
-                    <a href="viber://chat?number=%2B381604844952" target="_blank" class="btn-chat btn-viber">
-                        Viber
-                    </a>
-                </div>
+
+    <!-- Paket Bojler -->
+    <div class="card">
+        <h3 class="card-title">Paket „SVE-U-1” Bojler</h3>
+        <div class="card-price">9.500 RSD</div>
+        <ul class="card-list">
+            <li>Demontaža i pražnjenje starog bojler</li>
+            <li>2x Inox flex brinoks creva, 2x hromirani dupli niplovi, rozetne, tiplovi, zaptivni materijal</li>
+            <li>Kačenje novog bojlera, povezivanje na vodovod i struju</li>
+            <li>Puštamo u rad, provera sigurnosnog ventila i pritiska</li>
+        </ul>
+        <div class="action-box">
+            <p>Pošaljite sliku za proveru termina:</p>
+            <div class="btn-group">
+                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
             </div>
         </div>
-
-        <!-- Paket 2: Monoblok / WC Šolja -->
-        <div class="package-card">
-            <div>
-                <h3 class="package-title">Paket „SVE-U-1” Monoblok / WC Šolja</h3>
-                <div class="package-price">9.500 RSD</div>
-                <ul class="package-features">
-                    <li>Demontaža stare WC šolje i vodokotlića</li>
-                    <li>Ekscentrična manžetna za odvod, novi EK ventil sa filterom, brinoks, podni šrafovi, silikon</li>
-                    <li>Sklapanje mehanizma, fiksiranje šolje za pod, zaptivanje baze</li>
-                    <li>Provera ispiranja i zaptivenosti odvoda pod pritiskom</li>
-                </ul>
-            </div>
-            <div class="contact-box">
-                <span class="contact-box-title">Pošaljite sliku za proveru termina:</span>
-                <div class="chat-buttons">
-                    <a href="https://wa.me/381604844952?text=Zdravo,%20interesuje%20me%20Paket%20SVE-U-1%20WC%20Solja" target="_blank" class="btn-chat btn-whatsapp">
-                        WhatsApp
-                    </a>
-                    <a href="viber://chat?number=%2B381604844952" target="_blank" class="btn-chat btn-viber">
-                        Viber
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Paket 3: Baterije -->
-        <div class="package-card">
-            <div>
-                <h3 class="package-title">Paket „SVE-U-1” Baterije (Slavine)</h3>
-                <div class="package-price">6.700 RSD</div>
-                <ul class="package-features">
-                    <li>Demontaža stare baterije i priključaka</li>
-                    <li>2x EK ventila sa filterom ili 2x mesingana ekscentra sa rozetnama, brinoksi, zaptivke</li>
-                    <li>Montaža nove baterije, povezivanje na mrežu, nivelisanje</li>
-                    <li>Provera pritiska, prebacivača i aeratora pod punim mlazom</li>
-                </ul>
-            </div>
-            <div class="contact-box">
-                <span class="contact-box-title">Pošaljite sliku za proveru termina:</span>
-                <div class="chat-buttons">
-                    <a href="https://wa.me/381604844952?text=Zdravo,%20interesuje%20me%20Paket%20SVE-U-1%20Baterije" target="_blank" class="btn-chat btn-whatsapp">
-                        WhatsApp
-                    </a>
-                    <a href="viber://chat?number=%2B381604844952" target="_blank" class="btn-chat btn-viber">
-                        Viber
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Paket 4: Tuš Kabina -->
-        <div class="package-card">
-            <div>
-                <h3 class="package-title">Paket „SVE-U-1” Tuš Kabina sa Kadicom</h3>
-                <div class="package-price">16.000 RSD</div>
-                <ul class="package-features">
-                    <li>Demontaža stare kabine/kadice i priprema podloge</li>
-                    <li>Sifon visoke propusnosti sa savitljivim crevom, profi silikon, tiplovi i šrafovi</li>
-                    <li>Nivelisanje kadice, spajanje odvoda, montaža alu-profila i stakala, silikonisanje</li>
-                    <li>Test oticanja vode i nepropusnosti pod direktnim mlazom</li>
-                </ul>
-            </div>
-            <div class="contact-box">
-                <span class="contact-box-title">Pošaljite sliku za proveru termina:</span>
-                <div class="chat-buttons">
-                    <a href="https://wa.me/381604844952?text=Zdravo,%20interesuje%20me%20Paket%20SVE-U-1%20Tus%20Kabina" target="_blank" class="btn-chat btn-whatsapp">
-                        WhatsApp
-                    </a>
-                    <a href="viber://chat?number=%2B381604844952" target="_blank" class="btn-chat btn-viber">
-                        Viber
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Paket 5: Walk-In Paravan -->
-        <div class="package-card">
-            <div>
-                <h3 class="package-title">Paket „SVE-U-1” Walk-In Paravan</h3>
-                <div class="package-price">13.000 RSD</div>
-                <ul class="package-features">
-                    <li>Skidanje starog paravana ili zavese</li>
-                    <li>Zidni alu-profili, stabilizatorska šipka, profi sanitarni silikon, tiplovi</li>
-                    <li>Lasersko nivelisanje profila, fiksiranje stakla, montaža stabilizatora</li>
-                    <li>Provera stabilnosti i nepropusnosti donje barijere</li>
-                </ul>
-            </div>
-            <div class="contact-box">
-                <span class="contact-box-title">Pošaljite sliku za proveru termina:</span>
-                <div class="chat-buttons">
-                    <a href="https://wa.me/381604844952?text=Zdravo,%20interesuje%20me%20Paket%20SVE-U-1%20Walk-In%20Paravan" target="_blank" class="btn-chat btn-whatsapp">
-                        WhatsApp
-                    </a>
-                    <a href="viber://chat?number=%2B381604844952" target="_blank" class="btn-chat btn-viber">
-                        Viber
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Paket 6: Kupatilski Nameštaj -->
-        <div class="package-card">
-            <div>
-                <h3 class="package-title">Paket „SVE-U-1” Kupatilski Nameštaj</h3>
-                <div class="package-price">11.500 RSD</div>
-                <ul class="package-features">
-                    <li>Demontaža starog lavaboa, konzola i ogledala</li>
-                    <li>Sifon sa prelivom, 2x EK ventila, brinoksi, sanitarni silikon, tiplovi</li>
-                    <li>Montaža ormarića i umivaonika, kačenje ogledala sa laserskim ravnanjem, spajanje LED rasvete</li>
-                    <li>Provera odvodnog sistema i stabilnosti</li>
-                </ul>
-            </div>
-            <div class="contact-box">
-                <span class="contact-box-title">Pošaljite sliku za proveru termina:</span>
-                <div class="chat-buttons">
-                    <a href="https://wa.me/381604844952?text=Zdravo,%20interesuje%20me%20Paket%20SVE-U-1%20Kupatilski%20Namestaj" target="_blank" class="btn-chat btn-whatsapp">
-                        WhatsApp
-                    </a>
-                    <a href="viber://chat?number=%2B381604844952" target="_blank" class="btn-chat btn-viber">
-                        Viber
-                    </a>
-                </div>
-            </div>
-        </div>
-
     </div>
 
-    <!-- SEO LOKACIJE -->
-    <div class="seo-box">
-        <h3>Lokacije i opštine koje pokrivamo</h3>
-        <p><strong>Zemun:</strong> Gornji grad, Donji grad, Novi grad, Altina, Busije, Batajnica, Zemun Polje, Galenika, 13. maj | <strong>Novi Beograd:</strong> Svi blokovi, Bežanijska kosa, Ledine | <strong>Ostale opštine:</strong> Palilula, Voždovac, Zvezdara, Čukarica, Rakovica, Stari grad, Vračar, Savski venac, Surčin i okolina Beograda po dogovoru.</p>
+    <!-- Paket Monoblok / WC Šolja -->
+    <div class="card">
+        <h3 class="card-title">Paket „SVE-U-1” Monoblok / WC Šolja</h3>
+        <div class="card-price">9.500 RSD</div>
+        <ul class="card-list">
+            <li>Demontaža stare WC šolje i vodokotlića</li>
+            <li>Ekscentrična manžetna za odvod, novi EK ventil sa filterom, brinoks, podni šrafovi, silikon</li>
+            <li>Sklapanje mehanizma, fiksiranje šolje za pod, zaptivanje baze</li>
+            <li>Provera ispiranja i zaptivenosti odvoda pod pritiskom</li>
+        </ul>
+        <div class="action-box">
+            <p>Pošaljite sliku za proveru termina:</p>
+            <div class="btn-group">
+                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paket Baterije -->
+    <div class="card">
+        <h3 class="card-title">Paket „SVE-U-1” Baterije (Slavine)</h3>
+        <div class="card-price">6.700 RSD</div>
+        <ul class="card-list">
+            <li>Demontaža stare baterije i priključaka</li>
+            <li>2x EK ventila sa filterom ili 2x mesingana ekscentra sa rozetnama, brinoksi, zaptivke</li>
+            <li>Montaža nove baterije, povezivanje na mrežu, nivelisanje</li>
+            <li>Provera pritiska, prebacivača i aeratora pod punim mlazom</li>
+        </ul>
+        <div class="action-box">
+            <p>Pošaljite sliku za proveru termina:</p>
+            <div class="btn-group">
+                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paket Tuš Kabina -->
+    <div class="card">
+        <h3 class="card-title">Paket „SVE-U-1” Tuš Kabina sa Kadicom</h3>
+        <div class="card-price">16.000 RSD</div>
+        <ul class="card-list">
+            <li>Demontaža stare kabine/kadice i priprema podloge</li>
+            <li>Sifon visoke propusnosti sa savitljivim crevom, profi silikon, tiplovi i šrafovi</li>
+            <li>Nivelisanje kadice, spajanje odvoda, montaža alu-profila i stakala, silikonisanje</li>
+            <li>Test oticanja vode i nepropusnosti pod direktnim mlazom</li>
+        </ul>
+        <div class="action-box">
+            <p>Pošaljite sliku za proveru termina:</p>
+            <div class="btn-group">
+                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paket Walk-In Paravan -->
+    <div class="card">
+        <h3 class="card-title">Paket „SVE-U-1” Walk-In Paravan</h3>
+        <div class="card-price">13.000 RSD</div>
+        <ul class="card-list">
+            <li>Skidanje starog paravana ili zavese</li>
+            <li>Zidni alu-profili, stabilizatorska šipka, profi sanitarni silikon, tiplovi</li>
+            <li>Lasersko nivelisanje profila, fiksiranje stakla, montaža stabilizatora</li>
+            <li>Provera stabilnosti i nepropusnosti donje barijere</li>
+        </ul>
+        <div class="action-box">
+            <p>Pošaljite sliku za proveru termina:</p>
+            <div class="btn-group">
+                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paket Kupatilski Nameštaj -->
+    <div class="card">
+        <h3 class="card-title">Paket „SVE-U-1” Kupatilski Nameštaj</h3>
+        <div class="card-price">11.500 RSD</div>
+        <ul class="card-list">
+            <li>Demontaža starog lavaboa, konzola i ogledala</li>
+            <li>Sifon sa prelivom, 2x EK ventila, brinoksi, sanitarni silikon, tiplovi</li>
+            <li>Montaža ormarića i umivaonika, kačenje ogledala sa laserskim ravnjanjem, spajanje LED rasvete</li>
+            <li>Provera odvodnog sistema i stabilnosti</li>
+        </ul>
+        <div class="action-box">
+            <p>Pošaljite sliku za proveru termina:</p>
+            <div class="btn-group">
+                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lokacije -->
+    <div class="locations-box">
+        <strong>Lokacije i opštine koje pokrivamo:</strong>
+        Zemun: Gornji grad, Donji grad, Novi grad, Altina, Busije, Batajnica, Zemun Polje, Galenika, 13. maj | Novi Beograd: Svi blokovi, Bežanijska kosa, Ledine | Ostale opštine: Palilula, Voždovac, Zvezdara, Čukarica, Rakovica, Stari grad, Vračar, Savski venac, Surčin i okolina Beograda po dogovoru.
+    </div>
+
+    <!-- KONZALTING I DIJAGNOSTIKA SEKCIJA (Drugačija paleta boja - jantar / bronze) -->
+    <h2 class="section-title consulting-title">Paketi za Tehnički Konsalting & Dijagnostiku</h2>
+    <p class="consulting-subtitle">Stručna provera, specifikacija bez škarta i međufazna kontrola radova</p>
+
+    <!-- Paket Online Konsultacije -->
+    <div class="card consulting-card">
+        <h3 class="card-title">Paket Online Konsultacije</h3>
+        <div class="card-price">3.500 RSD</div>
+        <ul class="card-list">
+            <li>Analiza: Slika, video snimaka ili skice kupatila putem Viber / WhatsApp / poziva</li>
+            <li>Preporuka opreme: Stručni saveti za izbor odgovarajućih modela i dimenzija sanitarija</li>
+            <li>Brendovi: Provereni sistemi spram vašeg budžeta (Geberit, Peštan, Sika, Mapei)</li>
+            <li>Bez greške: Procena tehničke izvodljivosti i izbegavanje kupovine pogrešne opreme</li>
+        </ul>
+        <div class="action-box">
+            <p>Kontaktirajte nas za zakazivanje konsultacija:</p>
+            <div class="btn-group">
+                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paket Terenska Dijagnostika -->
+    <div class="card consulting-card">
+        <h3 class="card-title">Paket Terenska Dijagnostika ⭐</h3>
+        <div class="card-price">7.000 RSD</div>
+        <ul class="card-list">
+            <li>Pregled na terenu: Dolazak na objekat (Beograd i okolina) i detaljan pregled vertikala i odvoda</li>
+            <li>Merenje pritiska: Precizno merenje pritiska i određivanje tačnih pozicija za instalacije</li>
+            <li>Bez škarta: Kompletna specifikacija potrebnog materijala bez viškova i nagomilavanja</li>
+            <li>Plan radova: Definisanje redosleda radova i saveti za pripremu podloge i hidroizolacije</li>
+        </ul>
+        <div class="action-box">
+            <p>Kontaktirajte nas za zakazivanje terenske dijagnostike:</p>
+            <div class="btn-group">
+                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paket Premium Konsalting -->
+    <div class="card consulting-card">
+        <h3 class="card-title">Paket Premium Konsalting</h3>
+        <div class="card-price">14.000 RSD</div>
+        <ul class="card-list">
+            <li>Kompletna dijagnostika: Sve iz paketa Terenske Dijagnostike (izlazak na teren + merenja)</li>
+            <li>Pratnja u salonu: Asistencija pri kupovini / detaljna provera narudžbenice u salonu</li>
+            <li>Međufazna kontrola: Kontrolni izlazak pre zatvaranja zidova i lepljenja pločica</li>
+            <li>Provera instalacija: Provera ugradnih vodokotlića, padova cevovoda i zaptivenosti hidroizolacije</li>
+        </ul>
+        <div class="action-box">
+            <p>Kontaktirajte nas za zakazivanje premium konsaltinga:</p>
+            <div class="btn-group">
+                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <p>© majstor.in.rs — Sve-U-1 Vodoinstalaterske usluge i montaža | Telefon: 060/484-4952</p>
+        © majstor.in.rs — Sve-U-1 Vodoinstalaterske usluge i montaža | Telefon: 060/484-4952
     </footer>
 
 </div>
 
 </body>
-</html><!-- SCHEMA.ORG STRUKTURIRANI PODACI ZA GOOGLE I AI BOTOVE -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "@id": "https://majstor.in.rs/#konsalting-basic",
-      "name": "Online Konsultacije za Vodovod i Sanitarije",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Majstor.in.rs",
-        "url": "https://majstor.in.rs",
-        "telephone": "+381604844952",
-        "areaServed": "Beograd"
-      },
-      "description": "Analiza slika, video snimaka ili skice kupatila. Preporuka modela, dimenzija i proverenih brendova (Geberit, Peštan, Sika, Mapei).",
-      "offers": {
-        "@type": "Offer",
-        "price": "3500",
-        "priceCurrency": "RSD"
-      }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://majstor.in.rs/#konsalting-standard",
-      "name": "Terenska Dijagnostika i Specifikacija Materijala",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Majstor.in.rs",
-        "url": "https://majstor.in.rs",
-        "telephone": "+381604844952",
-        "areaServed": "Beograd i okolina"
-      },
-      "description": "Izlazak na teren, pregled vertikala, odvoda, merenje pritiska i izrada tačne specifikacije materijala bez škarta.",
-      "offers": {
-        "@type": "Offer",
-        "price": "7000",
-        "priceCurrency": "RSD"
-      }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://majstor.in.rs/#konsalting-premium",
-      "name": "Premium Tehnički Konsalting i Kontrola Radova",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Majstor.in.rs",
-        "url": "https://majstor.in.rs",
-        "telephone": "+381604844952",
-        "areaServed": "Beograd i okolina"
-      },
-      "description": "Terenska dijagnostika, pratnja u salonu sanitarija i međufazna kontrola radova pre zatvaranja zidova i lepljenja pločica.",
-      "offers": {
-        "@type": "Offer",
-        "price": "14000",
-        "priceCurrency": "RSD"
-      }
-    }
-  ]
-}
-</script>
-
-<!-- NASLOV SEKCIJE U NASTAVKU STRANICE -->
-<div style="text-align: center; margin: 45px 0 25px 0; padding: 0 10px;">
-  <h2 style="color: #ffffff; font-size: 1.6rem; margin-bottom: 8px;">
-    Paketi za Tehnički Konsalting & Dijagnostiku
-  </h2>
-  <p style="color: #f59e0b; font-size: 0.95rem; margin: 0; font-weight: 500;">
-    Stručna provera, specifikacija bez škarta i međufazna kontrola radova
-  </p>
-</div>
-
-<!-- 1. PAKET: ONLINE KONSULTACIJE (ZLATNA / AMBER AKCENT) -->
-<div class="card package-card" style="border: 2px solid #f59e0b !important;">
-  <h3 style="color: #ffffff;">Paket Online Konsultacije</h3>
-  <div class="price-tag" style="color: #f59e0b !important;">3.500 RSD</div>
-
-  <ul class="package-features">
-    <li><strong style="color: #f59e0b;">Analiza:</strong> Slika, video snimaka ili skice kupatila putem Viber / WhatsApp / poziva</li>
-    <li><strong style="color: #f59e0b;">Preporuka opreme:</strong> Stručni saveti za izbor odgovarajućih modela i dimenzija sanitarija</li>
-    <li><strong style="color: #f59e0b;">Brendovi:</strong> Provereni sistemi spram vašeg budžeta (Geberit, Peštan, Sika, Mapei)</li>
-    <li><strong style="color: #f59e0b;">Bez greške:</strong> Procena tehničke izvodljivosti i izbegavanje kupovine pogrešne opreme</li>
-  </ul>
-
-  <div class="action-box">
-    <p style="margin-bottom: 12px; font-weight: bold; color: #ffffff;">Kontaktirajte nas za zakazivanje konsultacija:</p>
-    <div class="button-group">
-      <a href="https://wa.me/381604844952?text=Zdravo,%20želim%20da%20vas%20kontaktiram%20za%20Paket%20Online%20Konsultacije" class="btn btn-whatsapp">WhatsApp</a>
-      <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
-    </div>
-  </div>
-</div>
-
-<!-- 2. PAKET: TERENSKA DIJAGNOSTIKA (ELEKTRIČNO PLAVI AKCENT - NAJPOPULARNIJE) -->
-<div class="card package-card" style="border: 2px solid #38bdf8 !important; box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);">
-  <h3 style="color: #ffffff;">Paket Terenska Dijagnostika ⭐</h3>
-  <div class="price-tag" style="color: #38bdf8 !important;">7.000 RSD</div>
-
-  <ul class="package-features">
-    <li><strong style="color: #38bdf8;">Pregled na terenu:</strong> Dolazak na objekat (Beograd i okolina) i detaljan pregled vertikala i odvoda</li>
-    <li><strong style="color: #38bdf8;">Merenje pritiska:</strong> Precizno merenje pritiska i određivanje tačnih pozicija za instalacije</li>
-    <li><strong style="color: #38bdf8;">Bez škarta:</strong> Kompletna specifikacija potrebnog materijala bez viškova i nagomilavanja</li>
-    <li><strong style="color: #38bdf8;">Plan radova:</strong> Definisanje redosleda radova i saveti za pripremu podloge i hidroizolacije</li>
-  </ul>
-
-  <div class="action-box">
-    <p style="margin-bottom: 12px; font-weight: bold; color: #ffffff;">Kontaktirajte nas za zakazivanje terenske dijagnostike:</p>
-    <div class="button-group">
-      <a href="https://wa.me/381604844952?text=Zdravo,%20želim%20da%20vas%20kontaktiram%20za%20Paket%20Terenska%20Dijagnostika" class="btn btn-whatsapp">WhatsApp</a>
-      <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
-    </div>
-  </div>
-</div>
-
-<!-- 3. PAKET: PREMIUM KONSALTING (SMARAGDNO ZELENI AKCENT) -->
-<div class="card package-card" style="border: 2px solid #10b981 !important;">
-  <h3 style="color: #ffffff;">Paket Premium Konsalting</h3>
-  <div class="price-tag" style="color: #10b981 !important;">14.000 RSD</div>
-
-  <ul class="package-features">
-    <li><strong style="color: #10b981;">Kompletna dijagnostika:</strong> Sve iz paketa Terenske Dijagnostike (izlazak na teren + merenja)</li>
-    <li><strong style="color: #10b981;">Pratnja u salonu:</strong> Asistencija pri kupovini / detaljna provera narudžbenice u salonu</li>
-    <li><strong style="color: #10b981;">Međufazna kontrola:</strong> Kontrolni izlazak pre zatvaranja zidova i lepljenja pločica</li>
-    <li><strong style="color: #10b981;">Provera instalacija:</strong> Provera ugradnih vodokotlića, padova cevovoda i zaptivenosti hidroizolacije</li>
-  </ul>
-
-  <div class="action-box">
-    <p style="margin-bottom: 12px; font-weight: bold; color: #ffffff;">Kontaktirajte nas za zakazivanje premium konsaltinga:</p>
-    <div class="button-group">
-      <a href="https://wa.me/381604844952?text=Zdravo,%20želim%20da%20vas%20kontaktiram%20za%20Paket%20Premium%20Konsalting" class="btn btn-whatsapp">WhatsApp</a>
-      <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
-    </div>
-  </div>
-</div>
+</html>
