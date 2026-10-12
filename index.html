@@ -8,11 +8,11 @@
         :root {
             --bg-color: #121212;
             --card-bg: #1a1a1a;
-            --accent-green: #00b074;
+            --accent-green: #00d68f;
             --accent-orange: #f39c51;
             --text-main: #ffffff;
-            --text-muted: #b0b0b0;
-            --border-color: #00b074;
+            --text-muted: #d1d1d1;
+            --border-color: #00d68f;
             --consulting-border: #f39c51;
             --consulting-accent: #f39c51;
             --consulting-card-bg: #1e1915;
@@ -42,7 +42,7 @@
         /* Hero / Header Box */
         .hero-box {
             background-color: #0f273d;
-            border: 2px solid #1b4965;
+            border: 2px solid #2b6285;
             border-radius: 12px;
             padding: 24px 20px;
             margin-bottom: 30px;
@@ -59,7 +59,7 @@
 
         .hero-desc {
             font-size: 15px;
-            color: #74c69d;
+            color: #a8e6cf;
             margin-bottom: 20px;
             line-height: 1.4;
         }
@@ -183,14 +183,14 @@
         /* Contact Box inside Card */
         .action-box {
             background-color: #121212;
-            border: 1px dashed #333;
+            border: 1px dashed #555;
             border-radius: 8px;
             padding: 12px;
             text-align: center;
         }
 
         .consulting-card .action-box {
-            border-color: #443322;
+            border-color: #775533;
         }
 
         .action-box p {
@@ -218,6 +218,8 @@
 
         .btn-whatsapp {
             background-color: var(--whatsapp-green);
+            color: #000;
+            font-weight: 700;
         }
 
         .btn-viber {
@@ -227,7 +229,7 @@
         /* Locations Box */
         .locations-box {
             background-color: var(--card-bg);
-            border: 1px solid #333;
+            border: 1px solid #444;
             border-radius: 10px;
             padding: 16px;
             margin: 30px 0;
@@ -241,217 +243,385 @@
             margin-bottom: 6px;
         }
 
+        /* FAQ Styling */
+        .faq-section {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .faq-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--accent-orange);
+            padding-bottom: 6px;
+            display: inline-block;
+        }
+
+        .accent-orange {
+            color: var(--accent-orange);
+        }
+
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 12px 16px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-answer {
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            border-top: 1px solid #2a2a2a;
+            padding-top: 10px;
+        }
+
+        .brand-text {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
         /* Footer */
         footer {
             text-align: center;
-            font-size: 11px;
+            font-size: 12px;
             color: var(--text-muted);
             padding: 20px 0;
             border-top: 1px solid #222;
             margin-top: 20px;
         }
     </style>
+
+    <!-- SEO FAQ Schema Markup za Google Bota -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Zašto platiti konsultacije pre kupovine opreme i početka radova?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kupovina pogrešnog ugradnog vodokotlića, neodgovarajućeg promera cevi ili loše hidroizolacije pravi škart i skupe greške. Konsultacijama dobijate tačnu specifikaciju materijala (Geberit, Peštan, Sika, Mapei) bez viškova i promašenih investicija."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Šta tačno dobijam u paketu Online Konsultacije za 3.500 RSD?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dobijate stručnu analizu vaših slika, snimaka ili skica putem Viber-a ili WhatsApp-a, preciznu preporuku dimenzija i modela sanitarija, spisak proverenih brendova (Geberit, Peštan, Sika, Mapei) i procenu tehničke izvodljivosti radova."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Koji je opseg terenske dijagnostike i šta ulazi u cenu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Terenska dijagnostika (7.000 RSD) pokriva Beograd i okolinu. Obuhvata dolazak na objekat, detaljan pregled vertikala i odvoda, kao i plan radova sa specifikacijom materijala bez nagomilavanja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li Premium Konsalting obuhvata proveru radova na terenu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da. Premium paket (14.000 RSD) obuhvata pratnju u salonu pri kupovini, kao i međufaznu kontrolu pre lepljenja pločica — proveru ugradnih kotlića, padova cevovoda i zaptivenosti hidroizolacije."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kako se zakazuje termin i kako se vrši plaćanje?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zakazivanje ide direktno putem WhatsApp, Viber ili pozivom na 060/484-4952. Online konsultacije se uplaćuju pre poziva, dok se terenske usluge plaćaju po obavljenom pregledu na terenu."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
 <div class="container">
+    <main>
+        <!-- Hero Header -->
+        <div class="hero-box">
+            <h1 class="hero-title">Bez trčanja po prodavnicama. Bez skrivenih troškova.</h1>
+            <p class="hero-desc">Naručite uređaj sa kompletnom „Sve-U-1” montažom na majstor.in.rs. Mi donosimo sav fiting, skidamo staro, montiramo novo i puštamo u rad.</p>
+            
+            <ul class="hero-list">
+                <li>Demontaža i odnošenje starog uređaja/opreme</li>
+                <li>Kompletan potrošni materijal (brinoksi, EK ventili, sifoni, tiplovi, silikon)</li>
+                <li>Profi montaža i garancija na izvedene radove</li>
+            </ul>
 
-    <!-- Hero Header -->
-    <div class="hero-box">
-        <h1 class="hero-title">Bez trčanja po prodavnicama. Bez skrivenih troškova.</h1>
-        <p class="hero-desc">Naručite uređaj sa kompletnom „Sve-U-1” montažom na majstor.in.rs. Mi donosimo sav fiting, skidamo staro, montiramo novo i puštamo u rad.</p>
-        
-        <ul class="hero-list">
-            <li>Demontaža i odnošenje starog uređaja/opreme</li>
-            <li>Kompletan potrošni materijal (brinoksi, EK ventili, sifoni, tiplovi, silikon)</li>
-            <li>Profi montaža i garancija na izvedene radove</li>
-        </ul>
+            <a href="#paketi" class="hero-btn">Pogledaj Sve-U-1 pakete montaže</a>
+        </div>
 
-        <a href="#paketi" class="hero-btn">Pogledaj Sve-U-1 pakete montaže</a>
-    </div>
+        <h2 class="section-title" id="paketi">Izdvojeni „Sve-U-1” Paketi</h2>
 
-    <h2 class="section-title" id="paketi">Izdvojeni „Sve-U-1” Paketi</h2>
-
-    <!-- Paket Bojler -->
-    <div class="card">
-        <h3 class="card-title">Paket „SVE-U-1” Bojler</h3>
-        <div class="card-price">9.500 RSD</div>
-        <ul class="card-list">
-            <li>Demontaža i pražnjenje starog bojler</li>
-            <li>2x Inox flex brinoks creva, 2x hromirani dupli niplovi, rozetne, tiplovi, zaptivni materijal</li>
-            <li>Kačenje novog bojlera, povezivanje na vodovod i struju</li>
-            <li>Puštamo u rad, provera sigurnosnog ventila i pritiska</li>
-        </ul>
-        <div class="action-box">
-            <p>Pošaljite sliku za proveru termina:</p>
-            <div class="btn-group">
-                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
-                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+        <!-- Paket Bojler -->
+        <div class="card">
+            <h3 class="card-title">Paket „SVE-U-1” Bojler</h3>
+            <div class="card-price">9.500 RSD</div>
+            <ul class="card-list">
+                <li>Demontaža i pražnjenje starog bojlera</li>
+                <li>2x Inox flex brinoks creva, 2x hromirani dupli niplovi, rozetne, tiplovi, zaptivni materijal</li>
+                <li>Kačenje novog bojlera, povezivanje na vodovod i struju</li>
+                <li>Puštamo u rad, provera sigurnosnog ventila i pritiska</li>
+            </ul>
+            <div class="action-box">
+                <p>Pošaljite sliku za proveru termina:</p>
+                <div class="btn-group">
+                    <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                    <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Paket Monoblok / WC Šolja -->
-    <div class="card">
-        <h3 class="card-title">Paket „SVE-U-1” Monoblok / WC Šolja</h3>
-        <div class="card-price">9.500 RSD</div>
-        <ul class="card-list">
-            <li>Demontaža stare WC šolje i vodokotlića</li>
-            <li>Ekscentrična manžetna za odvod, novi EK ventil sa filterom, brinoks, podni šrafovi, silikon</li>
-            <li>Sklapanje mehanizma, fiksiranje šolje za pod, zaptivanje baze</li>
-            <li>Provera ispiranja i zaptivenosti odvoda pod pritiskom</li>
-        </ul>
-        <div class="action-box">
-            <p>Pošaljite sliku za proveru termina:</p>
-            <div class="btn-group">
-                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
-                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+        <!-- Paket Monoblok / WC Šolja -->
+        <div class="card">
+            <h3 class="card-title">Paket „SVE-U-1” Monoblok / WC Šolja</h3>
+            <div class="card-price">9.500 RSD</div>
+            <ul class="card-list">
+                <li>Demontaža stare WC šolje i vodokotlića</li>
+                <li>Ekscentrična manžetna za odvod, novi EK ventil sa filterom, brinoks, podni šrafovi, silikon</li>
+                <li>Sklapanje mehanizma, fiksiranje šolje za pod, zaptivanje baze</li>
+                <li>Provera ispiranja i zaptivenosti odvoda pod pritiskom</li>
+            </ul>
+            <div class="action-box">
+                <p>Pošaljite sliku za proveru termina:</p>
+                <div class="btn-group">
+                    <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                    <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Paket Baterije -->
-    <div class="card">
-        <h3 class="card-title">Paket „SVE-U-1” Baterije (Slavine)</h3>
-        <div class="card-price">6.700 RSD</div>
-        <ul class="card-list">
-            <li>Demontaža stare baterije i priključaka</li>
-            <li>2x EK ventila sa filterom ili 2x mesingana ekscentra sa rozetnama, brinoksi, zaptivke</li>
-            <li>Montaža nove baterije, povezivanje na mrežu, nivelisanje</li>
-            <li>Provera pritiska, prebacivača i aeratora pod punim mlazom</li>
-        </ul>
-        <div class="action-box">
-            <p>Pošaljite sliku za proveru termina:</p>
-            <div class="btn-group">
-                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
-                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+        <!-- Paket Baterije -->
+        <div class="card">
+            <h3 class="card-title">Paket „SVE-U-1” Baterije (Slavine)</h3>
+            <div class="card-price">6.700 RSD</div>
+            <ul class="card-list">
+                <li>Demontaža stare baterije i priključaka</li>
+                <li>2x EK ventila sa filterom ili 2x mesingana ekscentra sa rozetnama, brinoksi, zaptivke</li>
+                <li>Montaža nove baterije, povezivanje na mrežu, nivelisanje</li>
+                <li>Provera pritiska, prebacivača i aeratora pod punim mlazom</li>
+            </ul>
+            <div class="action-box">
+                <p>Pošaljite sliku za proveru termina:</p>
+                <div class="btn-group">
+                    <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                    <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Paket Tuš Kabina -->
-    <div class="card">
-        <h3 class="card-title">Paket „SVE-U-1” Tuš Kabina sa Kadicom</h3>
-        <div class="card-price">16.000 RSD</div>
-        <ul class="card-list">
-            <li>Demontaža stare kabine/kadice i priprema podloge</li>
-            <li>Sifon visoke propusnosti sa savitljivim crevom, profi silikon, tiplovi i šrafovi</li>
-            <li>Nivelisanje kadice, spajanje odvoda, montaža alu-profila i stakala, silikonisanje</li>
-            <li>Test oticanja vode i nepropusnosti pod direktnim mlazom</li>
-        </ul>
-        <div class="action-box">
-            <p>Pošaljite sliku za proveru termina:</p>
-            <div class="btn-group">
-                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
-                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+        <!-- Paket Tuš Kabina -->
+        <div class="card">
+            <h3 class="card-title">Paket „SVE-U-1” Tuš Kabina sa Kadicom</h3>
+            <div class="card-price">16.000 RSD</div>
+            <ul class="card-list">
+                <li>Demontaža stare kabine/kadice i priprema podloge</li>
+                <li>Sifon visoke propusnosti sa savitljivim crevom, profi silikon, tiplovi i šrafovi</li>
+                <li>Nivelisanje kadice, spajanje odvoda, montaža alu-profila i stakala, silikonisanje</li>
+                <li>Test oticanja vode i nepropusnosti pod direktnim mlazom</li>
+            </ul>
+            <div class="action-box">
+                <p>Pošaljite sliku za proveru termina:</p>
+                <div class="btn-group">
+                    <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                    <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Paket Walk-In Paravan -->
-    <div class="card">
-        <h3 class="card-title">Paket „SVE-U-1” Walk-In Paravan</h3>
-        <div class="card-price">13.000 RSD</div>
-        <ul class="card-list">
-            <li>Skidanje starog paravana ili zavese</li>
-            <li>Zidni alu-profili, stabilizatorska šipka, profi sanitarni silikon, tiplovi</li>
-            <li>Lasersko nivelisanje profila, fiksiranje stakla, montaža stabilizatora</li>
-            <li>Provera stabilnosti i nepropusnosti donje barijere</li>
-        </ul>
-        <div class="action-box">
-            <p>Pošaljite sliku za proveru termina:</p>
-            <div class="btn-group">
-                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
-                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+        <!-- Paket Walk-In Paravan -->
+        <div class="card">
+            <h3 class="card-title">Paket „SVE-U-1” Walk-In Paravan</h3>
+            <div class="card-price">13.000 RSD</div>
+            <ul class="card-list">
+                <li>Skidanje starog paravana ili zavese</li>
+                <li>Zidni alu-profili, stabilizatorska šipka, profi sanitarni silikon, tiplovi</li>
+                <li>Lasersko nivelisanje profila, fiksiranje stakla, montaža stabilizatora</li>
+                <li>Provera stabilnosti i nepropusnosti donje barijere</li>
+            </ul>
+            <div class="action-box">
+                <p>Pošaljite sliku za proveru termina:</p>
+                <div class="btn-group">
+                    <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                    <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Paket Kupatilski Nameštaj -->
-    <div class="card">
-        <h3 class="card-title">Paket „SVE-U-1” Kupatilski Nameštaj</h3>
-        <div class="card-price">11.500 RSD</div>
-        <ul class="card-list">
-            <li>Demontaža starog lavaboa, konzola i ogledala</li>
-            <li>Sifon sa prelivom, 2x EK ventila, brinoksi, sanitarni silikon, tiplovi</li>
-            <li>Montaža ormarića i umivaonika, kačenje ogledala sa laserskim ravnjanjem, spajanje LED rasvete</li>
-            <li>Provera odvodnog sistema i stabilnosti</li>
-        </ul>
-        <div class="action-box">
-            <p>Pošaljite sliku za proveru termina:</p>
-            <div class="btn-group">
-                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
-                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+        <!-- Paket Kupatilski Nameštaj -->
+        <div class="card">
+            <h3 class="card-title">Paket „SVE-U-1” Kupatilski Nameštaj</h3>
+            <div class="card-price">11.500 RSD</div>
+            <ul class="card-list">
+                <li>Demontaža starog lavaboa, konzola i ogledala</li>
+                <li>Sifon sa prelivom, 2x EK ventila, brinoksi, sanitarni silikon, tiplovi</li>
+                <li>Montaža ormarića i umivaonika, kačenje ogledala sa laserskim ravnjanjem, spajanje LED rasvete</li>
+                <li>Provera odvodnog sistema i stabilnosti</li>
+            </ul>
+            <div class="action-box">
+                <p>Pošaljite sliku za proveru termina:</p>
+                <div class="btn-group">
+                    <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                    <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Lokacije -->
-    <div class="locations-box">
-        <strong>Lokacije i opštine koje pokrivamo:</strong>
-        Zemun: Gornji grad, Donji grad, Novi grad, Altina, Busije, Batajnica, Zemun Polje, Galenika, 13. maj | Novi Beograd: Svi blokovi, Bežanijska kosa, Ledine | Ostale opštine: Palilula, Voždovac, Zvezdara, Čukarica, Rakovica, Stari grad, Vračar, Savski venac, Surčin i okolina Beograda po dogovoru.
-    </div>
+        <!-- Lokacije -->
+        <div class="locations-box">
+            <strong>Lokacije i opštine koje pokrivamo:</strong>
+            Zemun: Gornji grad, Donji grad, Novi grad, Altina, Busije, Batajnica, Zemun Polje, Galenika, 13. maj | Novi Beograd: Svi blokovi, Bežanijska kosa, Ledine | Ostale opštine: Palilula, Voždovac, Zvezdara, Čukarica, Rakovica, Stari grad, Vračar, Savski venac, Surčin i okolina Beograda po dogovoru.
+        </div>
 
-    <!-- KONZALTING I DIJAGNOSTIKA SEKCIJA (Drugačija paleta boja - jantar / bronze) -->
-    <h2 class="section-title consulting-title">Paketi za Tehnički Konsalting & Dijagnostiku</h2>
-    <p class="consulting-subtitle">Stručna provera, specifikacija bez škarta i međufazna kontrola radova</p>
+        <!-- KONZALTING I DIJAGNOSTIKA SEKCIJA -->
+        <h2 class="section-title consulting-title">Paketi za Tehnički Konsalting & Dijagnostiku</h2>
+        <p class="consulting-subtitle">Stručna provera, specifikacija bez škarta i međufazna kontrola radova</p>
 
-    <!-- Paket Online Konsultacije -->
-    <div class="card consulting-card">
-        <h3 class="card-title">Paket Online Konsultacije</h3>
-        <div class="card-price">3.500 RSD</div>
-        <ul class="card-list">
-            <li>Analiza: Slika, video snimaka ili skice kupatila putem Viber / WhatsApp / poziva</li>
-            <li>Preporuka opreme: Stručni saveti za izbor odgovarajućih modela i dimenzija sanitarija</li>
-            <li>Brendovi: Provereni sistemi spram vašeg budžeta (Geberit, Peštan, Sika, Mapei)</li>
-            <li>Bez greške: Procena tehničke izvodljivosti i izbegavanje kupovine pogrešne opreme</li>
-        </ul>
-        <div class="action-box">
-            <p>Kontaktirajte nas za zakazivanje konsultacija:</p>
-            <div class="btn-group">
-                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
-                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+        <!-- Paket Online Konsultacije -->
+        <div class="card consulting-card">
+            <h3 class="card-title">Paket Online Konsultacije</h3>
+            <div class="card-price">3.500 RSD</div>
+            <ul class="card-list">
+                <li>Analiza: Slika, video snimaka ili skice kupatila putem Viber / WhatsApp / poziva</li>
+                <li>Preporuka opreme: Stručni saveti za izbor odgovarajućih modela i dimenzija sanitarija</li>
+                <li>Brendovi: Provereni sistemi spram vašeg budžeta (Geberit, Peštan, Sika, Mapei)</li>
+                <li>Bez greške: Procena tehničke izvodljivosti i izbegavanje kupovine pogrešne opreme</li>
+            </ul>
+            <div class="action-box">
+                <p>Kontaktirajte nas za zakazivanje konsultacija:</p>
+                <div class="btn-group">
+                    <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                    <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Paket Terenska Dijagnostika -->
-    <div class="card consulting-card">
-        <h3 class="card-title">Paket Terenska Dijagnostika ⭐</h3>
-        <div class="card-price">7.000 RSD</div>
-        <ul class="card-list">
-            <li>Pregled na terenu: Dolazak na objekat (Beograd i okolina) i detaljan pregled vertikala i odvoda</li>
-            <li>Merenje pritiska: Precizno merenje pritiska i određivanje tačnih pozicija za instalacije</li>
-            <li>Bez škarta: Kompletna specifikacija potrebnog materijala bez viškova i nagomilavanja</li>
-            <li>Plan radova: Definisanje redosleda radova i saveti za pripremu podloge i hidroizolacije</li>
-        </ul>
-        <div class="action-box">
-            <p>Kontaktirajte nas za zakazivanje terenske dijagnostike:</p>
-            <div class="btn-group">
-                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
-                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+        <!-- Paket Terenska Dijagnostika -->
+        <div class="card consulting-card">
+            <h3 class="card-title">Paket Terenska Dijagnostika ⭐</h3>
+            <div class="card-price">7.000 RSD</div>
+            <ul class="card-list">
+                <li>Pregled na terenu: Dolazak na objekat (Beograd i okolina) i detaljan pregled vertikala i odvoda</li>
+                <li>Merenje pritiska: Precizno merenje pritiska i određivanje tačnih pozicija za instalacije</li>
+                <li>Bez škarta: Kompletna specifikacija potrebnog materijala bez viškova i nagomilavanja</li>
+                <li>Plan radova: Definisanje redosleda radova i saveti za pripremu podloge i hidroizolacije</li>
+            </ul>
+            <div class="action-box">
+                <p>Kontaktirajte nas za zakazivanje terenske dijagnostike:</p>
+                <div class="btn-group">
+                    <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                    <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Paket Premium Konsalting -->
-    <div class="card consulting-card">
-        <h3 class="card-title">Paket Premium Konsalting</h3>
-        <div class="card-price">14.000 RSD</div>
-        <ul class="card-list">
-            <li>Kompletna dijagnostika: Sve iz paketa Terenske Dijagnostike (izlazak na teren + merenja)</li>
-            <li>Pratnja u salonu: Asistencija pri kupovini / detaljna provera narudžbenice u salonu</li>
-            <li>Međufazna kontrola: Kontrolni izlazak pre zatvaranja zidova i lepljenja pločica</li>
-            <li>Provera instalacija: Provera ugradnih vodokotlića, padova cevovoda i zaptivenosti hidroizolacije</li>
-        </ul>
-        <div class="action-box">
-            <p>Kontaktirajte nas za zakazivanje premium konsaltinga:</p>
-            <div class="btn-group">
-                <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
-                <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+        <!-- Paket Premium Konsalting -->
+        <div class="card consulting-card">
+            <h3 class="card-title">Paket Premium Konsalting</h3>
+            <div class="card-price">14.000 RSD</div>
+            <ul class="card-list">
+                <li>Kompletna dijagnostika: Sve iz paketa Terenske Dijagnostike (izlazak na teren + merenja)</li>
+                <li>Pratnja u salonu: Asistencija pri kupovini / detaljna provera narudžbenice u salonu</li>
+                <li>Međufazna kontrola: Kontrolni izlazak pre zatvaranja zidova i lepljenja pločica</li>
+                <li>Provera instalacija: Provera ugradnih vodokotlića, padova cevovoda i zaptivenosti hidroizolacije</li>
+            </ul>
+            <div class="action-box">
+                <p>Kontaktirajte nas za zakazivanje premium konsaltinga:</p>
+                <div class="btn-group">
+                    <a href="https://wa.me/381604844952" class="btn btn-whatsapp">WhatsApp</a>
+                    <a href="viber://chat?number=%2B381604844952" class="btn btn-viber">Viber</a>
+                </div>
             </div>
         </div>
-    </div>
+
+        <!-- FAQ Vizuelni Blok za Kupca -->
+        <section class="faq-section">
+            <h2 class="faq-title">Često Postavljana Pitanja <span class="accent-orange">(FAQ)</span></h2>
+            
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span class="q-text">Zašto platiti konsultacije pre kupovine opreme i početka radova?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Kupovina pogrešnog ugradnog vodokotlića, neodgovarajućeg promera cevi ili loše hidroizolacije pravi škart i skupe greške. Konsultacijama dobijate tačnu specifikaciju materijala (<span class="brand-text">Geberit, Peštan, Sika, Mapei</span>) bez viškova i promašenih investicija.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span class="q-text">Šta tačno dobijam u paketu Online Konsultacije za 3.500 RSD?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Dobijate stručnu analizu vaših slika, snimaka ili skica putem Viber-a ili WhatsApp-a, preciznu preporuku dimenzija i modela sanitarija, spisak proverenih brendova (<span class="brand-text">Geberit, Peštan, Sika, Mapei</span>) i procenu tehničke izvodljivosti radova.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span class="q-text">Koji je opseg terenske dijagnostike i šta ulazi u cenu?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Terenska dijagnostika (7.000 RSD) pokriva Beograd i okolinu. Obuhvata dolazak na objekat, detaljan pregled vertikala i odvoda, kao i plan radova sa specifikacijom materijala bez nagomilavanja.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span class="q-text">Da li Premium Konsalting obuhvata proveru radova na terenu?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Da. Premium paket (14.000 RSD) obuhvata pratnju u salonu pri kupovini, kao i međufaznu kontrolu pre lepljenja pločica — proveru ugradnih kotlića, padova cevovoda i zaptivenosti hidroizolacije.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span class="q-text">Kako se zakazuje termin i kako se vrši plaćanje?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Zakazivanje ide direktno putem WhatsApp, Viber ili pozivom na 060/484-4952. Online konsultacije se uplaćuju pre poziva, dok se terenske usluge plaćaju po obavljenom pregledu na terenu.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
 
     <footer>
         © majstor.in.rs — Sve-U-1 Vodoinstalaterske usluge i montaža | Telefon: 060/484-4952
@@ -460,109 +630,4 @@
 </div>
 
 </body>
-</html><!-- SEO FAQ Schema Markup za Google Bota -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Zašto platiti konsultacije pre kupovine opreme i početka radova?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Kupovina pogrešnog ugradnog vodokotlića, neodgovarajućeg promera cevi ili loše hidroizolacije pravi škart i skupe greške. Konsultacijama dobijate tačnu specifikaciju materijala (Geberit, Peštan, Sika, Mapei) bez viškova i promašenih investicija."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Šta tačno dobijam u paketu Online Konsultacije za 3.500 RSD?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dobijate stručnu analizu vaših slika, snimaka ili skica putem Viber-a ili WhatsApp-a, preciznu preporuku dimenzija i modela sanitarija, spisak proverenih brendova (Geberit, Peštan, Sika, Mapei) i procenu tehničke izvodljivosti radova."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Koji je opseg terenske dijagnostike i šta ulazi u cenu?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Terenska dijagnostika (7.000 RSD) pokriva Beograd i okolinu. Obuhvata dolazak na objekat, detaljan pregled vertikala i odvoda, kao i plan radova sa specifikacijom materijala bez nagomilavanja."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Da li Premium Konsalting obuhvata proveru radova na terenu?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Da. Premium paket (14.000 RSD) obuhvata pratnju u salonu pri kupovini, kao i međufaznu kontrolu pre lepljenja pločica — proveru ugradnih kotlića, padova cevovoda i zaptivenosti hidroizolacije."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Kako se zakazuje termin i kako se vrši plaćanje?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Zakazivanje ide direktno putem WhatsApp, Viber ili pozivom na 060/484-4952. Online konsultacije se uplaćuju pre poziva, dok se terenske usluge plaćaju po obavljenom pregledu na terenu."
-      }
-    }
-  ]
-}
-</script>
-
-<!-- FAQ Vizuelni Blok za Kupca sa Tekstom u Boji -->
-<section class="faq-section">
-  <h2 class="faq-title">Često Postavljana Pitanja <span class="accent-orange">(FAQ)</span></h2>
-  
-  <div class="faq-container">
-    <details class="faq-item">
-      <summary class="faq-question">
-        <span class="q-text">Zašto platiti konsultacije pre kupovine opreme i početka radova?</span>
-        <span class="faq-icon">+</span>
-      </summary>
-      <div class="faq-answer">
-        <p>Kupovina pogrešnog ugradnog vodokotlića, neodgovarajućeg promera cevi ili loše hidroizolacije pravi škart i skupe greške. Konsultacijama dobijate tačnu specifikaciju materijala (<span class="brand-text">Geberit, Peštan, Sika, Mapei</span>) bez viškova i promašenih investicija.</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary class="faq-question">
-        <span class="q-text">Šta tačno dobijam u paketu Online Konsultacije za 3.500 RSD?</span>
-        <span class="faq-icon">+</span>
-      </summary>
-      <div class="faq-answer">
-        <p>Dobijate stručnu analizu vaših slika, snimaka ili skica putem <span class="viber-text">Viber-a</span> ili <span class="whatsapp-text">WhatsApp-a</span>, preciznu preporuku dimenzija i modela sanitarija, spisak proverenih brendova (<span class="brand-text">Geberit, Peštan, Sika, Mapei</span>) i procenu tehničke izvodljivosti radova.</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary class="faq-question">
-        <span class="q-text">Koji je opseg terenske dijagnostike i šta ulazi u cenu?</span>
-        <span class="faq-icon">+</span>
-      </summary>
-      <div class="faq-answer">
-        <p>Terenska dijagnostika (7.000 RSD) pokriva <span class="highlight-white">Beograd i okolinu</span>. Obuhvata dolazak na objekat, detaljan pregled vertikala i odvoda, te plan radova sa specifikacijom bez nagomilavanja materijala.</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary class="faq-question">
-        <span class="q-text">Da li Premium Konsalting obuhvata proveru radova na terenu?</span>
-        <span class="faq-icon">+</span>
-      </summary>
-      <div class="faq-answer">
-        <p>Da. Premium paket (14.000 RSD) obuhvata pratnju u salonu pri kupovini, kao i <span class="highlight-white">međufaznu kontrolu pre lepljenja pločica</span> — proveru ugradnih kotlića, padova cevovoda i zaptivenosti hidroizolacije pre zatvaranja zidova.</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary class="faq-question">
-        <span class="q-text">Kako se zakazuje termin i kako se vrši plaćanje?</span>
-        <span class="faq-icon">+</span>
-      </summary>
-      <div class="faq-answer">
-        <p>Zakazivanje ide direktno klikom na <span class="whatsapp-text">WhatsApp</span> ili <span class="viber-text">Viber</span> dugme, ili pozivom na <span class="phone-text">060/484-4952</span>. Online konsultacije se uplaćuju pre poziva, dok se terenske usluge plaćaju po obavljenom pregledu na terenu.</p>
-      </div>
-    </details>
-  </div>
-</section>
+</html>
